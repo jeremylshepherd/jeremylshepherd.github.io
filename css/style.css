@@ -1,0 +1,243 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Indie+Flower|Shadows+Into+Light|Sigmar+One|Architects+Daughter|Chewy|Gloria+Hallelujah|Rock+Salt|Permanent+Marker|Luckiest+Guy|Damion|Nothing+You+Could+Do|Homemade+Apple|Fredericka+the+Great);
+@media only screen and (max-width: 768px) {
+  .navbar-nav, .sep, .self, .footer-links {
+    display: none;
+  }
+  .portfolio img {
+    margin: 5px;
+    max-width: 35%;
+  }
+}
+
+body {
+  margin: 0 auto;
+}
+
+a,
+li a,
+li a:hover,
+a:hover {
+  text-decoration: none;
+}
+
+#brand {
+  margin-left: 40px;
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 5px 5px 6px rgba(60, 60, 60, .2);
+  font-size: 36px;
+}
+
+.navbar{
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-default{
+  background: rgba(248,248,248,0.9);
+}
+.navbar-nav {
+  float: right;
+  margin-top: 10px;
+  margin-right: 40px;
+  height: 70px;
+}
+
+nav a:hover {
+  box-shadow: 1px 1px 3px #444;
+  border-radius: 7%;
+}
+
+.navbar-nav>li:hover{
+  background: #aaa;
+  border-radius: 7%;
+}
+
+.jumbotron {
+  text-align: center;
+  height: 600px;
+  margin-top: 77px;
+  color: #eee;
+  text-shadow: 2px 2px 6px #222;
+  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/notebook-hero-workspace-minimal2.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.main {
+  margin-top: 100px;
+  ;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  width: 128px;
+  height: 48px;
+  margin: 12px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-size: 15px;
+  box-shadow: 1px 1px 3px #444;
+  transition: all .3s ease-out;
+}
+
+button:hover {
+  box-shadow: 4px 4px 8px #222;
+  width: 146px;
+  height: 60px;
+  margin: 0;
+  font-size: 18px;
+  transition: all .3s ease-in;
+}
+
+button a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.label {
+  color: #333;
+}
+
+#about-container {
+  margin-top: -30px;
+  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/desk-pencil-eraser-black.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.about-me {
+  height: 600px;
+}
+
+.about {
+  text-align: justify;
+  text-justify: distribute;
+}
+
+#self {
+  width: 60%;
+  margin-top: 15px;
+  border-radius: 100%;
+  box-shadow: 6px 6px 6px #222;
+  opacity: .85;
+}
+
+
+p {
+  padding: 25px;
+  font-size: 1.6em;
+  background-color: rgba(248, 248, 248, 0.3);
+  box-shadow: 8px 8px 8px 16px rgba(248, 248, 248, 0.3);
+}
+
+span {
+  font-weight: Bold;
+  font-size: 18px;
+}
+
+.portfolio {
+  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/people-coffee-notes-tea.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.portfolio h1 {
+  margin-top: 48px;
+  font-size: 60px;
+}
+
+.portfolio h1,
+.portfolio h2 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: #eee;
+  text-shadow: 2px 2px 6px #222;
+}
+
+.portfolio ul {
+  text-align: center;
+}
+
+.portfolio li {
+  display: inline;
+  margin: 0 auto;
+}
+
+.portfolio img {
+  width: 240px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 6px #222;
+  opacity: .8;
+  transition: all .5s ease-out;  
+  margin: 20px;
+}
+
+.portfolio img:hover {
+  width: 260px;
+  box-shadow: 6px 6px 6px #444;
+  opacity: 1;
+  transition: all .5s ease-in;
+}
+
+.contact {
+  margin-top: 36px;
+  height: 480px;
+  font-family: 'Permanent Marker', cursive;
+  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/coffee-iphone-laptop-notebook2.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.contact h2 {
+  font-size: 48px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.contact h3 {
+  font-size: 40px;
+  text-align: center;
+  color: #eee;
+  text-shadow: 2px 2px 6px #222;
+}
+
+.contact-buttons button {
+  font-size: 12px;
+  list-style: inline;
+  color: #333;
+  background: none;
+}
+.contact-buttons button:hover {
+  font-size: 16px;
+  color: #333;
+  background: rgba(255, 255, 255, .4);
+}
+
+footer {
+  background: #888;
+  height: 100px;
+}
+
+footer ul {
+  float: left;
+}
+
+footer li a {
+  color: #111;
+}
+
+footer li a:hover {
+  color: #fff;
+}
+
+footer h6 {
+  clear: both;
+  margin-left: 66px;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: rgba(0, 60, 255, .8); 
+    box-shadow: 2px 2px 4px rgba(30, 30, 30, .9);
+    color: #FFFFFF; 
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Permanent Marker'
+}
+
