@@ -1,11 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Pacifico|Indie+Flower|Shadows+Into+Light|Sigmar+One|Architects+Daughter|Chewy|Gloria+Hallelujah|Rock+Salt|Permanent+Marker|Luckiest+Guy|Damion|Nothing+You+Could+Do|Homemade+Apple|Fredericka+the+Great);
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
 @media only screen and (max-width: 768px) {
-  .navbar-nav, .sep, .self, .footer-links {
+  .self, .footer-links, .label, .conText{
     display: none;
   }
-  .portfolio img {
-    margin: 5px;
-    max-width: 35%;
+
+  .copyright{
+    text-align: center;
   }
 }
 
@@ -14,31 +15,17 @@ body {
 }
 
 a,
-li a,
-li a:hover,
-a:hover {
+a:hover{
   text-decoration: none;
 }
 
 #brand {
-  margin-left: 40px;
   font-family: 'Permanent Marker', cursive;
-  text-shadow: 5px 5px 6px rgba(60, 60, 60, .2);
-  font-size: 36px;
-}
-
-.navbar{
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+/*   text-shadow: 5px 5px 2px rgba(60, 60, 60, .4); */
 }
 
 .navbar-default{
   background: rgba(248,248,248,0.9);
-}
-.navbar-nav {
-  float: right;
-  margin-top: 10px;
-  margin-right: 40px;
-  height: 70px;
 }
 
 nav a:hover {
@@ -46,15 +33,14 @@ nav a:hover {
   border-radius: 7%;
 }
 
-.navbar-nav>li:hover{
-  background: #aaa;
-  border-radius: 7%;
+.navbar-toggle{
+  margin-top: 20px;
 }
 
 .jumbotron {
   text-align: center;
   height: 600px;
-  margin-top: 77px;
+  margin-top: 65px;
   color: #eee;
   text-shadow: 2px 2px 6px #222;
   background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/notebook-hero-workspace-minimal2.jpg") no-repeat fixed;
@@ -63,14 +49,29 @@ nav a:hover {
 
 .main {
   margin-top: 100px;
-  ;
 }
 
 li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.social{
   list-style: none;
 }
 
-button {
+.social li a {
+  font-size: 24px;
+  color: #fff;
+  transition: all .5s ease-in-out;
+}
+
+.social li a:hover{
+  font-size: 32px;
+  transition: all .5s ease-in-out;
+}
+
+.contact button {
   width: 128px;
   height: 48px;
   margin: 12px;
@@ -81,9 +82,9 @@ button {
   transition: all .3s ease-out;
 }
 
-button:hover {
+.contact button:hover {
   box-shadow: 4px 4px 8px #222;
-  width: 146px;
+  display: inline-block;
   height: 60px;
   margin: 0;
   font-size: 18px;
@@ -95,54 +96,44 @@ button a:hover {
   color: #333;
 }
 
-.label {
-  color: #333;
-}
-
 #about-container {
   margin-top: -30px;
+  margin-bottom: -30px;
   background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/desk-pencil-eraser-black.jpg") no-repeat fixed;
   background-size: cover;
 }
 
 .about-me {
-  height: 600px;
+  postion:fixed;
+  background-color: rgba(248, 248, 248, 0.3);
 }
 
-.about {
-  text-align: justify;
-  text-justify: distribute;
+.about-me .row{
+  padding: 5px;
 }
 
-#self {
+.self {
+  text-align: center;
   width: 60%;
-  margin-top: 15px;
   border-radius: 100%;
   box-shadow: 6px 6px 6px #222;
   opacity: .85;
 }
 
-
 p {
   padding: 25px;
   font-size: 1.6em;
-  background-color: rgba(248, 248, 248, 0.3);
-  box-shadow: 8px 8px 8px 16px rgba(248, 248, 248, 0.3);
 }
 
-span {
-  font-weight: Bold;
-  font-size: 18px;
+.constrain {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 25px;
 }
 
 .portfolio {
   background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/people-coffee-notes-tea.jpg") no-repeat fixed;
   background-size: cover;
-}
-
-.portfolio h1 {
-  margin-top: 48px;
-  font-size: 60px;
 }
 
 .portfolio h1,
@@ -153,70 +144,122 @@ span {
   text-shadow: 2px 2px 6px #222;
 }
 
-.portfolio ul {
+.frame{
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 280px;
+  color: #444;
+  font-family: 'Permanent Marker';
+  border: 1px solid #999;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  margin-top: 25px;
+  padding: 10px;
+  transition: all 1s ease-in-out;
 }
 
-.portfolio li {
-  display: inline;
-  margin: 0 auto;
+.frame:hover{
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 1s ease-in-out;
 }
 
-.portfolio img {
-  width: 240px;
-  border-radius: 15px;
-  box-shadow: 4px 4px 6px #222;
-  opacity: .8;
-  transition: all .5s ease-out;  
-  margin: 20px;
+.frame a,
+.frame a:hover{
+  text-decoration: none;
+  color: #000;
 }
 
-.portfolio img:hover {
-  width: 260px;
-  box-shadow: 6px 6px 6px #444;
+.overlay{
+  opacity: 0;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Helvetica';
+  background: rgba(31, 31, 122, 0.1);
+  transition: all 1s ease-in-out;
+}
+
+.frame:hover .overlay{
   opacity: 1;
-  transition: all .5s ease-in;
+  background: rgba(31, 31, 122, 0.8);
+  transition: opacity .3s ease-in-out;
+}
+
+.image{
+  max-width: 100%;
+	height: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  clear: both;
 }
 
 .contact {
-  margin-top: 36px;
   height: 480px;
   font-family: 'Permanent Marker', cursive;
   background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/coffee-iphone-laptop-notebook2.jpg") no-repeat fixed;
   background-size: cover;
 }
 
+.contact a{
+  text-shadow: 3px 3px 8px #000;
+}
+
 .contact h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 3px 3px 8px #000;
   font-size: 48px;
   font-family: 'Permanent Marker', cursive;
 }
 
-.contact h3 {
-  font-size: 40px;
+.contact h4 {
+  font-size: 2rem;
   text-align: center;
-  color: #eee;
   text-shadow: 2px 2px 6px #222;
+}
+
+.contact h4 a {
+  text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+
+.contact-buttons {
+  display: block;
+  text-align: center;
 }
 
 .contact-buttons button {
   font-size: 12px;
-  list-style: inline;
-  color: #333;
   background: none;
 }
-.contact-buttons button:hover {
-  font-size: 16px;
-  color: #333;
-  background: rgba(255, 255, 255, .4);
+
+.contact-buttons button a {
+  text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
 }
 
 footer {
   background: #888;
-  height: 100px;
+  height: 60px;
 }
 
 footer ul {
   float: left;
+}
+
+footer li{
+  display:inline;
+  padding: 10px;
 }
 
 footer li a {
@@ -228,16 +271,5 @@ footer li a:hover {
 }
 
 footer h6 {
-  clear: both;
-  margin-left: 66px;
+  float: right;
 }
-
-.tooltip > .tooltip-inner {
-    background-color: rgba(0, 60, 255, .8); 
-    box-shadow: 2px 2px 4px rgba(30, 30, 30, .9);
-    color: #FFFFFF; 
-    padding: 10px;
-    font-size: 20px;
-    font-family: 'Permanent Marker'
-}
-
