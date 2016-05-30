@@ -1,4 +1,4 @@
-var projectData = "https://rawgit.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/b05ddb524c1e71e08e85bd056d079f6795f85669/ProjectData.json";
+var codze = (var projectData = "https://rawgit.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/b05ddb524c1e71e08e85bd056d079f6795f85669/ProjectData.json";
 
 var Portfolio = React.createClass({
   loadProjects: function() {
@@ -19,8 +19,8 @@ var Portfolio = React.createClass({
   getInitialState: function() {
     return ({data: []});
   },
-  componentDidMount: function() {    
-    this.loadProjects();    
+  componentDidMount: function() {
+    this.loadProjects();
   },
   render: function() {
     return(
@@ -140,7 +140,7 @@ var PortfolioAbout = React.createClass({
 });
 
 var PortfolioProjects = React.createClass({
- render: function() {  
+ render: function() {
     var ThumbNodes = this.props.data.map(function(project) {
       var technologies = project.technologies.join(', ');
       return (
@@ -244,4 +244,6 @@ var PortfolioContact = React.createClass({
   }
 });
 
-ReactDOM.render(<Portfolio url={projectData}/>, document.getElementById('app'));
+ReactDOM.render(<Portfolio url={projectData}/>, document.getElementById('app'));)
+
+Babel.transform(codze, { presets: ['es2015'] }).code;
