@@ -249,4 +249,4 @@ var PortfolioContact = React.createClass({
 ReactDOM.render(<Portfolio url={projectData}/>, document.getElementById('app'));
 );
 
-Babel.transform(projectCode, { presets: ['es2015'] }).code;
+Babel.transform(projectCode.toString(), { presets: ['es2015'] }).code;
