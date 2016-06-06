@@ -1,6 +1,6 @@
 "use strict";
 
-var projectData = "https://rawgit.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/b05ddb524c1e71e08e85bd056d079f6795f85669/ProjectData.json";
+var projectData = "https://gist.githubusercontent.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/05eb2bcd0a7b6873f8177dadde41d0fd6fed4caf/ProjectData.json";
 
 var Portfolio = React.createClass({
   displayName: "Portfolio",
