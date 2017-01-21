@@ -244,7 +244,7 @@ var PortfolioAbout = React.createClass({
         React.createElement(
           "div",
           { className: "col-md-6" },
-          React.createElement("img", { id: "self", className: "self img-responsive center-block", src: "http://www.jeremylshepherd.com/wp-content/uploads/2015/07/Jer-Square.jpg", alt: "Jeremy L. Shepherd" })
+          React.createElement("img", { id: "self", className: "self img-responsive center-block", src: "assets/page/Jer Square.jpg", alt: "Jeremy L. Shepherd" })
         ),
         React.createElement(
           "div",
