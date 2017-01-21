@@ -121,7 +121,7 @@ var PortfolioAbout = React.createClass({
       <div id="about-container" className="container-fluid">
         <div id="about" className="about-me row">
           <div className="col-md-6">
-            <img id="self" className="self img-responsive center-block" src="http://www.jeremylshepherd.com/wp-content/uploads/2015/07/Jer-Square.jpg" alt="Jeremy L. Shepherd"/>
+            <img id="self" className="self img-responsive center-block" src="/assets/page/Jer Square.jpg" alt="Jeremy L. Shepherd"/>
           </div>
           <div className="about col-md-6 col-xs-12">
             <p>I am a self-taught full-stack developer. In 2014, I began teaching myself front-end development in order to start a new career. I have spent the past 18 years working in law enforcement. I have a passion for building functional and beautiful web applications that enhance people's lives and free them to spend their focus and energy on following their passions.

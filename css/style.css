@@ -32,7 +32,7 @@ nav a:hover {
   margin-top: 65px;
   color: #eee;
   text-shadow: 2px 2px 6px #222;
-  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/notebook-hero-workspace-minimal2.jpg") no-repeat fixed;
+  background: url("/assets/page/notebook-hero-workspace-minimal2.jpg") no-repeat fixed;
   background-size: cover; }
 
 .main {
@@ -75,7 +75,7 @@ button a:hover {
 
 #about-container {
   margin-top: -30px;
-  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/desk-pencil-eraser-black.jpg") no-repeat fixed;
+  background: url("/assets/page/desk-pencil-eraser-black.jpg") no-repeat fixed;
   background-size: cover; }
 
 .about-me {
@@ -103,7 +103,7 @@ p {
   padding: 25px; }
 
 .portfolio {
-  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/people-coffee-notes-tea.jpg") no-repeat fixed;
+  background: url("/assets/page/people-coffee-notes-tea.jpg") no-repeat fixed;
   background-size: cover; }
   .portfolio h1, .portfolio h2 {
     font-family: 'Permanent Marker', cursive;
@@ -161,7 +161,7 @@ p {
 .contact {
   height: 480px;
   font-family: 'Permanent Marker', cursive;
-  background: url("http://www.jeremylshepherd.com/wp-content/uploads/2015/08/coffee-iphone-laptop-notebook2.jpg") no-repeat fixed;
+  background: url("/assets/page/coffee-iphone-laptop-notebook.jpg") no-repeat fixed;
   background-size: cover; }
   .contact a {
     text-shadow: 3px 3px 8px #000; }
