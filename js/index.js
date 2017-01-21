@@ -201,7 +201,7 @@ var PortfolioBanner = React.createClass({
                 React.createElement(
                   "a",
                   { href: "http://freecodecamp.com/jeremylshepherd" },
-                  React.createElement("i", { className: "fa fa-fire" }),
+                  React.createElement("i", { className: "fa fa-free-code-camp" }),
                   React.createElement(
                     "span",
                     { className: "label" },
@@ -244,7 +244,7 @@ var PortfolioAbout = React.createClass({
         React.createElement(
           "div",
           { className: "col-md-6" },
-          React.createElement("img", { id: "self", className: "self img-responsive center-block", src: "assets/page/Jer Square.jpg", alt: "Jeremy L. Shepherd" })
+          React.createElement("img", { id: "self", className: "self img-responsive center-block", src: "/assets/page/Jer Square.jpg", alt: "Jeremy L. Shepherd" })
         ),
         React.createElement(
           "div",
@@ -412,7 +412,7 @@ var PortfolioContact = React.createClass({
               React.createElement(
                 "a",
                 { href: "http://freecodecamp.com/jeremylshepherd" },
-                React.createElement("i", { className: "fa fa-fire" }),
+                React.createElement("i", { className: "fa fa-free-code-camp" }),
                 React.createElement(
                   "span",
                   { className: "conText" },

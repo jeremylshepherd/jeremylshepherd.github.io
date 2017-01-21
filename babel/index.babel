@@ -96,7 +96,7 @@ var PortfolioBanner = React.createClass({
                   </li>
                   <li title="Free Code Camp">
                     <a href="http://freecodecamp.com/jeremylshepherd">
-                      <i className="fa fa-fire"></i>
+                      <i className="fa fa-free-code-camp"></i>
                       <span className="label">FreeCodeCamp</span>
                     </a>
                   </li>
@@ -199,7 +199,7 @@ var PortfolioContact = React.createClass({
               </button>
               <button>
                 <a href="http://freecodecamp.com/jeremylshepherd">
-                  <i className="fa fa-fire"></i>
+                  <i className="fa fa-free-code-camp"></i>
                   <span className="conText"> FreeCodeCamp</span>
                 </a>
               </button>
