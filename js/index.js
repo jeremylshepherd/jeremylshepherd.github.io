@@ -1,6 +1,8 @@
 "use strict";
 
-var projectData = "https://gist.githubusercontent.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/b50bd305dea7df5d92f313789b216ca643b1e27f/ProjectData.json";
+//New api for my portfolio projects, free server so may take a moment to wake up
+
+var projectData = "https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects";
 
 var Portfolio = React.createClass({
   displayName: "Portfolio",
@@ -276,8 +278,42 @@ var PortfolioAbout = React.createClass({
 var PortfolioProjects = React.createClass({
   displayName: "PortfolioProjects",
 
+  getInitialState: function getInitialState() {
+    return { query: '' };
+  },
+
+  handleQuery: function handleQuery(e) {
+    this.setState({ query: e.target.value });
+  },
+
+  clearQuery: function clearQuery() {
+    this.setState({ query: '' });
+  },
+
   render: function render() {
-    var ThumbNodes = this.props.data.map(function (project) {
+    var _this = this;
+
+    function queryCheck(r, q) {
+      q = q.toLowerCase();
+      var tech = r.technologies.join(', ');
+      if (r.title.toLowerCase().indexOf(q) !== -1 || tech.toLowerCase().indexOf(q) !== -1 || r.type.toLowerCase().indexOf(q) !== -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    var filtered = void 0;
+    if (this.state.query) {
+      filtered = [];
+      this.props.data.map(function (r) {
+        if (queryCheck(r, _this.state.query)) {
+          filtered.push(r);
+        }
+      });
+    } else {
+      filtered = this.props.data;
+    }
+    var ThumbNodes = filtered.map(function (project) {
       var technologies = project.technologies.join(', ');
       return React.createElement(
         "div",
@@ -323,12 +359,25 @@ var PortfolioProjects = React.createClass({
           null,
           "Projects"
         ),
+        React.createElement(
+          "form",
+          { className: "form-group col-xs-12" },
+          React.createElement(
+            "div",
+            { className: "input-group" },
+            React.createElement("input", { type: "text", className: "form-control", value: this.state.query, placeholder: "Search...", onChange: this.handleQuery }),
+            React.createElement(
+              "div",
+              { className: "input-group-addon", onClick: this.clearQuery },
+              "Clear"
+            )
+          )
+        ),
         ThumbNodes
       )
     );
   }
 });
-
 var PortfolioContact = React.createClass({
   displayName: "PortfolioContact",
 
@@ -519,7 +568,7 @@ var PortfolioFooter = React.createClass({
             React.createElement(
               "h6",
               null,
-              "Copyright © Jeremy L. Shepherd 2015. All Rights Reserved"
+              "Copyright \xA9 Jeremy L. Shepherd 2015. All Rights Reserved"
             )
           )
         )
@@ -529,3 +578,4 @@ var PortfolioFooter = React.createClass({
 });
 
 ReactDOM.render(React.createElement(Portfolio, { url: projectData }), document.getElementById('app'));
+//# sourceMappingURL=/Users/jeremylshepherd/Dropbox/Web Dev Work/FreeCodeCamp/API/index.js.map

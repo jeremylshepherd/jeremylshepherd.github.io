@@ -1,4 +1,6 @@
-var projectData = "https://gist.githubusercontent.com/jeremylshepherd/e5b417a4b2125f8fc550351bc639ffbe/raw/05eb2bcd0a7b6873f8177dadde41d0fd6fed4caf/ProjectData.json";
+//New api for my portfolio projects, free server so may take a moment to wake up
+
+var projectData = "https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects";
 
 var Portfolio = React.createClass({
   loadProjects: function() {
@@ -140,8 +142,44 @@ var PortfolioAbout = React.createClass({
 });
 
 var PortfolioProjects = React.createClass({
+  getInitialState: function() {
+    return ({query: ''});
+  },
+
+  handleQuery: function(e) {
+   this.setState({query: e.target.value});
+  },
+
+  clearQuery: function() {
+   this.setState({query: ''});
+  },
+
  render: function() {
-    var ThumbNodes = this.props.data.map(function(project) {
+    function queryCheck(r, q) {
+      q = q.toLowerCase();
+      let tech = r.technologies.join(', ');
+      if(
+        r.title.toLowerCase().indexOf(q) !== -1 ||
+        tech.toLowerCase().indexOf(q)    !== -1 ||
+        r.type.toLowerCase().indexOf(q)  !== -1
+      ){
+        return true;
+      }else{
+        return false;
+      }
+    }
+   let filtered;
+   if(this.state.query){
+     filtered = [];
+     this.props.data.map((r) => {
+       if(queryCheck(r, this.state.query)){
+         filtered.push(r);
+       }
+     });
+   }else{
+     filtered = this.props.data;
+   }
+    var ThumbNodes = filtered.map(function(project) {
       var technologies = project.technologies.join(', ');
       return (
         <div className="col-sm-4 col-xs-12 frame">
@@ -160,13 +198,18 @@ var PortfolioProjects = React.createClass({
       <div id="portfolio" className="container-fluid portfolio">
         <div className="constrain row">
           <h2>Projects</h2>
+          <form className="form-group col-xs-12">
+            <div className="input-group">
+              <input type="text" className="form-control" value={this.state.query} placeholder="Search..." onChange={this.handleQuery} />
+              <div className="input-group-addon" onClick={this.clearQuery}>Clear</div>
+            </div>
+          </form>
           {ThumbNodes}
         </div>
       </div>
     )
   }
 });
-
 var PortfolioContact = React.createClass({
   render: function() {
     return(

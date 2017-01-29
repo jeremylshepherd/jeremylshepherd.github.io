@@ -1,0 +1,4 @@
+/node_modules
+.babelrc
+gulpfile.babel.js
+.DS_Store
