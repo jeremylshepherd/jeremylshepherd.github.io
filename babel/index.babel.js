@@ -1,305 +1,58 @@
-//New api for my portfolio projects, free server so may take a moment to wake up
+// New api for my portfolio projects, free heroku server so may take a moment to wake up
 
-var projectData = "https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects";
+const projectData = 'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
 
-var Portfolio = React.createClass({
-  loadProjects: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-            data: data
-          });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  getInitialState: function() {
-    return ({data: []});
-  },
-  componentDidMount: function() {
-    this.loadProjects();
-  },
-  render: function() {
-    return(
-      <div>
-        <PortfolioNav />
-        <PortfolioBanner />
-        <PortfolioAbout />
-        <PortfolioProjects data={this.state.data}/>
-        <PortfolioContact />
-        <PortfolioFooter />
-      </div>
-    )
-  }
-});
+import Nav from './Nav.babel.js';
+import Banner from './Banner.babel.js';
+import About from './About.babel.js';
+import Projects from './Projects.babel.js';
+import Contact from './Contact.babel.js';
+import Footer from './Footer.babel.js';
 
-var PortfolioNav = React.createClass({
-  render: function() {
-    return(
-      <nav className="navbar navbar-default navbar-fixed-top navbar-collapse">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-6 navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-              <h1 id="brand">Jeremy L. Shepherd</h1>
-            </div>
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul className="nav navbar-nav navbar-right">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
-});
 
-var PortfolioBanner = React.createClass({
-  render: function() {
-    return(
-      <div className="container-fluid">
-        <div className="row">
-          <div id="home" className="jumbotron col-sm-12 col-md-12">
-            <div className="main">
-              <h1>Jeremy L. Shepherd</h1>
-              <h3>Full-Stack JavaScript Developer</h3>
-              <ul className="social">
-                  <li title="Github">
-                    <a href="https://github.com/jeremylshepherd">
-                      <i className="fa fa-github"></i>
-                      <span className="label">Github</span>
-                    </a>
-                  </li>
-                  <li title="Twitter">
-                    <a href="https://twitter.com/jeremylshepherd">
-                      <i className="fa fa-twitter-square"></i>
-                      <span className="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li title="LinkedIn">
-                    <a href="http://www.linkedin.com/in/jeremylshepherd">
-                      <i className="fa fa-linkedin-square"></i>
-                      <span className="label">LinkedIN</span>
-                    </a>
-                  </li>
-                  <li title="Free Code Camp">
-                    <a href="http://freecodecamp.com/jeremylshepherd">
-                      <i className="fa fa-free-code-camp"></i>
-                      <span className="label">FreeCodeCamp</span>
-                    </a>
-                  </li>
-                  <li title="Codepen">
-                    <a href="http://codepen.io/jeremylshepherd">
-                      <i className="fa fa-codepen"></i>
-                      <span className="label">Codepen</span>
-                    </a>
-                  </li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-});
+export default class Portfolio extends React.Component {
+    constructor(props) {
+        super(props);
 
-var PortfolioAbout = React.createClass({
-  render: function() {
-    let date = () => {
-      let start = new Date(1998, 2, 30).getFullYear();
-      let now = new Date(Date.now()).getFullYear();
-      return now - start;
-    };
-    return (
-      <div id="about-container" className="container-fluid">
-        <div id="about" className="about-me container">
-          <div className="col-sm-6 hidden-xs">
-            <div className="polaroid">
-              <img
-                id="self"
-                className="self"
-                src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
-                alt="Jeremy L. Shepherd"
-              />
-              <span className="gutter">Jeremy 2017</span>
-            </div>
-          </div>
-          <div className="col-xs-12 col-sm-6">
-            <p>
-              {`I am a self-taught full-stack developer. In 2014, I began teaching myself front-end development in order to start a new career. I have spent the past ${date()} years working in law enforcement. I have a passion for building functional and beautiful web applications that enhance people's lives and free them to spend their focus and energy on following their passions.`}
-              <br />
-              <br />
-              <span>Compentencies:</span>
-              <br /> "MEAN" stack (MongoDB, ExpressJS, AngularJS, NodeJS)
-              <br /> Ruby on Rails, ERB, HAML, SASS, RSPEC,
-              <br /> React, d3, Jade, EJS, HTML5, CSS3, Vanilla JS, jQuery,
-              MongooseJS, and Bootstrap
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-});
+        this.state = {
+            data: []
+        };
 
-var PortfolioProjects = React.createClass({
-  getInitialState: function() {
-    return ({query: ''});
-  },
-
-  handleQuery: function(e) {
-   this.setState({query: e.target.value});
-  },
-
-  clearQuery: function() {
-   this.setState({query: ''});
-  },
-
- render: function() {
-    function queryCheck(r, q) {
-      q = q.toLowerCase();
-      let tech = r.technologies.join(', ');
-      if(
-        r.title.toLowerCase().indexOf(q) !== -1 ||
-        tech.toLowerCase().indexOf(q)    !== -1 ||
-        r.type.toLowerCase().indexOf(q)  !== -1
-      ){
-        return true;
-      }else{
-        return false;
-      }
+        this.loadProjects = this.loadProjects.bind(this);
     }
-   let filtered;
-   if(this.state.query){
-     filtered = [];
-     this.props.data.map((r) => {
-       if(queryCheck(r, this.state.query)){
-         filtered.push(r);
-       }
-     });
-   }else{
-     filtered = this.props.data;
-   }
-    var ThumbNodes = filtered.map(function(project) {
-      var technologies = project.technologies.join(', ');
-      return (
-        <div className="col-sm-4 col-xs-12 frame">
-          <a href={project.url}>
-            <span className="overlay"><p>{project.title + ':'} <br/> { technologies}<br/>{"Project type: " + project.type}</p></span>
-            <img
-              className="image img-responsive"
-              src={project.img}
-            />
-            <h5>{project.title}</h5>
-          </a>
-        </div>
+
+    loadProjects() {
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: (data) => {
+                this.setState({
+                    data: data
+                });
+            },
+            error: (xhr, status, err) => {
+                console.error(this.props.url, status, err.toString());
+            }
+        });
+    }
+
+    componentDidMount() {
+        this.loadProjects();
+    }
+
+    render() {
+        return(
+            <div>
+                <Nav />
+                <Banner />
+                <About />
+                <Projects data={this.state.data}/>
+                <Contact />
+                <Footer />
+            </div>
         );
-    });
-    return (
-      <div id="portfolio" className="container-fluid portfolio">
-        <div className="constrain row">
-          <h2>Projects</h2>
-          <form className="form-group col-xs-12">
-            <div className="input-group">
-              <input type="text" className="form-control" value={this.state.query} placeholder="Search..." onChange={this.handleQuery} />
-              <div className="input-group-addon" onClick={this.clearQuery}>Clear</div>
-            </div>
-          </form>
-          {ThumbNodes}
-        </div>
-      </div>
-    )
-  }
-});
-var PortfolioContact = React.createClass({
-  render: function() {
-    return(
-      <div className="container-fluid">
-        <div id="contact" className="contact row">
-          <div className="row col-xs-10 col-xs-offset-1">
-            <h2>Contact</h2>
-            <h4><a href="mailto:jeremylshepherd@gmail.com?Subject=Inquiry" target="_top">
-              <i className="fa fa-envelope" aria-hidden="true"></i> jeremylshepherd@gmail.com</a></h4>
-          </div>
-          <div className="row col-xs-10 col-xs-offset-1">
-            <div className="contact-buttons">
-              <button>
-                <a href="https://github.com/jeremylshepherd">
-                  <i className="fa fa-github"></i>
-                  <span className="conText">Github</span>
-                </a>
-              </button>
-              <button>
-                <a href="https://twitter.com/jeremylshepherd">
-                  <i className="fa fa-twitter"></i>
-                  <span className="conText"> Twitter</span>
-                </a>
-              </button>
-              <button>
-                <a href="http://www.linkedin.com/in/jeremylshepherd">
-                  <i className="fa fa-linkedin"></i>
-                  <span className="conText"> LinkedIN</span>
-                </a>
-              </button>
-              <button>
-                <a href="http://freecodecamp.com/jeremylshepherd">
-                  <i className="fa fa-free-code-camp"></i>
-                  <span className="conText"> FreeCodeCamp</span>
-                </a>
-              </button>
-              <button>
-                <a href="http://codepen.io/jeremylshepherd">
-                  <i className="fa fa-codepen"></i>
-                  <span className="conText"> Codepen</span>
-                </a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      )
     }
-  });
-
-  var PortfolioFooter = React.createClass({
-    render: function() {
-      return(
-        <div className="container-fluid">
-        <div className="row">
-          <footer>
-            <div className="col-xs-6">
-              <ul className="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><i className="fa fa-coffee" aria-hidden="true"></i></li>
-                <li><a href="#about">About</a></li>
-                <li><i className="fa fa-coffee" aria-hidden="true"></i></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><i className="fa fa-coffee" aria-hidden="true"></i></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-            <div className="col-md-6 col-xs-12 copyright">
-              <h6>Copyright © Jeremy L. Shepherd 2015. All Rights Reserved</h6>
-            </div>
-          </footer>
-        </div>
-    </div>
-    )
-  }
-});
+};
 
 ReactDOM.render(<Portfolio url={projectData}/>, document.getElementById('app'));
