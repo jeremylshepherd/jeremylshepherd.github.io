@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Permanent+Marker)
+@import '_polaroid'
 
 @media only screen and (max-width: 768px)
   .self, .footer-links, .label, .conText
@@ -8,6 +9,9 @@
 
 body
   margin: 0 auto
+
+.container
+  max-width: 90%
 
 a
   text-decoration: none
@@ -76,23 +80,14 @@ button a:hover
 
 #about-container
   margin-top: -30px
-  background: url("/assets/page/desk-pencil-eraser-black.jpg") no-repeat fixed
+  background-image: url("https://jeremylshepherd.github.io/assets/page/desk-pencil-eraser-black.jpg")
   background-size: cover
+  background-color: rgba(255, 255, 230, 0.5)
+  background-blend-mode: overlay
 
 .about-me
-  postion: fixed
-  background-color: rgba(248, 248, 248, 0.3)
   .row
     padding: 5px
-
-.self
-  text-align: center
-  margin-bottom: 10px
-  width: 60%
-  max-width: 398px
-  border-radius: 100%
-  box-shadow: 6px 6px 6px #222
-  opacity: .85
 
 p
   padding: 25px
@@ -111,6 +106,9 @@ p
     text-align: center
     color: #eee
     text-shadow: 2px 2px 6px #222
+
+.input-group-addon
+  cursor: pointer    
 
 .frame
   text-align: center

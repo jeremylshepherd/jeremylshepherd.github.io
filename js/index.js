@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
 //New api for my portfolio projects, free server so may take a moment to wake up
@@ -237,24 +238,43 @@ var PortfolioAbout = React.createClass({
   displayName: "PortfolioAbout",
 
   render: function render() {
+    var date = function date() {
+      var start = new Date(1998, 2, 30).getFullYear();
+      var now = new Date(Date.now()).getFullYear();
+      return now - start;
+    };
     return React.createElement(
       "div",
       { id: "about-container", className: "container-fluid" },
       React.createElement(
         "div",
-        { id: "about", className: "about-me row" },
+        { id: "about", className: "about-me container" },
         React.createElement(
           "div",
-          { className: "col-md-6" },
-          React.createElement("img", { id: "self", className: "self img-responsive center-block", src: "https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg", alt: "Jeremy L. Shepherd" })
+          { className: "col-sm-6 hidden-xs" },
+          React.createElement(
+            "div",
+            { className: "polaroid" },
+            React.createElement("img", {
+              id: "self",
+              className: "self",
+              src: "https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg",
+              alt: "Jeremy L. Shepherd"
+            }),
+            React.createElement(
+              "span",
+              { className: "gutter" },
+              "Jeremy 2017"
+            )
+          )
         ),
         React.createElement(
           "div",
-          { className: "about col-md-6 col-xs-12" },
+          { className: "col-xs-12 col-sm-6" },
           React.createElement(
             "p",
             null,
-            "I am a self-taught full-stack developer. In 2014, I began teaching myself front-end development in order to start a new career. I have spent the past 18 years working in law enforcement. I have a passion for building functional and beautiful web applications that enhance people's lives and free them to spend their focus and energy on following their passions.",
+            "I am a self-taught full-stack developer. In 2014, I began teaching myself front-end development in order to start a new career. I have spent the past " + date() + " years working in law enforcement. I have a passion for building functional and beautiful web applications that enhance people's lives and free them to spend their focus and energy on following their passions.",
             React.createElement("br", null),
             React.createElement("br", null),
             React.createElement(
@@ -263,11 +283,11 @@ var PortfolioAbout = React.createClass({
               "Compentencies:"
             ),
             React.createElement("br", null),
-            " \"MEAN\" stack (MongoDB, Express.JS, Angular.JS, Node.JS)",
+            " \"MEAN\" stack (MongoDB, ExpressJS, AngularJS, NodeJS)",
             React.createElement("br", null),
             " Ruby on Rails, ERB, HAML, SASS, RSPEC,",
             React.createElement("br", null),
-            " React, Jade, EJS, HTML5, CSS3, Vanilla JS, jQuery, MongooseJS, and Bootstrap"
+            " React, d3, Jade, EJS, HTML5, CSS3, Vanilla JS, jQuery, MongooseJS, and Bootstrap"
           )
         )
       )
@@ -578,4 +598,5 @@ var PortfolioFooter = React.createClass({
 });
 
 ReactDOM.render(React.createElement(Portfolio, { url: projectData }), document.getElementById('app'));
-//# sourceMappingURL=/Users/jeremylshepherd/Dropbox/Web Dev Work/FreeCodeCamp/API/index.js.map
+
+},{}]},{},[1]);
