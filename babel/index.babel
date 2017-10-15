@@ -196,7 +196,7 @@ var PortfolioProjects = React.createClass({
         </div>
         );
     });
-    let Main = this.props.isLoading ?
+    let Main = this.props.loading ?
       <i className='fa fa-spinner fa-3x' /> :
       {ThumbNodes};
     return (

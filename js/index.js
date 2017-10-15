@@ -350,7 +350,7 @@ var PortfolioProjects = React.createClass({
         )
       );
     });
-    var Main = this.props.isLoading ? React.createElement("i", { className: "fa fa-spinner fa-3x" }) : { ThumbNodes: ThumbNodes };
+    var Main = this.props.loading ? React.createElement("i", { className: "fa fa-spinner fa-3x" }) : { ThumbNodes: ThumbNodes };
     return React.createElement(
       "div",
       { id: "portfolio", className: "container-fluid portfolio" },
