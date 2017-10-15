@@ -196,9 +196,14 @@ var PortfolioProjects = React.createClass({
         </div>
         );
     });
-    let Main = this.props.loading ?
-      <i className='fa fa-spinner fa-3x' /> :
-      ThumbNodes;
+    let Loading = this.props.loading ?
+      (<div className="text-center">
+          <h1 className="text-center">
+            <i className="fa fa-spinner fa-pulse fa-inverse" aria-hidden="true"/>
+            {'  Projects are loading...'}
+          </h1>
+       </div>) :
+      null;
     return (
       <div id="portfolio" className="container-fluid portfolio">
         <div className="constrain row">
@@ -209,7 +214,8 @@ var PortfolioProjects = React.createClass({
               <div className="input-group-addon" onClick={this.clearQuery}>Clear</div>
             </div>
           </form>
-          {Main}
+          <div className="row">{ThumbNodes}</div>
+          <div className="row">{Loading}</div>
         </div>
       </div>
     )
