@@ -198,7 +198,7 @@ var PortfolioProjects = React.createClass({
     });
     let Main = this.props.loading ?
       <i className='fa fa-spinner fa-3x' /> :
-      {ThumbNodes};
+      ThumbNodes;
     return (
       <div id="portfolio" className="container-fluid portfolio">
         <div className="constrain row">
