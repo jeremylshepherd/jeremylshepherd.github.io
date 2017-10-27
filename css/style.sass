@@ -1,14 +1,29 @@
-@import url(https://fonts.googleapis.com/css?family=Permanent+Marker)
-@import '_polaroid'
+//Import fonts
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black')
 
-@media only screen and (max-width: 768px)
-  .self, .footer-links, .label, .conText
-    display: none
-  .copyright
-    text-align: center
 
+//Sass Variables
+$lower-border: 1px solid #fff5cc
+$upper-border: 1px solid rgba(122, 122, 122, 0.3)
+$color: #222
+$hover-text: #eee
+$hover-elem: rgba(0, 0, 0, 0.3)
+$disp-font: 'Permanent Marker', cursive
+$read-font: 'Roboto'
+
+//Mixins
+@mixin transAll($sec)
+  transition: all $sec ease-in-out
+
+@mixin backGround
+  background-color: #fffff7
 body
   margin: 0 auto
+  font-family: $read-font
+  color: $color
+
+.header-bar
+  font-family: $disp-font
 
 .container
   max-width: 90%
@@ -18,78 +33,76 @@ a
   &:hover
     text-decoration: none
 
-#brand
-  font-family: 'Permanent Marker', cursive
-
 .navbar-default
-  background: rgba(248, 248, 248, 0.9)
+  @include backGround
+  .navbar-brand
+    font-family: $disp-font
+    font-size: 2.1em
+    color: $color
+  .navbar-nav
+    li
+      &:hover
+        background-color: $hover-elem
+      a
+        color: $color
+        &:hover
+          color: $hover-text
 
-nav li:hover
-  background-color: #C8C8C8
-
-.navbar-toggle
-  margin-top: 20px
+#jumbo-container
+  @include backGround
 
 .jumbotron
+  font-family: $read-font
   text-align: center
-  height: 600px
-  margin-top: 65px
-  color: #eee
-  text-shadow: 2px 2px 6px #222
-  background: url("/assets/page/notebook-hero-workspace-minimal2.jpg") no-repeat fixed
-  background-size: cover
-
-.main
-  margin-top: 100px
-
-li
-  display: inline-block
-  padding: 10px
+  color: $color
+  background: none
+  .main
+    margin-top: 100px
+  li
+    display: inline-block
+    padding: 10px
+  h1
+    font-family: Archivo Black
 
 .social
   list-style: none
   li a
     font-size: 24px
-    color: #fff
-    transition: all .5s ease-in-out
+    color: $color
+    @include transAll(.2s)
+    .label
+      color: $color
+      &:hover
+        color: red
     &:hover
-      font-size: 32px
-      transition: all .5s ease-in-out
+      color: red
 
-.contact button
-  width: 128px
-  height: 48px
-  margin: 12px
-  border-radius: 5px
-  border: 1px solid #000
-  font-size: 15px
-  box-shadow: 1px 1px 3px #444
-  transition: all .3s ease-out
-  &:hover
-    box-shadow: 4px 4px 8px #222
-    display: inline-block
-    height: 60px
-    margin: 0
-    font-size: 18px
-    transition: all .3s ease-in
 
-button a:hover
-  text-decoration: none
-  color: #333
-
-#about-container
-  margin-top: -30px
-  background-image: url("https://jeremylshepherd.github.io/assets/page/desk-pencil-eraser-black.jpg")
-  background-size: cover
-  background-color: rgba(255, 255, 230, 0.5)
-  background-blend-mode: overlay
-
-.about-me
-  .row
-    padding: 5px
+.polaroid
+  position: absolute
+  max-width: 70%
+  background: #fffae6
+  border-left: $upper-border
+  border-top: $upper-border
+  border-right: $lower-border
+  border-bottom: $lower-border
+  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
+  .self
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
+    max-width: 90%
+    position: relative
+    left: 5%
+    top: 20px
+  .gutter
+    position: relative
+    color: #333
+    display: block
+    margin-top: 30px
+    text-align: center
+    font-family: $disp-font
+    font-size: 3.5rem
 
 p
-  padding: 25px
   font-size: 1.6em
 
 .constrain
@@ -98,8 +111,7 @@ p
   padding: 25px
 
 .portfolio
-  background: url("/assets/page/people-coffee-notes-tea.jpg") no-repeat fixed
-  background-size: cover
+  @include backGround
   h1, h2
     font-family: 'Permanent Marker', cursive
     text-align: center
@@ -107,7 +119,7 @@ p
     text-shadow: 2px 2px 6px #222
 
 .input-group-addon
-  cursor: pointer    
+  cursor: pointer
 
 .frame
   text-align: center
@@ -119,17 +131,20 @@ p
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2)
   margin-top: 25px
   padding: 10px
-  transition: all 1s ease-in-out
   &:hover
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8)
     background-color: rgba(255, 255, 255, 0.8)
-    transition: all 1s ease-in-out
   a
     text-decoration: none
     color: #000
     &:hover
       text-decoration: none
       color: #000
+  .image
+    max-width: 100%
+    max-height: 75%
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
+    clear: both
 
 .overlay
   opacity: 0
@@ -143,59 +158,111 @@ p
   font-size: 14px
   font-family: 'Helvetica'
   background: rgba(31, 31, 122, 0.1)
-  transition: all 1s ease-in-out
+  @include transAll(1s)
 
 .frame:hover .overlay
   opacity: 1
   background: rgba(31, 31, 122, 0.8)
   transition: opacity .3s ease-in-out
 
-.image
-  max-width: 100%
-  height: auto
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
-  clear: both
-
 .contact
-  height: 480px
-  font-family: 'Permanent Marker', cursive
-  background: url("/assets/page/coffee-iphone-laptop-notebook.jpg") no-repeat fixed
-  background-size: cover
-  a
-    text-shadow: 3px 3px 8px #000
-  h2
-    text-align: center
-    color: #fff
-    text-shadow: 3px 3px 8px #000
-    font-size: 48px
-    font-family: 'Permanent Marker', cursive
+  height: 240px
+  background: none
+  font-family: $disp-font
   h4
     font-size: 2rem
     text-align: center
-    text-shadow: 2px 2px 6px #222
-    a
-      text-shadow: -1px -1px 0 #fff,   1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4)
+  button
+    background: none
+    width: 130px
+    height: 48px
+    margin: 12px
+    border-radius: 5px
+    border: 1px solid #000
+    font-size: 12px
+    box-shadow: 1px 1px 3px #444
+    @include transAll(.2s)
+    &:hover
+      box-shadow: 4px 4px 8px #222
+      margin: 0
+      background-color: rgba(255, 255, 255, 0.1)
 
 .contact-buttons
   display: block
   text-align: center
-  button
-    font-size: 12px
-    background: none
-    a
-      text-shadow: -1px -1px 0 #fff,   1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff
+
+
 
 footer
-  background: #888
+  @include backGround
+  border-top: 1px solid #111
   height: 60px
+  h6
+    float: right
   ul
     float: left
   li
     display: inline
     padding: 10px
     a
-      color: #111
+      color: $color
       &:hover
         color: #fff
-  h6
-    float: right
+
+.colCont
+  width: 100%
+  .zzz
+    max-height: 5px
+    overflow: hidden
+    opacity: 0
+    transition: max-height 500ms, opacity 750ms
+  .xxx
+    max-height: 10000px
+    opacity: 1
+    transition: max-height 500ms, opacity 750ms
+
+@media only screen and (max-width: 768px)
+  .self, .footer-links, .label, .conText, .polaroid, .gutter
+    display: none
+  .contact
+    button
+      color: $hover-text
+      width: 60px
+      height: 60px
+      margin: 2
+      border-radius: 50%
+      border: none
+      font-size: 36px
+      @include transAll(.2s)
+      &:hover
+        margin: 2
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8)
+    .fa
+      color: $hover-text
+    #github
+      background-color: #2c3e50
+    #twitter
+      background-color: #3498db
+    #linkedin
+      background-color: #2980b9
+    #freecodecamp
+      background-color: #27ae60
+    #codepen
+      background-color: #34495e
+  .copyright
+    text-align: center
+
+@media only screen and (max-width: 540px)
+  .contact
+    button
+      color: $hover-text
+      width: 36px
+      height: 36px
+      margin: 2px
+      font-size: 20px
+
+@media only screen and (max-width: 320px)
+  .navbar-default
+    .navbar-brand
+      font-size: 1.5em
