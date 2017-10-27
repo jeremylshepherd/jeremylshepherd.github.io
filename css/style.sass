@@ -10,6 +10,8 @@ $hover-text: #eee
 $hover-elem: rgba(0, 0, 0, 0.3)
 $disp-font: 'Permanent Marker', cursive
 $read-font: 'Roboto'
+$cont-size-p: 36px
+$cont-size-t: 60px
 
 //Mixins
 @mixin transAll($sec)
@@ -228,8 +230,8 @@ footer
   .contact
     button
       color: $hover-text
-      width: 60px
-      height: 60px
+      width: $cont-size-t
+      height: $cont-size-t
       margin: 2
       border-radius: 50%
       border: none
@@ -240,6 +242,7 @@ footer
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8)
     .fa
       color: $hover-text
+      text-align: center
     #github
       background-color: #2c3e50
     #twitter
@@ -257,8 +260,8 @@ footer
   .contact
     button
       color: $hover-text
-      width: 36px
-      height: 36px
+      width: $cont-size-p
+      height: $cont-size-p
       margin: 2px
       font-size: 20px
 
