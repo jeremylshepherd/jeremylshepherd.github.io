@@ -442,10 +442,10 @@ var PortfolioContact = function PortfolioContact() {
     { className: "container-fluid" },
     React.createElement(
       "div",
-      { id: "contact", className: "contact row" },
+      { id: "contact", className: "contact" },
       React.createElement(
         "div",
-        { className: "row col-xs-10 col-xs-offset-1" },
+        { className: "col-xs-10 col-xs-offset-1" },
         React.createElement(
           "h4",
           null,
