@@ -139,42 +139,55 @@ const PortfolioBanner = () => {
   );
 };
 
-const PortfolioAbout = () => {
-  return (
-    <div id="about-container" className="container-fluid">
-      <div id="about" className="about-me container">
-        <div className="col-sm-6">
-          <div className="polaroid">
-            <img
-              id="self"
-              className="self"
-              src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
-              alt="Jeremy L. Shepherd"
-            />
-            <span className="gutter">Jeremy 2017</span>
+class PortfolioAbout extends React.Component {
+  constructor() {
+    super();
+
+    this.defaultSRC = this.defaultSRC.bind(this);
+  }
+
+  defaultSRC(e){
+    e.target.src="https://raw.githubusercontent.com/jeremylshepherd/jeremylshepherd.github.io/master/assets/Image_not_available.gif"
+  }
+
+  render() {
+    return (
+      <div id="about-container" className="container-fluid">
+        <div id="about" className="about-me container">
+          <div className="col-sm-6 hidden-xs">
+            <div className="polaroid">
+              <img
+                onError={this.defaultSRC}
+                id="self"
+                className="self"
+                src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
+                alt="Jeremy L. Shepherd"
+              />
+              <span className="gutter">Jeremy 2017</span>
+            </div>
+          </div>
+          <div className="col-sm-6 col-xs-12">
+            <p>
+              {`My name is Jeremy and I am full-stack web & mobile developer.`}
+            </p>
+            <p>
+              {`In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}
+            </p>
+            <p>
+              {`I spent ${date()} years working in law enforcement. Now, I have a passion for building functional and beautiful web/mobile applications that enhance people's lives and free them to focus time and energy on following their passions.`}
+              <br />
+              <br />
+              <span>Specializations:</span>
+              <br /> <Bullet /> React, React-Native, Angular, D3
+              <br /> <Bullet /> Node, Express, Ruby on Rails
+              <br /> <Bullet /> SQL, MongoDB
+            </p>
           </div>
         </div>
-        <div className="col-xs-12 col-sm-6">
-          <p>
-            {`My name is Jeremy and I am full-stack web & mobile developer.`}
-          </p>
-          <p>
-            {`In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}
-          </p>
-          <p>
-            {`I spent ${date()} years working in law enforcement. Now, I have a passion for building functional and beautiful web/mobile applications that enhance people's lives and free them to focus time and energy on following their passions.`}
-            <br />
-            <br />
-            <span>Compentencies:</span>
-            <br /> <Bullet /> React, React-Native, Angular, D3
-            <br /> <Bullet /> Node, Express, Ruby on Rails
-            <br /> <Bullet /> SQL, MongoDB
-          </p>
-        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 class PortfolioProjects extends React.Component {
   constructor() {
@@ -223,9 +236,9 @@ class PortfolioProjects extends React.Component {
     });
     let Loading = this.props.loading ? (
       <div className="text-center">
-        <h1 className="text-center">
+        <h1 className="text-center loading">
           <i className="fa fa-spinner fa-pulse fa-inverse" aria-hidden="true" />
-          {"  Projects are loading..."}
+          <span className="pulse">{"  loading..."}</span>
         </h1>
       </div>
     ) : null;
@@ -261,6 +274,7 @@ const PortfolioContact = () => {
         <div className="col-xs-10 col-xs-offset-1">
           <h4>
             <a
+              className="btn btn-danger radiate"
               href="mailto:jeremylshepherd@gmail.com?Subject=Inquiry"
               target="_top"
             >
@@ -274,31 +288,26 @@ const PortfolioContact = () => {
             <button id="github">
               <a href="https://github.com/jeremylshepherd">
                 <i className="fa fa-github" />
-                <span className="conText">Github</span>
               </a>
             </button>
             <button id="twitter">
               <a href="https://twitter.com/jeremylshepherd">
                 <i className="fa fa-twitter" />
-                <span className="conText"> Twitter</span>
               </a>
             </button>
             <button id="linkedin">
               <a href="https://www.linkedin.com/in/jeremylshepherd">
                 <i className="fa fa-linkedin" />
-                <span className="conText"> LinkedIN</span>
               </a>
             </button>
             <button id="freecodecamp">
               <a href="https://freecodecamp.com/jeremylshepherd">
                 <i className="fa fa-free-code-camp" />
-                <span className="conText"> FreeCodeCamp</span>
               </a>
             </button>
             <button id="codepen">
               <a href="https://codepen.io/jeremylshepherd">
                 <i className="fa fa-codepen" />
-                <span className="conText"> Codepen</span>
               </a>
             </button>
           </div>
@@ -310,38 +319,40 @@ const PortfolioContact = () => {
 
 const PortfolioFooter = () => {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <footer>
-          <div className="col-xs-6">
-            <ul className="footer-links">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <i className="fa fa-coffee" aria-hidden="true" />
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <i className="fa fa-coffee" aria-hidden="true" />
-              </li>
-              <li>
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li>
-                <i className="fa fa-coffee" aria-hidden="true" />
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-6 col-xs-12 copyright">
-            <h6>Copyright © Jeremy L. Shepherd 2017. All Rights Reserved</h6>
-          </div>
-        </footer>
+    <div className="footer">
+      <div className="container-fluid">
+        <div className="row">
+          <footer>
+            <div className="col-lg-6 hidden-md hidden-sm hidden-xs">
+              <ul className="footer-links">
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <i className="fa fa-coffee" aria-hidden="true" />
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <i className="fa fa-coffee" aria-hidden="true" />
+                </li>
+                <li>
+                  <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                  <i className="fa fa-coffee" aria-hidden="true" />
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-lg-6 col-md-12 copyright">
+              <h6>Copyright © Jeremy L. Shepherd 2017. All Rights Reserved</h6>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   );

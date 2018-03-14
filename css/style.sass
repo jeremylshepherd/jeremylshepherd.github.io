@@ -1,17 +1,34 @@
 //Import fonts
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black')
 
-
 //Sass Variables
 $lower-border: 1px solid #fff5cc
 $upper-border: 1px solid rgba(122, 122, 122, 0.3)
+
+//Text Color
 $color: #222
 $hover-text: #eee
 $hover-elem: rgba(0, 0, 0, 0.3)
+
+//Font
 $disp-font: 'Permanent Marker', cursive
 $read-font: 'Roboto'
+
+//Contact Buttons
 $cont-size-p: 36px
 $cont-size-t: 60px
+
+//Animation interval
+$pulse-beat: 1.25s
+
+//color
+$pulse: rgba(white, 0)
+$email: rgba(212, 73, 70, 1)
+$linkedIn: #2980b9
+$github: #2c3e50
+$codepen: #34495e
+$twitter: #3498db
+$fcc: #27ae60
 
 //Mixins
 @mixin transAll($sec)
@@ -19,6 +36,26 @@ $cont-size-t: 60px
 
 @mixin backGround
   background-color: #fffff7
+
+@mixin textEffect($num, $hue)
+  text-shadow: (-$num) 0px 0px $hue, ($num) 0px 0px $hue, 0px (-$num) 0px $hue, 0px ($num) 0px $hue, (-$num * 2) 0px 0px invert($hue), ($num * 2) 0px 0px invert($hue), 0px ($num * 2) 0px invert($hue), 0px (-$num * 2) 0px invert($hue)
+
+@mixin stroke($width, $color)
+  text-shadow: (-$width) (-$width) 0 $color, $width (-$width) 0 $color, (-$width) $width 0 $color, $width $width 0 $color
+
+@mixin pulse($ani_name, $color)
+  @keyframes #{$ani_name}
+    to
+      box-shadow: 0 0 0 15px $color
+
+@mixin aniInf($name, $time)
+  animation: $name $time infinite
+
+@mixin social($color)
+  background-color: $color
+  box-shadow: 0 0 0 0 rgba($color, 1)
+
+
 body
   margin: 0 auto
   font-family: $read-font
@@ -27,8 +64,9 @@ body
 .header-bar
   font-family: $disp-font
 
-.container
-  max-width: 90%
+.container,
+.container-fluid
+  max-width: 99%
 
 a
   text-decoration: none
@@ -119,6 +157,20 @@ p
     text-align: center
     color: #eee
     text-shadow: 2px 2px 6px #222
+  .loading,
+  .fa-spinner
+    text-shadow: 0px 0px 0px #fff
+    color: $color
+  .pulse
+    animation: pulse 2s infinite
+
+@keyframes pulse
+  0%
+    @include stroke(0px, rgba(0, 0, 0, 0))
+    color: rgba(0, 0, 0, 1)
+  50%
+    @include stroke(1px, rgba(0, 0, 0, 1))
+    color: rgba(255, 255, 255, 1)
 
 .input-group-addon
   cursor: pointer
@@ -174,40 +226,77 @@ p
     text-align: center
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4)
   button
-    background: none
+    color: $hover-text
+    width: $cont-size-t
+    height: $cont-size-t
     padding: 0
-    width: 130px
-    height: 48px
-    margin: 12px
-    border-radius: 5px
-    border: 1px solid #000
-    font-size: 12px
-    box-shadow: 1px 1px 3px #444
+    margin: 10px
+    border-radius: 50%
+    border: none
+    font-size: 36px
     @include transAll(.2s)
     &:hover
-      box-shadow: 4px 4px 8px #222
-      margin: 0
-      background-color: rgba(255, 255, 255, 0.1)
+      margin: 2
+  .fa
+    color: $hover-text
+    text-align: center
+  #github
+    @include social($github)
+    &:hover
+      @include aniInf(github, $pulse-beat)
+  #twitter
+    @include social($twitter)
+    &:hover
+      @include aniInf(twitter, $pulse-beat)
+  #linkedin
+    @include social($linkedIn)
+    &:hover
+      @include aniInf(linkedIn, $pulse-beat)
+  #freecodecamp
+    @include social($fcc)
+    &:hover
+      @include aniInf(fcc, $pulse-beat)
+  #codepen
+    @include social($codepen)
+    &:hover
+      @include aniInf(codepen, $pulse-beat)
+  .copyright
+    text-align: center
+  .radiate
+    box-shadow: 0 0 0 0 rgba(212, 73, 70, 1)
+    border-radius: 1px
+    &:hover
+      @include aniInf(email, 1.25s)
+
+@include pulse(email, $pulse)
+@include pulse(github, $pulse)
+@include pulse(twitter, $pulse)
+@include pulse(linkedIn, $pulse)
+@include pulse(fcc, $pulse)
+@include pulse(codepen, $pulse)
 
 .contact-buttons
   display: block
   text-align: center
 
-footer
+.footer
   @include backGround
   border-top: 1px solid #111
-  height: 60px
+  max-height: 100px
   h6
     float: right
   ul
     float: left
+    margin-top: 10px
   li
     display: inline
     padding: 10px
+    &:hover:nth-child(odd)
+      background-color: $hover-elem
     a
       color: $color
       &:hover
-        color: #fff
+        color: $hover-text
 
 .colCont
   width: 100%
@@ -222,36 +311,21 @@ footer
     transition: max-height 500ms, opacity 750ms
 
 @media only screen and (max-width: 768px)
-  .self, .footer-links, .label, .conText, .polaroid, .gutter
+  .footer-links, .label, .conText
     display: none
-  .contact
-    button
-      color: $hover-text
-      width: $cont-size-t
-      height: $cont-size-t
-      margin: 2
-      border-radius: 50%
-      border: none
-      font-size: 36px
-      @include transAll(.2s)
-      &:hover
-        margin: 2
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8)
+  .social
     .fa
-      color: $hover-text
-      text-align: center
-    #github
-      background-color: #2c3e50
-    #twitter
-      background-color: #3498db
-    #linkedin
-      background-color: #2980b9
-    #freecodecamp
-      background-color: #27ae60
-    #codepen
-      background-color: #34495e
-  .copyright
-    text-align: center
+      font-size: 42px
+    .fa-github
+      color: $github
+    .fa-twitter-square
+      color: $twitter
+    .fa-linkedin-square
+      color: $linkedIn
+    .fa-free-code-camp
+      color: $fcc
+    .fa-codepen
+      color: $codepen
 
 @media only screen and (max-width: 540px)
   .contact

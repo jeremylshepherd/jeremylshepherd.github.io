@@ -262,87 +262,111 @@ var PortfolioBanner = function PortfolioBanner() {
   );
 };
 
-var PortfolioAbout = function PortfolioAbout() {
-  return React.createElement(
-    "div",
-    { id: "about-container", className: "container-fluid" },
-    React.createElement(
-      "div",
-      { id: "about", className: "about-me container" },
-      React.createElement(
+var PortfolioAbout = function (_React$Component) {
+  _inherits(PortfolioAbout, _React$Component);
+
+  function PortfolioAbout() {
+    _classCallCheck(this, PortfolioAbout);
+
+    var _this = _possibleConstructorReturn(this, (PortfolioAbout.__proto__ || Object.getPrototypeOf(PortfolioAbout)).call(this));
+
+    _this.defaultSRC = _this.defaultSRC.bind(_this);
+    return _this;
+  }
+
+  _createClass(PortfolioAbout, [{
+    key: "defaultSRC",
+    value: function defaultSRC(e) {
+      e.target.src = "https://raw.githubusercontent.com/jeremylshepherd/jeremylshepherd.github.io/master/assets/Image_not_available.gif";
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
         "div",
-        { className: "col-sm-6" },
+        { id: "about-container", className: "container-fluid" },
         React.createElement(
           "div",
-          { className: "polaroid" },
-          React.createElement("img", {
-            id: "self",
-            className: "self",
-            src: "https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg",
-            alt: "Jeremy L. Shepherd"
-          }),
+          { id: "about", className: "about-me container" },
           React.createElement(
-            "span",
-            { className: "gutter" },
-            "Jeremy 2017"
+            "div",
+            { className: "col-sm-6 hidden-xs" },
+            React.createElement(
+              "div",
+              { className: "polaroid" },
+              React.createElement("img", {
+                onError: this.defaultSRC,
+                id: "self",
+                className: "self",
+                src: "https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg",
+                alt: "Jeremy L. Shepherd"
+              }),
+              React.createElement(
+                "span",
+                { className: "gutter" },
+                "Jeremy 2017"
+              )
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "col-sm-6 col-xs-12" },
+            React.createElement(
+              "p",
+              null,
+              "My name is Jeremy and I am full-stack web & mobile developer."
+            ),
+            React.createElement(
+              "p",
+              null,
+              "In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding."
+            ),
+            React.createElement(
+              "p",
+              null,
+              "I spent " + date() + " years working in law enforcement. Now, I have a passion for building functional and beautiful web/mobile applications that enhance people's lives and free them to focus time and energy on following their passions.",
+              React.createElement("br", null),
+              React.createElement("br", null),
+              React.createElement(
+                "span",
+                null,
+                "Specializations:"
+              ),
+              React.createElement("br", null),
+              " ",
+              React.createElement(Bullet, null),
+              " React, React-Native, Angular, D3",
+              React.createElement("br", null),
+              " ",
+              React.createElement(Bullet, null),
+              " Node, Express, Ruby on Rails",
+              React.createElement("br", null),
+              " ",
+              React.createElement(Bullet, null),
+              " SQL, MongoDB"
+            )
           )
         )
-      ),
-      React.createElement(
-        "div",
-        { className: "col-xs-12 col-sm-6" },
-        React.createElement(
-          "p",
-          null,
-          "My name is Jeremy and I am full-stack web & mobile developer."
-        ),
-        React.createElement(
-          "p",
-          null,
-          "In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding."
-        ),
-        React.createElement(
-          "p",
-          null,
-          "I spent " + date() + " years working in law enforcement. Now, I have a passion for building functional and beautiful web/mobile applications that enhance people's lives and free them to focus time and energy on following their passions.",
-          React.createElement("br", null),
-          React.createElement("br", null),
-          React.createElement(
-            "span",
-            null,
-            "Compentencies:"
-          ),
-          React.createElement("br", null),
-          " ",
-          React.createElement(Bullet, null),
-          " React, React-Native, Angular, D3",
-          React.createElement("br", null),
-          " ",
-          React.createElement(Bullet, null),
-          " Node, Express, Ruby on Rails",
-          React.createElement("br", null),
-          " ",
-          React.createElement(Bullet, null),
-          " SQL, MongoDB"
-        )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
 
-var PortfolioProjects = function (_React$Component) {
-  _inherits(PortfolioProjects, _React$Component);
+  return PortfolioAbout;
+}(React.Component);
+
+var PortfolioProjects = function (_React$Component2) {
+  _inherits(PortfolioProjects, _React$Component2);
 
   function PortfolioProjects() {
     _classCallCheck(this, PortfolioProjects);
 
-    var _this = _possibleConstructorReturn(this, (PortfolioProjects.__proto__ || Object.getPrototypeOf(PortfolioProjects)).call(this));
+    var _this2 = _possibleConstructorReturn(this, (PortfolioProjects.__proto__ || Object.getPrototypeOf(PortfolioProjects)).call(this));
 
-    _this.state = { query: "" };
+    _this2.state = { query: "" };
 
-    _this.handleQuery = _this.handleQuery.bind(_this);
-    _this.clearQuery = _this.clearQuery.bind(_this);
-    return _this;
+    _this2.handleQuery = _this2.handleQuery.bind(_this2);
+    _this2.clearQuery = _this2.clearQuery.bind(_this2);
+    return _this2;
   }
 
   _createClass(PortfolioProjects, [{
@@ -358,13 +382,13 @@ var PortfolioProjects = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var filtered = void 0;
       if (this.state.query) {
         filtered = [];
         this.props.data.map(function (r) {
-          if (queryCheck(r, _this2.state.query)) {
+          if (queryCheck(r, _this3.state.query)) {
             filtered.push(r);
           }
         });
@@ -387,9 +411,13 @@ var PortfolioProjects = function (_React$Component) {
         { className: "text-center" },
         React.createElement(
           "h1",
-          { className: "text-center" },
+          { className: "text-center loading" },
           React.createElement("i", { className: "fa fa-spinner fa-pulse fa-inverse", "aria-hidden": "true" }),
-          "  Projects are loading..."
+          React.createElement(
+            "span",
+            { className: "pulse" },
+            "  loading..."
+          )
         )
       ) : null;
       return React.createElement(
@@ -452,6 +480,7 @@ var PortfolioContact = function PortfolioContact() {
           React.createElement(
             "a",
             {
+              className: "btn btn-danger radiate",
               href: "mailto:jeremylshepherd@gmail.com?Subject=Inquiry",
               target: "_top"
             },
@@ -473,12 +502,7 @@ var PortfolioContact = function PortfolioContact() {
             React.createElement(
               "a",
               { href: "https://github.com/jeremylshepherd" },
-              React.createElement("i", { className: "fa fa-github" }),
-              React.createElement(
-                "span",
-                { className: "conText" },
-                "Github"
-              )
+              React.createElement("i", { className: "fa fa-github" })
             )
           ),
           React.createElement(
@@ -487,12 +511,7 @@ var PortfolioContact = function PortfolioContact() {
             React.createElement(
               "a",
               { href: "https://twitter.com/jeremylshepherd" },
-              React.createElement("i", { className: "fa fa-twitter" }),
-              React.createElement(
-                "span",
-                { className: "conText" },
-                " Twitter"
-              )
+              React.createElement("i", { className: "fa fa-twitter" })
             )
           ),
           React.createElement(
@@ -501,12 +520,7 @@ var PortfolioContact = function PortfolioContact() {
             React.createElement(
               "a",
               { href: "https://www.linkedin.com/in/jeremylshepherd" },
-              React.createElement("i", { className: "fa fa-linkedin" }),
-              React.createElement(
-                "span",
-                { className: "conText" },
-                " LinkedIN"
-              )
+              React.createElement("i", { className: "fa fa-linkedin" })
             )
           ),
           React.createElement(
@@ -515,12 +529,7 @@ var PortfolioContact = function PortfolioContact() {
             React.createElement(
               "a",
               { href: "https://freecodecamp.com/jeremylshepherd" },
-              React.createElement("i", { className: "fa fa-free-code-camp" }),
-              React.createElement(
-                "span",
-                { className: "conText" },
-                " FreeCodeCamp"
-              )
+              React.createElement("i", { className: "fa fa-free-code-camp" })
             )
           ),
           React.createElement(
@@ -529,12 +538,7 @@ var PortfolioContact = function PortfolioContact() {
             React.createElement(
               "a",
               { href: "https://codepen.io/jeremylshepherd" },
-              React.createElement("i", { className: "fa fa-codepen" }),
-              React.createElement(
-                "span",
-                { className: "conText" },
-                " Codepen"
-              )
+              React.createElement("i", { className: "fa fa-codepen" })
             )
           )
         )
@@ -546,79 +550,83 @@ var PortfolioContact = function PortfolioContact() {
 var PortfolioFooter = function PortfolioFooter() {
   return React.createElement(
     "div",
-    { className: "container-fluid" },
+    { className: "footer" },
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "container-fluid" },
       React.createElement(
-        "footer",
-        null,
+        "div",
+        { className: "row" },
         React.createElement(
-          "div",
-          { className: "col-xs-6" },
+          "footer",
+          null,
           React.createElement(
-            "ul",
-            { className: "footer-links" },
+            "div",
+            { className: "col-lg-6 hidden-md hidden-sm hidden-xs" },
             React.createElement(
-              "li",
-              null,
+              "ul",
+              { className: "footer-links" },
               React.createElement(
-                "a",
-                { href: "#home" },
-                "Home"
-              )
-            ),
-            React.createElement(
-              "li",
-              null,
-              React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
-            ),
-            React.createElement(
-              "li",
-              null,
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#home" },
+                  "Home"
+                )
+              ),
               React.createElement(
-                "a",
-                { href: "#about" },
-                "About"
-              )
-            ),
-            React.createElement(
-              "li",
-              null,
-              React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
-            ),
-            React.createElement(
-              "li",
-              null,
+                "li",
+                null,
+                React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
+              ),
               React.createElement(
-                "a",
-                { href: "#portfolio" },
-                "Portfolio"
-              )
-            ),
-            React.createElement(
-              "li",
-              null,
-              React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
-            ),
-            React.createElement(
-              "li",
-              null,
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#about" },
+                  "About"
+                )
+              ),
               React.createElement(
-                "a",
-                { href: "#contact" },
-                "Contact"
+                "li",
+                null,
+                React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#portfolio" },
+                  "Portfolio"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement("i", { className: "fa fa-coffee", "aria-hidden": "true" })
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#contact" },
+                  "Contact"
+                )
               )
             )
-          )
-        ),
-        React.createElement(
-          "div",
-          { className: "col-md-6 col-xs-12 copyright" },
+          ),
           React.createElement(
-            "h6",
-            null,
-            "Copyright \xA9 Jeremy L. Shepherd 2017. All Rights Reserved"
+            "div",
+            { className: "col-lg-6 col-md-12 copyright" },
+            React.createElement(
+              "h6",
+              null,
+              "Copyright \xA9 Jeremy L. Shepherd 2017. All Rights Reserved"
+            )
           )
         )
       )
@@ -626,20 +634,20 @@ var PortfolioFooter = function PortfolioFooter() {
   );
 };
 
-var CollapseCont = function (_React$Component2) {
-  _inherits(CollapseCont, _React$Component2);
+var CollapseCont = function (_React$Component3) {
+  _inherits(CollapseCont, _React$Component3);
 
   function CollapseCont(props) {
     _classCallCheck(this, CollapseCont);
 
-    var _this3 = _possibleConstructorReturn(this, (CollapseCont.__proto__ || Object.getPrototypeOf(CollapseCont)).call(this, props));
+    var _this4 = _possibleConstructorReturn(this, (CollapseCont.__proto__ || Object.getPrototypeOf(CollapseCont)).call(this, props));
 
-    _this3.state = {
+    _this4.state = {
       show: true
     };
 
-    _this3.toggle = _this3.toggle.bind(_this3);
-    return _this3;
+    _this4.toggle = _this4.toggle.bind(_this4);
+    return _this4;
   }
 
   _createClass(CollapseCont, [{
@@ -682,27 +690,27 @@ var CollapseCont = function (_React$Component2) {
   return CollapseCont;
 }(React.Component);
 
-var Portfolio = function (_React$Component3) {
-  _inherits(Portfolio, _React$Component3);
+var Portfolio = function (_React$Component4) {
+  _inherits(Portfolio, _React$Component4);
 
   function Portfolio() {
     _classCallCheck(this, Portfolio);
 
-    var _this4 = _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).call(this));
+    var _this5 = _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).call(this));
 
-    _this4.state = {
+    _this5.state = {
       data: [],
       isLoading: false
     };
 
-    _this4.loadProjects = _this4.loadProjects.bind(_this4);
-    return _this4;
+    _this5.loadProjects = _this5.loadProjects.bind(_this5);
+    return _this5;
   }
 
   _createClass(Portfolio, [{
     key: "loadProjects",
     value: function loadProjects() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.setState({ isLoading: true });
       $.ajax({
@@ -710,13 +718,13 @@ var Portfolio = function (_React$Component3) {
         dataType: "json",
         cache: false,
         success: function success(data) {
-          _this5.setState({
+          _this6.setState({
             data: data,
             isLoading: false
           });
         },
         error: function error(xhr, status, err) {
-          console.error(_this5.props.url, status, err.toString());
+          console.error(_this6.props.url, status, err.toString());
         }
       });
     }
