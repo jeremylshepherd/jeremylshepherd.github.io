@@ -1,6 +1,8 @@
-const Banner = (props) => {
-    return(
-        <div className="container-fluid">
+import React from 'react';
+
+const Banner = () => {
+    return (
+        <div className="container-fluid" id="jumbo-container">
             <div className="row">
                 <div id="home" className="jumbotron col-sm-12 col-md-12">
                     <div className="main">
@@ -9,31 +11,31 @@ const Banner = (props) => {
                         <ul className="social">
                             <li title="Github">
                                 <a href="https://github.com/jeremylshepherd">
-                                    <i className="fa fa-github"></i>
+                                    <i className="fa fa-github" />
                                     <span className="label">Github</span>
                                 </a>
                             </li>
                             <li title="Twitter">
                                 <a href="https://twitter.com/jeremylshepherd">
-                                    <i className="fa fa-twitter-square"></i>
+                                    <i className="fa fa-twitter-square" />
                                     <span className="label">Twitter</span>
                                 </a>
                             </li>
                             <li title="LinkedIn">
-                                <a href="http://www.linkedin.com/in/jeremylshepherd">
-                                    <i className="fa fa-linkedin-square"></i>
+                                <a href="https://www.linkedin.com/in/jeremylshepherd">
+                                    <i className="fa fa-linkedin-square" />
                                     <span className="label">LinkedIN</span>
                                 </a>
                             </li>
                             <li title="Free Code Camp">
-                                <a href="http://freecodecamp.com/jeremylshepherd">
-                                    <i className="fa fa-free-code-camp"></i>
+                                <a href="https://freecodecamp.com/jeremylshepherd">
+                                    <i className="fa fa-free-code-camp" />
                                     <span className="label">FreeCodeCamp</span>
                                 </a>
                             </li>
                             <li title="Codepen">
-                                <a href="http://codepen.io/jeremylshepherd">
-                                    <i className="fa fa-codepen"></i>
+                                <a href="https://codepen.io/jeremylshepherd">
+                                    <i className="fa fa-codepen" />
                                     <span className="label">Codepen</span>
                                 </a>
                             </li>
