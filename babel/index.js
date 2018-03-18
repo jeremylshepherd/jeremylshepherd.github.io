@@ -3,19 +3,19 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './Nav';
-import About from './About';
-import Banner from './Banner';
-import Projects from './Projects';
-import Contact from './Contact';
-import Footer from './Footer';
-import CollapseCont from './CollapseCont';
+import Nav from './Components/Nav';
+import About from './Components/About';
+import Banner from './Components/Banner';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
+import CollapseCont from './Components/CollapseCont';
 import $ from 'jquery';
 
 // Better naming conventions
 
 const projectData =
-  'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
+    'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
 
 class Portfolio extends React.Component {
     constructor() {

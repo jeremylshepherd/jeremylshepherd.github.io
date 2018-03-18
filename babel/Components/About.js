@@ -1,6 +1,6 @@
 import React from 'react';
 import Bullet from './Bullet';
-import { date } from '../assets/helpers';
+import { date } from '../../assets/helpers';
 
 export default class About extends React.Component {
     constructor() {
@@ -10,7 +10,8 @@ export default class About extends React.Component {
     }
 
     defaultSRC(e) {
-        e.target.src = 'https://raw.githubusercontent.com/jeremylshepherd/jeremylshepherd.github.io/master/assets/Image_not_available.gif';
+        e.target.src =
+            'https://raw.githubusercontent.com/jeremylshepherd/jeremylshepherd.github.io/master/assets/Image_not_available.gif';
     }
 
     render() {

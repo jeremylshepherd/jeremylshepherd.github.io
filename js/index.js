@@ -50,7 +50,7 @@ var _Bullet = require('./Bullet');
 
 var _Bullet2 = _interopRequireDefault(_Bullet);
 
-var _helpers = require('../assets/helpers');
+var _helpers = require('../../assets/helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -154,7 +154,7 @@ var About = function (_React$Component) {
 
 exports.default = About;
 
-},{"../assets/helpers":2,"./Bullet":5,"react":39}],4:[function(require,module,exports){
+},{"../../assets/helpers":2,"./Bullet":5,"react":39}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -297,7 +297,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _contStyle = require('../assets/contStyle');
+var _contStyle = require('../../assets/contStyle');
 
 var _contStyle2 = _interopRequireDefault(_contStyle);
 
@@ -368,7 +368,7 @@ var CollapseCont = function (_React$Component) {
 exports.default = CollapseCont;
 ;
 
-},{"../assets/contStyle":1,"react":39}],7:[function(require,module,exports){
+},{"../../assets/contStyle":1,"react":39}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -568,7 +568,7 @@ exports.default = Footer;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react = require("react");
@@ -578,89 +578,89 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Nav = function Nav() {
-  return _react2.default.createElement(
-    "nav",
-    { className: "navbar navbar-default navbar-fixed-top navbar-collapse" },
-    _react2.default.createElement(
-      "div",
-      { className: "container-fluid" },
-      _react2.default.createElement(
-        "div",
-        { className: "row" },
+    return _react2.default.createElement(
+        "nav",
+        { className: "navbar navbar-default navbar-fixed-top navbar-collapse" },
         _react2.default.createElement(
-          "div",
-          { className: "navbar-header" },
-          _react2.default.createElement(
-            "button",
-            {
-              type: "button",
-              className: "navbar-toggle collapsed",
-              "data-toggle": "collapse",
-              "data-target": "#right-nav",
-              "aria-expanded": "false"
-            },
+            "div",
+            { className: "container-fluid" },
             _react2.default.createElement(
-              "span",
-              { className: "sr-only" },
-              "Toggle navigation"
-            ),
-            _react2.default.createElement("span", { className: "icon-bar" }),
-            _react2.default.createElement("span", { className: "icon-bar" }),
-            _react2.default.createElement("span", { className: "icon-bar" })
-          ),
-          _react2.default.createElement(
-            "span",
-            { className: "navbar-brand" },
-            "Jeremy L. Shepherd"
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "collapse navbar-collapse", id: "right-nav" },
-          _react2.default.createElement(
-            "ul",
-            { className: "nav navbar-nav navbar-right" },
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "a",
-                { href: "#home" },
-                "Home"
-              )
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "a",
-                { href: "#about" },
-                "About"
-              )
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "a",
-                { href: "#portfolio" },
-                "Portfolio"
-              )
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              _react2.default.createElement(
-                "a",
-                { href: "#contact" },
-                "Contact"
-              )
+                "div",
+                { className: "row" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "navbar-header" },
+                    _react2.default.createElement(
+                        "button",
+                        {
+                            type: "button",
+                            className: "navbar-toggle collapsed",
+                            "data-toggle": "collapse",
+                            "data-target": "#right-nav",
+                            "aria-expanded": "false"
+                        },
+                        _react2.default.createElement(
+                            "span",
+                            { className: "sr-only" },
+                            "Toggle navigation"
+                        ),
+                        _react2.default.createElement("span", { className: "icon-bar" }),
+                        _react2.default.createElement("span", { className: "icon-bar" }),
+                        _react2.default.createElement("span", { className: "icon-bar" })
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        { className: "navbar-brand" },
+                        "Jeremy L. Shepherd"
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "collapse navbar-collapse", id: "right-nav" },
+                    _react2.default.createElement(
+                        "ul",
+                        { className: "nav navbar-nav navbar-right" },
+                        _react2.default.createElement(
+                            "li",
+                            null,
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#home" },
+                                "Home"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "li",
+                            null,
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#about" },
+                                "About"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "li",
+                            null,
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#portfolio" },
+                                "Portfolio"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "li",
+                            null,
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#contact" },
+                                "Contact"
+                            )
+                        )
+                    )
+                )
             )
-          )
         )
-      )
-    )
-  );
+    );
 };
 
 exports.default = Nav;
@@ -682,7 +682,7 @@ var _Thumb = require('./Thumb');
 
 var _Thumb2 = _interopRequireDefault(_Thumb);
 
-var _helpers = require('../assets/helpers');
+var _helpers = require('../../assets/helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -805,7 +805,7 @@ var PortfolioProjects = function (_React$Component) {
 
 exports.default = PortfolioProjects;
 
-},{"../assets/helpers":2,"./Thumb":11,"react":39}],11:[function(require,module,exports){
+},{"../../assets/helpers":2,"./Thumb":11,"react":39}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -869,31 +869,31 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Nav = require('./Nav');
+var _Nav = require('./Components/Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _About = require('./About');
+var _About = require('./Components/About');
 
 var _About2 = _interopRequireDefault(_About);
 
-var _Banner = require('./Banner');
+var _Banner = require('./Components/Banner');
 
 var _Banner2 = _interopRequireDefault(_Banner);
 
-var _Projects = require('./Projects');
+var _Projects = require('./Components/Projects');
 
 var _Projects2 = _interopRequireDefault(_Projects);
 
-var _Contact = require('./Contact');
+var _Contact = require('./Components/Contact');
 
 var _Contact2 = _interopRequireDefault(_Contact);
 
-var _Footer = require('./Footer');
+var _Footer = require('./Components/Footer');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _CollapseCont = require('./CollapseCont');
+var _CollapseCont = require('./Components/CollapseCont');
 
 var _CollapseCont2 = _interopRequireDefault(_CollapseCont);
 
@@ -995,7 +995,7 @@ var Portfolio = function (_React$Component) {
 
 _reactDom2.default.render(_react2.default.createElement(Portfolio, { url: projectData }), document.getElementById('app'));
 
-},{"./About":3,"./Banner":4,"./CollapseCont":6,"./Contact":7,"./Footer":8,"./Nav":9,"./Projects":10,"jquery":29,"react":39,"react-dom":36}],13:[function(require,module,exports){
+},{"./Components/About":3,"./Components/Banner":4,"./Components/CollapseCont":6,"./Components/Contact":7,"./Components/Footer":8,"./Components/Nav":9,"./Components/Projects":10,"jquery":29,"react":39,"react-dom":36}],13:[function(require,module,exports){
 (function (process){
 'use strict';
 

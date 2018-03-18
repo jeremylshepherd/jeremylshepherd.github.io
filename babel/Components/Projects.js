@@ -1,6 +1,6 @@
 import React from 'react';
 import Thumb from './Thumb';
-import { queryCheck } from '../assets/helpers';
+import { queryCheck } from '../../assets/helpers';
 
 export default class PortfolioProjects extends React.Component {
     constructor() {
@@ -34,9 +34,9 @@ export default class PortfolioProjects extends React.Component {
         var ThumbNodes = filtered.map(function(project) {
             const technologies = project.technologies.join(', ');
             const title =
-        project.title.length < 40
-            ? project.title
-            : `${project.title.slice(0, 37)}...`;
+                project.title.length < 40
+                    ? project.title
+                    : `${project.title.slice(0, 37)}...`;
             return (
                 <Thumb
                     key={project._id}
@@ -51,7 +51,10 @@ export default class PortfolioProjects extends React.Component {
         let Loading = this.props.loading ? (
             <div className="text-center">
                 <h1 className="text-center loading">
-                    <i className="fa fa-spinner fa-pulse fa-inverse" aria-hidden="true" />
+                    <i
+                        className="fa fa-spinner fa-pulse fa-inverse"
+                        aria-hidden="true"
+                    />
                     <span className="pulse">{'  loading...'}</span>
                 </h1>
             </div>
@@ -68,8 +71,11 @@ export default class PortfolioProjects extends React.Component {
                                 placeholder="Search..."
                                 onChange={this.handleQuery}
                             />
-                            <div className="input-group-addon" onClick={this.clearQuery}>
-                Clear
+                            <div
+                                className="input-group-addon"
+                                onClick={this.clearQuery}
+                            >
+                                Clear
                             </div>
                         </div>
                     </form>

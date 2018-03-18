@@ -1,5 +1,5 @@
 import React from 'react';
-import contStyle from '../assets/contStyle';
+import contStyle from '../../assets/contStyle';
 
 export default class CollapseCont extends React.Component {
     constructor(props) {
