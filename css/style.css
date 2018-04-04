@@ -58,7 +58,7 @@ a {
     .social li a:hover {
       color: red; }
 
-.polaroid {
+#profile .polaroid {
   position: absolute;
   max-width: 70%;
   background: #fffae6;
@@ -67,13 +67,14 @@ a {
   border-right: 1px solid #fff5cc;
   border-bottom: 1px solid #fff5cc;
   box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5); }
-  .polaroid .self {
+  #profile .polaroid .self,
+  #profile .polaroid .video {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
     max-width: 90%;
     position: relative;
     left: 5%;
     top: 20px; }
-  .polaroid .gutter {
+  #profile .polaroid .gutter {
     position: relative;
     color: #333;
     display: block;
@@ -81,6 +82,25 @@ a {
     text-align: center;
     font-family: "Permanent Marker", cursive;
     font-size: 3.5rem; }
+  #profile .polaroid .profile-toggle {
+    position: absolute;
+    margin-top: -20px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    right: -20px;
+    background-color: #2980b9; }
+    #profile .polaroid .profile-toggle:active {
+      background-color: #3498db; }
+    #profile .polaroid .profile-toggle .fa {
+      color: #fff;
+      position: absolute;
+      left: .35em;
+      top: .35em;
+      font-size: 1.75em; }
+      #profile .polaroid .profile-toggle .fa .fa-play-circle-o:before {
+        padding-left: .05em; }
 
 p {
   font-size: 1.6em; }

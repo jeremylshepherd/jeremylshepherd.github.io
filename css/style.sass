@@ -119,30 +119,51 @@ a
     &:hover
       color: red
 
-
-.polaroid
-  position: absolute
-  max-width: 70%
-  background: #fffae6
-  border-left: $upper-border
-  border-top: $upper-border
-  border-right: $lower-border
-  border-bottom: $lower-border
-  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
-  .self
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
-    max-width: 90%
-    position: relative
-    left: 5%
-    top: 20px
-  .gutter
-    position: relative
-    color: #333
-    display: block
-    margin-top: 30px
-    text-align: center
-    font-family: $disp-font
-    font-size: 3.5rem
+#profile
+	.polaroid
+		position: absolute
+		max-width: 70%
+		background: #fffae6
+		border-left: $upper-border
+		border-top: $upper-border
+		border-right: $lower-border
+		border-bottom: $lower-border
+		box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
+		.self,
+		.video
+			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
+			max-width: 90%
+			position: relative
+			left: 5%
+			top: 20px	
+		.gutter
+			position: relative
+			color: #333
+			display: block
+			margin-top: 30px
+			text-align: center
+			font-family: $disp-font
+			font-size: 3.5rem
+		.profile-toggle
+			position: absolute
+			margin-top: -20px
+			border-radius: 50%
+			box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
+			width: 40px
+			height: 40px
+			right: -20px
+			background-color: #2980b9
+			&:active
+				background-color: #3498db
+			.fa
+				color: #fff
+				position: absolute
+				left: .35em
+				top: .35em
+				font-size: 1.75em
+				.fa-play-circle-o
+					&:before
+						padding-left: .05em
 
 p
   font-size: 1.6em

@@ -7,7 +7,7 @@ const Banner = () => {
                 <div id="home" className="jumbotron col-sm-12 col-md-12">
                     <div className="main">
                         <h1>Jeremy L. Shepherd</h1>
-                        <h3>Full-Stack JavaScript Developer</h3>
+                        <h3>Full-Stack Developer</h3>
                         <ul className="social">
                             <li title="Github">
                                 <a href="https://github.com/jeremylshepherd">
