@@ -2,93 +2,61 @@
 body {
   margin: 0 auto;
   font-family: "Roboto";
-  color: #222;
-}
+  color: #222; }
 
 .header-bar {
-  font-family: "Permanent Marker", cursive;
-}
+  font-family: "Permanent Marker", cursive; }
 
 .container,
 .container-fluid {
-  max-width: 99%;
-}
+  max-width: 99%; }
 
 a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
 
 .navbar-default {
-  background-color: #fffff7;
-}
-
-.navbar-default .navbar-brand {
-  font-family: "Permanent Marker", cursive;
-  font-size: 2.1em;
-  color: #222;
-}
-
-.navbar-default .navbar-nav li:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.navbar-default .navbar-nav li a {
-  color: #222;
-}
-
-.navbar-default .navbar-nav li a:hover {
-  color: #eee;
-}
+  background-color: #fffff7; }
+  .navbar-default .navbar-brand {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.1em;
+    color: #222; }
+  .navbar-default .navbar-nav li:hover {
+    background-color: rgba(0, 0, 0, 0.3); }
+  .navbar-default .navbar-nav li a {
+    color: #222; }
+    .navbar-default .navbar-nav li a:hover {
+      color: #eee; }
 
 #jumbo-container {
-  background-color: #fffff7;
-}
+  background-color: #fffff7; }
 
 .jumbotron {
   font-family: "Roboto";
   text-align: center;
   color: #222;
-  background: none;
-}
-
-.jumbotron .main {
-  margin-top: 100px;
-}
-
-.jumbotron li {
-  display: inline-block;
-  padding: 10px;
-}
-
-.jumbotron h1 {
-  font-family: Archivo Black;
-}
+  background: none; }
+  .jumbotron .main {
+    margin-top: 100px; }
+  .jumbotron li {
+    display: inline-block;
+    padding: 10px; }
+  .jumbotron h1 {
+    font-family: Archivo Black; }
 
 .social {
-  list-style: none;
-}
-
-.social li a {
-  font-size: 24px;
-  color: #222;
-  transition: all 0.2s ease-in-out;
-}
-
-.social li a .label {
-  color: #222;
-}
-
-.social li a .label:hover {
-  color: red;
-}
-
-.social li a:hover {
-  color: red;
-}
+  list-style: none; }
+  .social li a {
+    font-size: 24px;
+    color: #222;
+    transition: all 0.2s ease-in-out; }
+    .social li a .label {
+      color: #222; }
+      .social li a .label:hover {
+        color: red; }
+    .social li a:hover {
+      color: red; }
 
 .polaroid {
   position: absolute;
@@ -98,72 +66,54 @@ a:hover {
   border-top: 1px solid rgba(122, 122, 122, 0.3);
   border-right: 1px solid #fff5cc;
   border-bottom: 1px solid #fff5cc;
-  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5);
-}
-
-.polaroid .self {
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
-  max-width: 90%;
-  position: relative;
-  left: 5%;
-  top: 20px;
-}
-
-.polaroid .gutter {
-  position: relative;
-  color: #333;
-  display: block;
-  margin-top: 30px;
-  text-align: center;
-  font-family: "Permanent Marker", cursive;
-  font-size: 3.5rem;
-}
+  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5); }
+  .polaroid .self {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    position: relative;
+    left: 5%;
+    top: 20px; }
+  .polaroid .gutter {
+    position: relative;
+    color: #333;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-size: 3.5rem; }
 
 p {
-  font-size: 1.6em;
-}
+  font-size: 1.6em; }
 
 .constrain {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 25px;
-}
+  padding: 25px; }
 
 .portfolio {
-  background-color: #fffff7;
-}
-
-.portfolio h1, .portfolio h2 {
-  font-family: 'Permanent Marker', cursive;
-  text-align: center;
-  color: #eee;
-  text-shadow: 2px 2px 6px #222;
-}
-
-.portfolio .loading,
-.portfolio .fa-spinner {
-  text-shadow: 0px 0px 0px #fff;
-  color: #222;
-}
-
-.portfolio .pulse {
-  animation: pulse 2s infinite;
-}
+  background-color: #fffff7; }
+  .portfolio h1, .portfolio h2 {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    color: #eee;
+    text-shadow: 2px 2px 6px #222; }
+  .portfolio .loading,
+  .portfolio .fa-spinner {
+    text-shadow: 0px 0px 0px #fff;
+    color: #222; }
+  .portfolio .pulse {
+    animation: pulse 2s infinite; }
 
 @keyframes pulse {
   0% {
     text-shadow: 0px 0px 0 transparent, 0px 0px 0 transparent, 0px 0px 0 transparent, 0px 0px 0 transparent;
-    color: black;
-  }
+    color: black; }
   50% {
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    color: white;
-  }
-}
+    color: white; } }
 
 .input-group-addon {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .frame {
   text-align: center;
@@ -174,256 +124,169 @@ p {
   border: 1px solid #999;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   margin-top: 25px;
-  padding: 10px;
-}
-
-.frame .overlay {
-  opacity: 0;
-  position: absolute;
-  left: 15px;
-  right: 15px;
-  top: 25px;
-  bottom: 0px;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px;
-  font-family: 'Helvetica';
-  background: rgba(31, 31, 122, 0.1);
-  transition: all 1s ease-in-out;
-}
-
-.frame:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.frame:hover .overlay {
-  opacity: 1;
-  background: rgba(31, 31, 122, 0.8);
-  transition: opacity .3s ease-in-out;
-}
-
-.frame a {
-  text-decoration: none;
-  color: #000;
-}
-
-.frame a:hover {
-  text-decoration: none;
-  color: #000;
-}
-
-.frame .image {
-  max-width: 100%;
-  max-height: 75%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-  clear: both;
-}
+  padding: 10px; }
+  .frame .overlay {
+    opacity: 0;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 25px;
+    bottom: 0px;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Helvetica';
+    background: rgba(31, 31, 122, 0.1);
+    transition: all 1s ease-in-out; }
+  .frame:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); }
+    .frame:hover .overlay {
+      opacity: 1;
+      background: rgba(31, 31, 122, 0.8);
+      transition: opacity .3s ease-in-out; }
+  .frame a {
+    text-decoration: none;
+    color: #000; }
+    .frame a:hover {
+      text-decoration: none;
+      color: #000; }
+  .frame .image {
+    max-width: 100%;
+    max-height: 75%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    clear: both; }
 
 .contact {
   height: 240px;
   background: none;
-  font-family: "Permanent Marker", cursive;
-}
-
-.contact h4 {
-  font-size: 2rem;
-  text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-.contact button {
-  color: #eee;
-  width: 60px;
-  height: 60px;
-  padding: 0;
-  margin: 10px;
-  border-radius: 50%;
-  border: none;
-  font-size: 36px;
-  transition: all 0.2s ease-in-out;
-}
-
-.contact button:hover {
-  margin: 2;
-}
-
-.contact .fa {
-  color: #eee;
-  text-align: center;
-}
-
-.contact #github {
-  background-color: #2c3e50;
-  box-shadow: 0 0 0 0 #2c3e50;
-}
-
-.contact #github:hover {
-  animation: github 1.25s infinite;
-}
-
-.contact #twitter {
-  background-color: #3498db;
-  box-shadow: 0 0 0 0 #3498db;
-}
-
-.contact #twitter:hover {
-  animation: twitter 1.25s infinite;
-}
-
-.contact #linkedin {
-  background-color: #2980b9;
-  box-shadow: 0 0 0 0 #2980b9;
-}
-
-.contact #linkedin:hover {
-  animation: linkedIn 1.25s infinite;
-}
-
-.contact #freecodecamp {
-  background-color: #27ae60;
-  box-shadow: 0 0 0 0 #27ae60;
-}
-
-.contact #freecodecamp:hover {
-  animation: fcc 1.25s infinite;
-}
-
-.contact #codepen {
-  background-color: #34495e;
-  box-shadow: 0 0 0 0 #34495e;
-}
-
-.contact #codepen:hover {
-  animation: codepen 1.25s infinite;
-}
-
-.contact .copyright {
-  text-align: center;
-}
-
-.contact .radiate {
-  box-shadow: 0 0 0 0 #d44946;
-  border-radius: 1px;
-}
-
-.contact .radiate:hover {
-  animation: email 1.25s infinite;
-}
+  font-family: "Permanent Marker", cursive; }
+  .contact h4 {
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
+  .contact button {
+    color: #eee;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 10px;
+    border-radius: 50%;
+    border: none;
+    font-size: 36px;
+    transition: all 0.2s ease-in-out; }
+    .contact button:hover {
+      margin: 2; }
+  .contact .fa {
+    color: #eee;
+    text-align: center; }
+  .contact #github {
+    background-color: #2c3e50;
+    box-shadow: 0 0 0 0 #2c3e50; }
+    .contact #github:hover {
+      animation: github 1.25s infinite; }
+  .contact #twitter {
+    background-color: #3498db;
+    box-shadow: 0 0 0 0 #3498db; }
+    .contact #twitter:hover {
+      animation: twitter 1.25s infinite; }
+  .contact #linkedin {
+    background-color: #2980b9;
+    box-shadow: 0 0 0 0 #2980b9; }
+    .contact #linkedin:hover {
+      animation: linkedIn 1.25s infinite; }
+  .contact #freecodecamp {
+    background-color: #27ae60;
+    box-shadow: 0 0 0 0 #27ae60; }
+    .contact #freecodecamp:hover {
+      animation: fcc 1.25s infinite; }
+  .contact #codepen {
+    background-color: #34495e;
+    box-shadow: 0 0 0 0 #34495e; }
+    .contact #codepen:hover {
+      animation: codepen 1.25s infinite; }
+  .contact .copyright {
+    text-align: center; }
+  .contact .radiate {
+    box-shadow: 0 0 0 0 #d44946;
+    border-radius: 1px; }
+    .contact .radiate:hover {
+      animation: email 1.25s infinite; }
 
 @keyframes email {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 @keyframes github {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 @keyframes twitter {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 @keyframes linkedIn {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 @keyframes fcc {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 @keyframes codepen {
   to {
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-}
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); } }
 
 .contact-buttons {
   display: block;
-  text-align: center;
-}
+  text-align: center; }
 
 .footer {
   background-color: #fffff7;
   border-top: 1px solid #111;
-  max-height: 100px;
-}
-
-.footer h6 {
-  float: right;
-}
-
-.footer ul {
-  float: left;
-  margin-top: 10px;
-}
-
-.footer li {
-  display: inline;
-  padding: 10px;
-}
-
-.footer li:hover:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.footer li a {
-  color: #222;
-}
-
-.footer li a:hover {
-  color: #eee;
-}
+  max-height: 100px; }
+  .footer h6 {
+    float: right; }
+  .footer ul {
+    float: left;
+    margin-top: 10px; }
+  .footer li {
+    display: inline;
+    padding: 10px; }
+    .footer li:hover:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.3); }
+    .footer li a {
+      color: #222; }
+      .footer li a:hover {
+        color: #eee; }
 
 .colCont {
-  width: 100%;
-}
-
-.colCont .zzz {
-  max-height: 5px;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 500ms, opacity 750ms;
-}
-
-.colCont .xxx {
-  max-height: 10000px;
-  opacity: 1;
-  transition: max-height 500ms, opacity 750ms;
-}
+  width: 100%; }
+  .colCont .zzz {
+    max-height: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 500ms, opacity 750ms; }
+  .colCont .xxx {
+    max-height: 10000px;
+    opacity: 1;
+    transition: max-height 500ms, opacity 750ms; }
 
 @media only screen and (max-width: 768px) {
   .footer-links, .label, .conText {
-    display: none;
-  }
+    display: none; }
   .social .fa {
-    font-size: 42px;
-  }
+    font-size: 42px; }
   .social .fa-github {
-    color: #2c3e50;
-  }
+    color: #2c3e50; }
   .social .fa-twitter-square {
-    color: #3498db;
-  }
+    color: #3498db; }
   .social .fa-linkedin-square {
-    color: #2980b9;
-  }
+    color: #2980b9; }
   .social .fa-free-code-camp {
-    color: #27ae60;
-  }
+    color: #27ae60; }
   .social .fa-codepen {
-    color: #34495e;
-  }
-}
+    color: #34495e; } }
 
 @media only screen and (max-width: 540px) {
   .contact button {
@@ -431,12 +294,8 @@ p {
     width: 36px;
     height: 36px;
     margin: 2px;
-    font-size: 20px;
-  }
-}
+    font-size: 20px; } }
 
 @media only screen and (max-width: 320px) {
   .navbar-default .navbar-brand {
-    font-size: 1.5em;
-  }
-}
+    font-size: 1.5em; } }
