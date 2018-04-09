@@ -29,6 +29,8 @@ export default class About extends React.Component {
                         </p>
                         <p>
                             {`I have spent ${date()} years working in law enforcement. Now, I have a passion for building functional and beautiful web/mobile applications that enhance people's lives and free them to focus time and energy on following their passions.`}
+
+                            <br /><a href='../../assets/resume.pdf' target="_blank">Résumé</a>
                             <br />
                             <br />
                             <span>Technologies:</span>

@@ -28,7 +28,7 @@
     "babel-register": "^6.26.0",
     "babelify": "^7.3.0",
     "browserify": "^14.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.0",
     "gulp-babel": "^6.1.2",
     "gulp-reactify": "^3.0.1",
     "gulp-sass": "^3.1.0",
@@ -37,6 +37,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
     "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
