@@ -15,8 +15,8 @@ export default class Profile extends Component {
             <video
                 preload="auto"
                 className="video"
-				src="../../assets/Jeremy Shepherd intro_1_1.mp4"
-				poster="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
+                src="../../assets/Jeremy Shepherd intro_1_1.mp4"
+                poster="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
                 controls
                 controlsList="nodownload"
             />
@@ -35,7 +35,9 @@ export default class Profile extends Component {
             <div id="profile" className="col-sm-6 hidden-xs">
                 <div className="polaroid">
                     {Image}
-                    <span className="gutter">Jeremy {new Date(Date.now()).getFullYear()}</span>
+                    <span className="gutter">
+                        Jeremy {new Date(Date.now()).getFullYear()}
+                    </span>
                     <div
                         className="profile-toggle"
                         onClick={() => this.setState({ video: !video })}
