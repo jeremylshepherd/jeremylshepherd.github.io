@@ -9,7 +9,10 @@ import Banner from './Components/Banner';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import RouteError from './Components/RouteError';
 import CollapseCont from './Components/CollapseCont';
+import Main from './Components/Main';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
@@ -53,23 +56,14 @@ class Portfolio extends React.Component {
 
     render() {
         return (
-            <div>
-                <Nav />
-                <Banner />
-                <CollapseCont heading="About Me">
-                    <About />
-                </CollapseCont>
-                <CollapseCont heading="Projects">
-                    <Projects
-                        data={this.state.data}
-                        loading={this.state.isLoading}
-                    />
-                </CollapseCont>
-                <CollapseCont heading="Contact">
-                    <Contact />
-                </CollapseCont>
-                <Footer />
-            </div>
+            <Router>
+                <div>
+                    <Nav />
+                    <Route exact path="/" render={() => <Main {...this.state} />} />
+                    <Route component={RouteError} />
+                    <Footer />
+                </div>
+            </Router>
         );
     }
 }

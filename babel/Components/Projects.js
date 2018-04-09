@@ -40,6 +40,7 @@ export default class PortfolioProjects extends React.Component {
             return (
                 <Thumb
                     key={project._id}
+                    id={project._id}
                     url={project.url}
                     title={title}
                     technologies={technologies}
