@@ -1,6 +1,4 @@
 /node_modules
 /.c9
-.babelrc
-gulpfile.babel.js
 .DS_Store
 /.vscode
