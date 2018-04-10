@@ -4,14 +4,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Components/Nav';
-import About from './Components/About';
-import Banner from './Components/Banner';
-import Projects from './Components/Projects';
-import Contact from './Components/Contact';
+import ProjectPage from './Components/ProjectPage';
 import Footer from './Components/Footer';
-import CollapseCont from './Components/CollapseCont';
-
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import RouteError from './Components/RouteError';
+import Main from './Components/Main';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
@@ -54,17 +51,20 @@ class Portfolio extends React.Component {
     }
 
     render() {
+        const projRoutes = this.state.data.map((t) => {
+            return <Route key={t._id} path={`/${t._id}`} render={() => <ProjectPage {...t} /> }/>;
+        });
         return (
             <Router>
-                <div>
+                <div className="full">
                     <Nav />
-                    <Banner />
-                    <Switch>
-                        <Route exact path="/" render={ () => <Main {...this.state } /> } />
-                            
-                        </Route>
-                        <Route path="/test" render={() => <div><h1>Test</h1></div> } />
-                    </Switch>
+                    <div id="content">
+                        <Switch>
+                            <Route exact path="/" render={() => <Main {...this.state} />} />
+                            {projRoutes}
+                            <Route component={RouteError} />
+                        </Switch>
+                    </div>
                     <Footer />
                 </div>
             </Router>

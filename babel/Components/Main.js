@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Banner from './Banner';
+import CollapseCont from './CollapseCont';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
 
 const Main = props => {
     return (
-        <div>
+        <div className="full">
+            <Banner />
             <CollapseCont heading="About Me">
                 <About />
-                <Link to="/test"><i className="fa fa-code"/></Link>
             </CollapseCont>
             <CollapseCont heading="Projects">
                 <Projects
