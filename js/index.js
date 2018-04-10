@@ -1280,7 +1280,7 @@ var Portfolio = function (_React$Component) {
                     } });
             });
             return _react2.default.createElement(
-                _reactRouterDom.HashRouter,
+                _reactRouterDom.BrowserRouter,
                 null,
                 _react2.default.createElement(
                     'div',

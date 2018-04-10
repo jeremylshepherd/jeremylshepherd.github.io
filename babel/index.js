@@ -8,7 +8,7 @@ import ProjectPage from './Components/ProjectPage';
 import Footer from './Components/Footer';
 import RouteError from './Components/RouteError';
 import Main from './Components/Main';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
