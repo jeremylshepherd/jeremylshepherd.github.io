@@ -1053,7 +1053,6 @@ var Portfolio = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.loadProjects();
-            console.log(window.location.href);
         }
     }, {
         key: 'render',

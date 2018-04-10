@@ -49,7 +49,6 @@ class Portfolio extends React.Component {
 
     componentDidMount() {
         this.loadProjects();
-        console.log(window.location.href);
     }
 
     render() {
