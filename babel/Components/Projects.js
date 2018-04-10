@@ -1,6 +1,8 @@
 import React from 'react';
 import Thumb from './Thumb';
+import ProjectPage from './ProjectPage';
 import { queryCheck } from '../../assets/helpers';
+import { Route } from 'react-router-dom';
 
 export default class PortfolioProjects extends React.Component {
     constructor() {
@@ -40,6 +42,7 @@ export default class PortfolioProjects extends React.Component {
             return (
                 <Thumb
                     key={project._id}
+                    id={project._id}
                     url={project.url}
                     title={title}
                     technologies={technologies}
