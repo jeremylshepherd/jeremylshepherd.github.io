@@ -1054,7 +1054,7 @@ var Portfolio = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.loadProjects();
-            console.log(process.env);
+            console.log(JSON.stringify(process.env, null, 2));
         }
     }, {
         key: 'render',
