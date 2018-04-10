@@ -49,6 +49,7 @@ class Portfolio extends React.Component {
 
     componentDidMount() {
         this.loadProjects();
+        console.log(process.env.PUBLIC_URL);
     }
 
     render() {
