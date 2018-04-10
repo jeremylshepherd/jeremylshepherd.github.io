@@ -49,7 +49,7 @@ class Portfolio extends React.Component {
 
     componentDidMount() {
         this.loadProjects();
-        console.log(JSON.stringify(process.env, null, 2));
+        console.log(window.location.href);
     }
 
     render() {

@@ -954,7 +954,6 @@ var Thumb = function Thumb(props) {
 exports.default = Thumb;
 
 },{"react":38}],13:[function(require,module,exports){
-(function (process){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1054,7 +1053,7 @@ var Portfolio = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.loadProjects();
-            console.log(JSON.stringify(process.env, null, 2));
+            console.log(window.location.href);
         }
     }, {
         key: 'render',
@@ -1094,8 +1093,7 @@ var Portfolio = function (_React$Component) {
 
 _reactDom2.default.render(_react2.default.createElement(Portfolio, { url: projectData }), document.getElementById('app'));
 
-}).call(this,require('_process'))
-},{"./Components/About":3,"./Components/Banner":4,"./Components/CollapseCont":6,"./Components/Contact":7,"./Components/Footer":8,"./Components/Nav":9,"./Components/Projects":11,"_process":30,"jquery":28,"react":38,"react-dom":35}],14:[function(require,module,exports){
+},{"./Components/About":3,"./Components/Banner":4,"./Components/CollapseCont":6,"./Components/Contact":7,"./Components/Footer":8,"./Components/Nav":9,"./Components/Projects":11,"jquery":28,"react":38,"react-dom":35}],14:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
