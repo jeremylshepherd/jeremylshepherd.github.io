@@ -16,14 +16,14 @@ const styles = {
         borderRadius: '100%', 
         opacity: '0.85'
     }
-}
+};
 
 const RouteError = () => {
     return (
         <div style={styles.container}>
             <img src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg" style={styles.img} />
-            <h1>Oops! I seemed to have misplaced that route</h1>
-            <Link className="btn btn-primary" to="/">Get me outta here!</Link>
+            <h1 className="header-bar">Oops! I seemed to have misplaced that route.</h1>
+            <Link className="btn btn-primary" to="/">Take me home!</Link>
         </div>
     );
 }

@@ -7,7 +7,7 @@ import Contact from './Contact';
 
 const Main = props => {
     return (
-        <div>
+        <div className="full">
             <Banner />
             <CollapseCont heading="About Me">
                 <About />

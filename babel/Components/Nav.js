@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 const Nav = () => {
     return (
@@ -23,16 +24,16 @@ const Nav = () => {
                     <div className="collapse navbar-collapse" id="right-nav">
                         <ul className="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#home">Home</a>
+                                <NavLink smooth to="/#home">Home</NavLink>
                             </li>
                             <li>
-                                <a href="#about">About</a>
+                                <NavLink smooth to="/#about">About</NavLink>
                             </li>
                             <li>
-                                <a href="#portfolio">Portfolio</a>
+                                <NavLink smooth to="/#portfolio">Portfolio</NavLink>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <NavLink smooth to="/#contact">Contact</NavLink>
                             </li>
                         </ul>
                     </div>

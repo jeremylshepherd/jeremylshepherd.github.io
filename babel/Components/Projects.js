@@ -1,6 +1,8 @@
 import React from 'react';
 import Thumb from './Thumb';
+import ProjectPage from './ProjectPage';
 import { queryCheck } from '../../assets/helpers';
+import { Route } from 'react-router-dom';
 
 export default class PortfolioProjects extends React.Component {
     constructor() {
