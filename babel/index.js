@@ -60,22 +60,8 @@ class Portfolio extends React.Component {
                     <Nav />
                     <Banner />
                     <Switch>
-                        <Route exact path="/">
-                            <div>
-                                <CollapseCont heading="About Me">
-                                    <About />
-                                    <Link to="/test"><i className="fa fa-code"/></Link>
-                                </CollapseCont>
-                                <CollapseCont heading="Projects">
-                                    <Projects
-                                        data={this.state.data}
-                                        loading={this.state.isLoading}
-                                    />
-                                </CollapseCont>
-                                <CollapseCont heading="Contact">
-                                    <Contact />
-                                </CollapseCont>
-                            </div>
+                        <Route exact path="/" render={ () => <Main {...this.state } /> } />
+                            
                         </Route>
                         <Route path="/test" render={() => <div><h1>Test</h1></div> } />
                     </Switch>
