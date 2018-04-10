@@ -1068,28 +1068,37 @@ var Portfolio = function (_React$Component) {
                     _react2.default.createElement(_Nav2.default, null),
                     _react2.default.createElement(_Banner2.default, null),
                     _react2.default.createElement(
-                        Switch,
+                        _reactRouterDom.Switch,
                         null,
                         _react2.default.createElement(
                             _reactRouterDom.Route,
                             { exact: true, path: '/' },
                             _react2.default.createElement(
-                                _CollapseCont2.default,
-                                { heading: 'About Me' },
-                                _react2.default.createElement(_About2.default, null)
-                            ),
-                            _react2.default.createElement(
-                                _CollapseCont2.default,
-                                { heading: 'Projects' },
-                                _react2.default.createElement(_Projects2.default, {
-                                    data: this.state.data,
-                                    loading: this.state.isLoading
-                                })
-                            ),
-                            _react2.default.createElement(
-                                _CollapseCont2.default,
-                                { heading: 'Contact' },
-                                _react2.default.createElement(_Contact2.default, null)
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    _CollapseCont2.default,
+                                    { heading: 'About Me' },
+                                    _react2.default.createElement(_About2.default, null),
+                                    _react2.default.createElement(
+                                        _reactRouterDom.Link,
+                                        { to: '/test' },
+                                        _react2.default.createElement('i', { className: 'fa fa-code' })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    _CollapseCont2.default,
+                                    { heading: 'Projects' },
+                                    _react2.default.createElement(_Projects2.default, {
+                                        data: this.state.data,
+                                        loading: this.state.isLoading
+                                    })
+                                ),
+                                _react2.default.createElement(
+                                    _CollapseCont2.default,
+                                    { heading: 'Contact' },
+                                    _react2.default.createElement(_Contact2.default, null)
+                                )
                             )
                         ),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/test', render: function render() {

@@ -11,7 +11,7 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import CollapseCont from './Components/CollapseCont';
 
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
@@ -61,18 +61,21 @@ class Portfolio extends React.Component {
                     <Banner />
                     <Switch>
                         <Route exact path="/">
-                            <CollapseCont heading="About Me">
-                                <About />
-                            </CollapseCont>
-                            <CollapseCont heading="Projects">
-                                <Projects
-                                    data={this.state.data}
-                                    loading={this.state.isLoading}
-                                />
-                            </CollapseCont>
-                            <CollapseCont heading="Contact">
-                                <Contact />
-                            </CollapseCont>
+                            <div>
+                                <CollapseCont heading="About Me">
+                                    <About />
+                                    <Link to="/test"><i className="fa fa-code"/></Link>
+                                </CollapseCont>
+                                <CollapseCont heading="Projects">
+                                    <Projects
+                                        data={this.state.data}
+                                        loading={this.state.isLoading}
+                                    />
+                                </CollapseCont>
+                                <CollapseCont heading="Contact">
+                                    <Contact />
+                                </CollapseCont>
+                            </div>
                         </Route>
                         <Route path="/test" render={() => <div><h1>Test</h1></div> } />
                     </Switch>
