@@ -15,9 +15,9 @@ const Nav = () => {
                             aria-expanded="false"
                         >
                             <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
+                            <span className="icon-bar ib-top" />
+                            <span className="icon-bar ib-mid" />
+                            <span className="icon-bar ib-bot" />
                         </button>
                         <span className="navbar-brand">Jeremy L. Shepherd</span>
                     </div>

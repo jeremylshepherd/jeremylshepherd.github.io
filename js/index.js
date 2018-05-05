@@ -556,7 +556,7 @@ var Footer = function Footer() {
                     _react2.default.createElement(
                         'h6',
                         null,
-                        'Copyright \xA9 Jeremy L. Shepherd 2017. All Rights Reserved'
+                        'Copyright \xA9 Jeremy L. Shepherd ' + new Date(Date.now()).getFullYear() + '. All Rights\n                            Reserved'
                     )
                 )
             )
@@ -669,9 +669,9 @@ var Nav = function Nav() {
                             { className: 'sr-only' },
                             'Toggle navigation'
                         ),
-                        _react2.default.createElement('span', { className: 'icon-bar' }),
-                        _react2.default.createElement('span', { className: 'icon-bar' }),
-                        _react2.default.createElement('span', { className: 'icon-bar' })
+                        _react2.default.createElement('span', { className: 'icon-bar ib-top' }),
+                        _react2.default.createElement('span', { className: 'icon-bar ib-mid' }),
+                        _react2.default.createElement('span', { className: 'icon-bar ib-bot' })
                     ),
                     _react2.default.createElement(
                         'span',
@@ -1224,6 +1224,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // Better naming conventions
 
+var storage = window.localStorage;
+
 var projectData = 'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
 
 var Portfolio = function (_React$Component) {
@@ -1258,9 +1260,13 @@ var Portfolio = function (_React$Component) {
                         data: data,
                         isLoading: false
                     });
+                    storage.setItem('data', JSON.stringify(data));
                 },
                 error: function error(xhr, status, err) {
                     console.error(_this2.props.url, status, err.toString());
+                    _this2.setState({
+                        data: JSON.parse(storage.getItem('data'))
+                    });
                 }
             });
         }

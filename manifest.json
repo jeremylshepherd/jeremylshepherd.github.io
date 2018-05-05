@@ -1,0 +1,47 @@
+{
+  "name": "Jeremy L. Shepherd Portfolio",
+  "short_name": "Portfolio",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#fffff7",
+  "icons": [
+    {
+      "src": "/assets/icons/Icon-2146x2146",
+      "sizes": "2146x2146"
+    },
+    {
+      "src": "/assets/icons/Icon-1024x1024",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/assets/icons/Icon-512x512",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/icons/Icon-256x256",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/assets/icons/Icon-192x192"
+    },
+    {
+      "src": "/assets/icons/Icon-128x128",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/icons/Icon-96x96",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/assets/icons/Icon-48x48",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/icons/Icon-24x24",
+      "sizes": "24x24"
+    }
+  ],
+  "background_color": "#fffff7"
+}

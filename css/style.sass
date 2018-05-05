@@ -1,11 +1,11 @@
 //Import fonts
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black')
 
-@import 'flex'
-
 // VSCode Implementation
 
-//Sass Variables
+/////Sass Variables
+
+//Borders
 $lower-border: 1px solid #fff5cc
 $upper-border: 1px solid rgba(122, 122, 122, 0.3)
 
@@ -33,6 +33,9 @@ $github: #2c3e50
 $codepen: #34495e
 $twitter: #3498db
 $fcc: #27ae60
+
+//Fa-font-size
+
 
 //Mixins
 @mixin transAll($sec)
@@ -64,22 +67,6 @@ body
   margin: 0 auto
   font-family: $read-font
   color: $color
-  
-.full
-  width: 100%
-
-#content
-  min-height: 860px
-  display: flex
-  align-items: center
-  justify-content: center
-  align-content: stretch
-  
-.read
-  font-family: $read-font
-  
-.display
-  font-family: $disp-font
 
 .header-bar
   font-family: $disp-font
@@ -92,13 +79,14 @@ a
   text-decoration: none
   &:hover
     text-decoration: none
-
+  
 .navbar-default
   @include backGround
   .navbar-brand
     font-family: $disp-font
     font-size: 1.8em
     color: $color
+    padding: 15px 0
   .navbar-nav
     li
       &:hover
@@ -107,7 +95,39 @@ a
         color: $color
         &:hover
           color: $hover-text
-
+  .navbar-toggle
+    border: 0
+    transform: rotate(0)
+    transition: all 0.25s ease-in-out
+    &:focus,
+    &:hover
+      background-color: transparent
+    .icon-bar
+      transition: all 0.3s ease-in-out
+      height: 4px
+      margin-left: 12.5%
+    .ib-top
+      transform: rotate(45deg)
+      transform-origin: 0% 50%
+    .ib-mid
+      opacity: 0
+    .ib-bot
+      transform: rotate(-45deg)
+      transform-origin: 0% 50%
+    &.collapsed
+      transform: rotate(-180deg)      
+      .icon-bar
+        height: 2px
+        margin-left: 0
+      .ib-top
+        transform: rotate(0)
+      .ib-mid
+        opacity: 1
+      .ib-bot
+        transform: rotate(0)
+  &.navbar-collapse
+    background-color: rgba( 255, 255, 247, 0.95)
+  
 #jumbo-container
   @include backGround
 
@@ -138,50 +158,47 @@ a
       color: red
 
 #profile
-	.polaroid
-		position: absolute
-		max-width: 70%
-		background: #fffae6
-		border-left: $upper-border
-		border-top: $upper-border
-		border-right: $lower-border
-		border-bottom: $lower-border
-		box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
-		.self,
-		.video
-			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
-			max-width: 90%
-			position: relative
-			left: 5%
-			top: 20px	
-		.gutter
-			position: relative
-			color: #333
-			display: block
-			margin-top: 30px
-			text-align: center
-			font-family: $disp-font
-			font-size: 3.5rem
-		.profile-toggle
-			position: absolute
-			margin-top: -20px
-			border-radius: 50%
-			box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
-			width: 40px
-			height: 40px
-			right: -20px
-			background-color: #2980b9
-			&:active
-				background-color: #3498db
-			.fa
-				color: #fff
-				position: absolute
-				left: .35em
-				top: .35em
-				font-size: 1.75em
-				.fa-play-circle-o
-					&:before
-						padding-left: .05em
+  .polaroid
+    position: absolute
+    max-width: 70%
+    background: #fffae6
+    border-left: $upper-border
+    border-top: $upper-border
+    border-right: $lower-border
+    border-bottom: $lower-border
+    box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
+    .self,
+    .video
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
+      max-width: 90%
+      position: relative
+      left: 5%
+      top: 20px
+    .gutter
+      position: relative
+      color: #333
+      display: block
+      margin-top: 30px
+      text-align: center
+      font-family: $disp-font
+      font-size: 3.5rem
+    .profile-toggle
+      position: absolute
+      margin-top: -20px
+      border-radius: 50%
+      box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
+      width: 40px
+      height: 40px
+      right: -20px
+      background-color: #2980b9
+      &:active
+        background-color: #3498db
+      .fa
+        color: #fff
+        position: absolute
+        left: .35em
+        top: .35em
+        font-size: 1.75em
 
 p
   font-size: 1.6em
@@ -219,7 +236,7 @@ p
 .frame
   text-align: center
   background-color: rgba(255, 255, 255, 0.6)
-  height: 280px
+  //height: 280px
   color: #444
   font-family: 'Permanent Marker'
   border: 1px solid #999
@@ -257,16 +274,6 @@ p
     max-height: 75%
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
     clear: both
-
-.tech
-  list-style-type: none
-  li
-    text-indent: -1.4em
-    &:before
-      font-family: 'FontAwesome'
-      content: '\f121'
-      color: $color
-      margin-right: .2em
 
 .contact
   height: 240px
@@ -333,7 +340,7 @@ p
 .footer
   @include backGround
   border-top: 1px solid #111
-  max-height: 60px
+  max-height: 100px
   h6
     float: right
   ul
@@ -359,7 +366,7 @@ p
     opacity: 0
     transition: max-height 500ms, opacity 750ms
   .xxx
-    max-height: 10000px
+    //max-height: 10000px
     opacity: 1
     transition: max-height 500ms, opacity 750ms
 
@@ -380,6 +387,10 @@ p
     .fa-codepen
       color: $codepen
 
+@media only screen and (min-width: 768px)
+  .frame
+    height: 260px
+      
 @media only screen and (max-width: 540px)
   .contact
     button

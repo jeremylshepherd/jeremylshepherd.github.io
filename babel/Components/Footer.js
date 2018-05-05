@@ -42,8 +42,8 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-6 col-md-12 copyright">
                         <h6>
-                            Copyright © Jeremy L. Shepherd 2017. All Rights
-                            Reserved
+                            {`Copyright © Jeremy L. Shepherd ${new Date(Date.now()).getFullYear()}. All Rights
+                            Reserved`}
                         </h6>
                     </div>
                 </footer>
