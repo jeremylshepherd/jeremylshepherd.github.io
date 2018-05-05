@@ -144,6 +144,11 @@ a {
   .navbar-default.navbar-collapse {
     background-color: rgba(255, 255, 247, 0.95); }
 
+#backButton .backButton {
+  font-size: 1.55rem;
+  color: #222;
+  font-family: "Roboto"; }
+
 #jumbo-container {
   background-color: #fffff7; }
 

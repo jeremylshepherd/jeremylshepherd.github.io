@@ -8,12 +8,11 @@ import ProjectPage from './Components/ProjectPage';
 import Footer from './Components/Footer';
 import RouteError from './Components/RouteError';
 import Main from './Components/Main';
+import BackButtonRouter from './Components/BackButton';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
-
-const storage = window.localStorage;
 
 const projectData =
     'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
@@ -58,16 +57,18 @@ class Portfolio extends React.Component {
         });
         return (
             <Router>
-                <div className="full">
-                    <Nav />
-                    <div id="content">
-                        <Switch>
-                            <Route exact path="/" render={() => <Main {...this.state} />} />
-                            {projRoutes}
-                            <Route component={RouteError} />
-                        </Switch>
+                <div>
+                    <div className="full">
+                        <Nav />
+                        <div id="content">
+                            <Switch>
+                                <Route exact path="/" render={() => <Main {...this.state} />} />
+                                {projRoutes}
+                                <Route component={RouteError} />
+                            </Switch>
+                        </div>
+                        <Footer />
                     </div>
-                    <Footer />
                 </div>
             </Router>
         );
