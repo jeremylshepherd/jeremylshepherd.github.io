@@ -41,13 +41,9 @@ class Portfolio extends React.Component {
                     data: data,
                     isLoading: false
                 });
-                storage.setItem('data', JSON.stringify(data));
             },
             error: (xhr, status, err) => {
                 console.error(this.props.url, status, err.toString());
-                this.setState({
-                    data: JSON.parse(storage.getItem('data'))
-                });
             }
         });
     }

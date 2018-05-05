@@ -1,15 +1,16 @@
 //Import fonts
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black')
 
+@import 'flex'
+
 // VSCode Implementation
 
-/////Sass Variables
-
-//Borders
+//Sass Variables
 $lower-border: 1px solid #fff5cc
 $upper-border: 1px solid rgba(122, 122, 122, 0.3)
 
-//Text Color
+//Theme Color
+$bg-color: #fffff7
 $color: #222
 $hover-text: #eee
 $hover-elem: rgba(0, 0, 0, 0.3)
@@ -33,9 +34,6 @@ $github: #2c3e50
 $codepen: #34495e
 $twitter: #3498db
 $fcc: #27ae60
-
-//Fa-font-size
-
 
 //Mixins
 @mixin transAll($sec)
@@ -67,6 +65,23 @@ body
   margin: 0 auto
   font-family: $read-font
   color: $color
+  background-color: $bg-color
+  
+.full
+  width: 100%
+
+#content
+  min-height: 95vh
+  display: flex
+  align-items: center
+  justify-content: center
+  align-content: stretch
+  
+.read
+  font-family: $read-font
+  
+.display
+  font-family: $disp-font
 
 .header-bar
   font-family: $disp-font
@@ -79,7 +94,7 @@ a
   text-decoration: none
   &:hover
     text-decoration: none
-  
+
 .navbar-default
   @include backGround
   .navbar-brand
@@ -127,7 +142,7 @@ a
         transform: rotate(0)
   &.navbar-collapse
     background-color: rgba( 255, 255, 247, 0.95)
-  
+
 #jumbo-container
   @include backGround
 
@@ -146,6 +161,7 @@ a
 
 .social
   list-style: none
+  margin-left: -30px
   li a
     font-size: 24px
     color: $color
@@ -158,47 +174,50 @@ a
       color: red
 
 #profile
-  .polaroid
-    position: absolute
-    max-width: 70%
-    background: #fffae6
-    border-left: $upper-border
-    border-top: $upper-border
-    border-right: $lower-border
-    border-bottom: $lower-border
-    box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
-    .self,
-    .video
-      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
-      max-width: 90%
-      position: relative
-      left: 5%
-      top: 20px
-    .gutter
-      position: relative
-      color: #333
-      display: block
-      margin-top: 30px
-      text-align: center
-      font-family: $disp-font
-      font-size: 3.5rem
-    .profile-toggle
-      position: absolute
-      margin-top: -20px
-      border-radius: 50%
-      box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
-      width: 40px
-      height: 40px
-      right: -20px
-      background-color: #2980b9
-      &:active
-        background-color: #3498db
-      .fa
-        color: #fff
-        position: absolute
-        left: .35em
-        top: .35em
-        font-size: 1.75em
+	.polaroid
+		position: absolute
+		max-width: 70%
+		background: #fffae6
+		border-left: $upper-border
+		border-top: $upper-border
+		border-right: $lower-border
+		border-bottom: $lower-border
+		box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
+		.self,
+		.video
+			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
+			max-width: 90%
+			position: relative
+			left: 5%
+			top: 20px	
+		.gutter
+			position: relative
+			color: #333
+			display: block
+			margin-top: 30px
+			text-align: center
+			font-family: $disp-font
+			font-size: 3.5rem
+		.profile-toggle
+			position: absolute
+			margin-top: -20px
+			border-radius: 50%
+			box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
+			width: 40px
+			height: 40px
+			right: -20px
+			background-color: #2980b9
+			&:active
+				background-color: #3498db
+			.fa
+				color: #fff
+				position: absolute
+				left: .35em
+				top: .35em
+				font-size: 1.75em
+				.fa-play-circle-o
+					&:before
+						padding-left: .05em
 
 p
   font-size: 1.6em
@@ -275,6 +294,16 @@ p
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
     clear: both
 
+.tech
+  list-style-type: none
+  li
+    text-indent: -1.4em
+    &:before
+      font-family: 'FontAwesome'
+      content: '\f121'
+      color: $color
+      margin-right: .2em
+
 .contact
   height: 240px
   background: none
@@ -340,7 +369,7 @@ p
 .footer
   @include backGround
   border-top: 1px solid #111
-  max-height: 100px
+  max-height: 60px
   h6
     float: right
   ul
@@ -366,7 +395,6 @@ p
     opacity: 0
     transition: max-height 500ms, opacity 750ms
   .xxx
-    //max-height: 10000px
     opacity: 1
     transition: max-height 500ms, opacity 750ms
 
@@ -390,7 +418,7 @@ p
 @media only screen and (min-width: 768px)
   .frame
     height: 260px
-      
+
 @media only screen and (max-width: 540px)
   .contact
     button
