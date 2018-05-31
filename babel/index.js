@@ -79,8 +79,6 @@ class Portfolio extends React.Component {
     }
 }
 
-// This is the VSCODE version
-
 ReactDOM.render(
     <Portfolio url={projectData} />,
     document.getElementById('app')

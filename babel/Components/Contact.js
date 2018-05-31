@@ -34,7 +34,7 @@ const Contact = () => {
                             </a>
                         </button>
                         <button id="freecodecamp">
-                            <a href="https://freecodecamp.com/jeremylshepherd">
+                            <a href="https://www.freecodecamp.org/portfolio/jeremylshepherd">
                                 <i className="fa fa-free-code-camp" />
                             </a>
                         </button>

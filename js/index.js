@@ -294,7 +294,7 @@ var Banner = function Banner() {
                             { title: "Free Code Camp" },
                             _react2.default.createElement(
                                 "a",
-                                { href: "https://freecodecamp.com/jeremylshepherd" },
+                                { href: "https://www.freecodecamp.org/portfolio/jeremylshepherd" },
                                 _react2.default.createElement("i", { className: "fa fa-free-code-camp" }),
                                 _react2.default.createElement(
                                     "span",
@@ -499,7 +499,7 @@ var Contact = function Contact() {
                         { id: "freecodecamp" },
                         _react2.default.createElement(
                             "a",
-                            { href: "https://freecodecamp.com/jeremylshepherd" },
+                            { href: "https://www.freecodecamp.org/portfolio/jeremylshepherd" },
                             _react2.default.createElement("i", { className: "fa fa-free-code-camp" })
                         )
                     ),
@@ -1388,8 +1388,6 @@ var Portfolio = function (_React$Component) {
 
     return Portfolio;
 }(_react2.default.Component);
-
-// This is the VSCODE version
 
 _reactDom2.default.render(_react2.default.createElement(Portfolio, { url: projectData }), document.getElementById('app'));
 
