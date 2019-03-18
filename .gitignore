@@ -1,5 +1,4 @@
 /node_modules
-.babelrc
-gulpfile.babel.js
+/.c9
 .DS_Store
 /.vscode

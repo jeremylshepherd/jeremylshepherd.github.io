@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
                     <div className="col-lg-6 hidden-md hidden-sm hidden-xs">
                         <ul className="footer-links">
                             <li>
-                                <a href="#home">Home</a>
+                                <NavLink to="/#home">Home</NavLink>
                             </li>
                             <li>
                                 <i
@@ -17,7 +18,7 @@ const Footer = () => {
                                 />
                             </li>
                             <li>
-                                <a href="#about">About</a>
+                                <NavLink smooth to="/#about">About</NavLink>
                             </li>
                             <li>
                                 <i
@@ -26,7 +27,7 @@ const Footer = () => {
                                 />
                             </li>
                             <li>
-                                <a href="#portfolio">Portfolio</a>
+                                <NavLink smooth to="/#portfolio">Portfolio</NavLink>
                             </li>
                             <li>
                                 <i
@@ -35,14 +36,14 @@ const Footer = () => {
                                 />
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <NavLink smooth to="/#contact">Contact</NavLink>
                             </li>
                         </ul>
                     </div>
                     <div className="col-lg-6 col-md-12 copyright">
                         <h6>
-                            Copyright © Jeremy L. Shepherd 2017. All Rights
-                            Reserved
+                            {`Copyright © Jeremy L. Shepherd ${new Date(Date.now()).getFullYear()}. All Rights
+                            Reserved`}
                         </h6>
                     </div>
                 </footer>

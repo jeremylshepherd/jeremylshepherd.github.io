@@ -4,15 +4,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Components/Nav';
-import About from './Components/About';
-import Banner from './Components/Banner';
-import Projects from './Components/Projects';
-import Contact from './Components/Contact';
+import ProjectPage from './Components/ProjectPage';
 import Footer from './Components/Footer';
-import CollapseCont from './Components/CollapseCont';
+import RouteError from './Components/RouteError';
+import Main from './Components/Main';
+import BackButtonRouter from './Components/BackButton';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 
 // Better naming conventions
+
+const storage = window.localStorage;
 
 const projectData =
     'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
@@ -40,9 +42,11 @@ class Portfolio extends React.Component {
                     data: data,
                     isLoading: false
                 });
+                storage.setItem('data', JSON.stringify(data));
             },
             error: (xhr, status, err) => {
                 console.error(this.props.url, status, err.toString());
+                this.setState({ data: JSON.parse(storage.getItem('data')) });
             }
         });
     }
@@ -52,29 +56,28 @@ class Portfolio extends React.Component {
     }
 
     render() {
+        const projRoutes = this.state.data.map((t) => {
+            return <Route key={t._id} path={`/${t._id}`} render={() => <ProjectPage {...t} /> }/>;
+        });
         return (
-            <div>
-                <Nav />
-                <Banner />
-                <CollapseCont heading="About Me">
-                    <About />
-                </CollapseCont>
-                <CollapseCont heading="Projects">
-                    <Projects
-                        data={this.state.data}
-                        loading={this.state.isLoading}
-                    />
-                </CollapseCont>
-                <CollapseCont heading="Contact">
-                    <Contact />
-                </CollapseCont>
-                <Footer />
-            </div>
+            <Router>
+                <div>
+                    <div className="full">
+                        <Nav />
+                        <div id="content">
+                            <Switch>
+                                <Route exact path="/" render={() => <Main {...this.state} />} />
+                                {projRoutes}
+                                <Route component={RouteError} />
+                            </Switch>
+                        </div>
+                        <Footer />
+                    </div>
+                </div>
+            </Router>
         );
     }
 }
-
-// This is the VSCODE version
 
 ReactDOM.render(
     <Portfolio url={projectData} />,

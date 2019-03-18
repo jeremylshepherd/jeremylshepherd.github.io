@@ -1,8 +1,91 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black");
+.flexCont {
+  display: flex; }
+
+.flexCol {
+  flex-direction: column; }
+
+.flexRow {
+  flex-direction: row; }
+
+.alignCent {
+  align-items: center; }
+
+.alignFS {
+  align-items: flex-start; }
+
+.alignFE {
+  align-items: flex-end; }
+
+.alignBL {
+  align-items: baseline; }
+
+.alignSTR {
+  align-items: stretch; }
+
+.justSB {
+  justify-content: space-between; }
+
+.justSA {
+  justify-content: space-around; }
+
+.justCen {
+  justify-content: center; }
+
+.justSE {
+  justify-content: space-evenly; }
+
+.justFS {
+  justify-content: flex-start; }
+
+.justFE {
+  justify-content: flex-end; }
+
+.fg1 {
+  flex-grow: 1; }
+
+.fg2 {
+  flex-grow: 2; }
+
+.fg3 {
+  flex-grow: 3; }
+
+.asCen {
+  align-self: center; }
+
+.asFE {
+  align-self: flex-end; }
+
+.asFS {
+  align-self: flex-start; }
+
+.asSTR {
+  align-self: stretch; }
+
+.asBL {
+  align-self: baseline; }
+
 body {
   margin: 0 auto;
   font-family: "Roboto";
-  color: #222; }
+  color: #222;
+  background-color: #fffff7; }
+
+.full {
+  width: 100%; }
+
+#content {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: stretch; }
+
+.read {
+  font-family: "Roboto"; }
+
+.display {
+  font-family: "Permanent Marker", cursive; }
 
 .header-bar {
   font-family: "Permanent Marker", cursive; }
@@ -21,13 +104,50 @@ a {
   .navbar-default .navbar-brand {
     font-family: "Permanent Marker", cursive;
     font-size: 1.8em;
-    color: #222; }
+    color: #222;
+    padding: 15px 0; }
   .navbar-default .navbar-nav li:hover {
     background-color: rgba(0, 0, 0, 0.3); }
   .navbar-default .navbar-nav li a {
     color: #222; }
     .navbar-default .navbar-nav li a:hover {
       color: #eee; }
+  .navbar-default .navbar-toggle {
+    border: 0;
+    transform: rotate(0);
+    transition: all 0.25s ease-in-out; }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+      background-color: transparent; }
+    .navbar-default .navbar-toggle .icon-bar {
+      transition: all 0.3s ease-in-out;
+      height: 4px;
+      margin-left: 12.5%; }
+    .navbar-default .navbar-toggle .ib-top {
+      transform: rotate(45deg);
+      transform-origin: 0% 50%; }
+    .navbar-default .navbar-toggle .ib-mid {
+      opacity: 0; }
+    .navbar-default .navbar-toggle .ib-bot {
+      transform: rotate(-45deg);
+      transform-origin: 0% 50%; }
+    .navbar-default .navbar-toggle.collapsed {
+      transform: rotate(-180deg); }
+      .navbar-default .navbar-toggle.collapsed .icon-bar {
+        height: 2px;
+        margin-left: 0; }
+      .navbar-default .navbar-toggle.collapsed .ib-top {
+        transform: rotate(0); }
+      .navbar-default .navbar-toggle.collapsed .ib-mid {
+        opacity: 1; }
+      .navbar-default .navbar-toggle.collapsed .ib-bot {
+        transform: rotate(0); }
+  .navbar-default.navbar-collapse {
+    background-color: rgba(255, 255, 247, 0.95); }
+
+#backButton .backButton {
+  font-size: 1.55rem;
+  color: #222;
+  font-family: "Roboto"; }
 
 #jumbo-container {
   background-color: #fffff7; }
@@ -46,7 +166,8 @@ a {
     font-family: Archivo Black; }
 
 .social {
-  list-style: none; }
+  list-style: none;
+  margin-left: -30px; }
   .social li a {
     font-size: 24px;
     color: #222;
@@ -138,7 +259,6 @@ p {
 .frame {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
-  height: 280px;
   color: #444;
   font-family: 'Permanent Marker';
   border: 1px solid #999;
@@ -176,6 +296,16 @@ p {
     max-height: 75%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
     clear: both; }
+
+.tech {
+  list-style-type: none; }
+  .tech li {
+    text-indent: -1.4em; }
+    .tech li:before {
+      font-family: 'FontAwesome';
+      content: '\f121';
+      color: #222;
+      margin-right: .2em; }
 
 .contact {
   height: 240px;
@@ -264,7 +394,7 @@ p {
 .footer {
   background-color: #fffff7;
   border-top: 1px solid #111;
-  max-height: 100px; }
+  max-height: 60px; }
   .footer h6 {
     float: right; }
   .footer ul {
@@ -290,7 +420,6 @@ p {
     opacity: 0;
     transition: max-height 500ms, opacity 750ms; }
   .colCont .xxx {
-    max-height: 10000px;
     opacity: 1;
     transition: max-height 500ms, opacity 750ms; }
 
@@ -309,6 +438,10 @@ p {
     color: #27ae60; }
   .social .fa-codepen {
     color: #34495e; } }
+
+@media only screen and (min-width: 768px) {
+  .frame {
+    height: 260px; } }
 
 @media only screen and (max-width: 540px) {
   .contact button {

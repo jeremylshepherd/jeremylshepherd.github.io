@@ -28,7 +28,7 @@ const Banner = () => {
                                 </a>
                             </li>
                             <li title="Free Code Camp">
-                                <a href="https://freecodecamp.com/jeremylshepherd">
+                                <a href="https://www.freecodecamp.org/portfolio/jeremylshepherd">
                                     <i className="fa fa-free-code-camp" />
                                     <span className="label">FreeCodeCamp</span>
                                 </a>
