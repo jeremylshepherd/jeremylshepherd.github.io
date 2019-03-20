@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
+import { videoSrc } from '../utils';
 
-export default class Profile extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            video: false
-        };
-    }
+export default class Profile extends React.Component {
+    state = {
+        video: false
+    };
 
     render() {
         const { video } = this.state;
@@ -15,8 +12,7 @@ export default class Profile extends Component {
             <video
                 preload="auto"
                 className="video"
-                src="../../assets/Jeremy Shepherd intro_1_1.mp4"
-                poster="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
+                src={videoSrc}
                 controls
                 controlsList="nodownload"
             />
@@ -32,16 +28,13 @@ export default class Profile extends Component {
         const flag = video ? 'fa fa-camera-retro' : 'fa fa-play-circle-o';
 
         return (
-            <div id="profile" className="col-sm-6 hidden-xs">
+            <div id="profile">
                 <div className="polaroid">
                     {Image}
-                    <span className="gutter">
-                        Jeremy {new Date(Date.now()).getFullYear()}
-                    </span>
+                    <span className="gutter">Jeremy {new Date(Date.now()).getFullYear()}</span>
                     <div
                         className="profile-toggle"
-                        onClick={() => this.setState({ video: !video })}
-                    >
+                        onClick={() => this.setState({ video: !video })}>
                         <i className={flag} />
                     </div>
                 </div>

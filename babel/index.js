@@ -16,48 +16,33 @@ import $ from 'jquery';
 
 const storage = window.localStorage;
 
-const projectData =
-    'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
+const projectData = 'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
 
 class Portfolio extends React.Component {
-    constructor() {
-        super();
+    state = {
+        data: [],
+        isLoading: false
+    };
 
-        this.state = {
-            data: [],
-            isLoading: false
-        };
-
-        this.loadProjects = this.loadProjects.bind(this);
-    }
-
-    loadProjects() {
+    loadProjects = () => {
         this.setState({ isLoading: true });
-        $.ajax({
-            url: this.props.url,
-            dataType: 'json',
-            cache: false,
-            success: data => {
+        fetch(this.props.url)
+            .then(response => response.json())
+            .then(data =>
                 this.setState({
                     data: data,
                     isLoading: false
-                });
-                storage.setItem('data', JSON.stringify(data));
-            },
-            error: (xhr, status, err) => {
-                console.error(this.props.url, status, err.toString());
-                this.setState({ data: JSON.parse(storage.getItem('data')) });
-            }
-        });
-    }
+                })
+            );
+    };
 
     componentDidMount() {
         this.loadProjects();
     }
 
     render() {
-        const projRoutes = this.state.data.map((t) => {
-            return <Route key={t._id} path={`/${t._id}`} render={() => <ProjectPage {...t} /> }/>;
+        const projRoutes = this.state.data.map(t => {
+            return <Route key={t._id} path={`/${t._id}`} render={() => <ProjectPage {...t} />} />;
         });
         return (
             <Router>
@@ -79,7 +64,4 @@ class Portfolio extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <Portfolio url={projectData} />,
-    document.getElementById('app')
-);
+ReactDOM.render(<Portfolio url={projectData} />, document.getElementById('app'));

@@ -1,7 +1,5 @@
 'use strict';
 
-require('babel-core/register');
-
 import gulp from 'gulp';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
@@ -11,9 +9,10 @@ import buffer from 'vinyl-buffer';
 
 let tasks;
 
-gulp.task('build-js', () => {    
+gulp.task('build-js', () => {
     return browserify('babel/index.js')
         .transform('babelify', {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             sourceMaps: true
         })
         .bundle()
@@ -25,13 +24,14 @@ gulp.task('build-js', () => {
 });
 
 gulp.task('build-css', () => {
-    return gulp.src('css/style.sass')
+    return gulp
+        .src('css/style.sass')
         .pipe(sass())
         .pipe(gulp.dest('css'));
 });
 
 gulp.task('sass:watch', () => {
-    gulp.watch('css/style.sass', ['build-css']);    
+    gulp.watch('css/style.sass', ['build-css']);
 });
 
 gulp.task('js:watch', () => {

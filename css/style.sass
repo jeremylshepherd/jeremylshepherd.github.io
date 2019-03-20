@@ -1,16 +1,13 @@
 //Import fonts
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Archivo+Black')
 
-@import 'flex'
+/////Sass Variables
 
-// VSCode Implementation
-
-//Sass Variables
+//Borders
 $lower-border: 1px solid #fff5cc
 $upper-border: 1px solid rgba(122, 122, 122, 0.3)
 
-//Theme Color
-$bg-color: #fffff7
+//Text Color
 $color: #222
 $hover-text: #eee
 $hover-elem: rgba(0, 0, 0, 0.3)
@@ -18,6 +15,7 @@ $hover-elem: rgba(0, 0, 0, 0.3)
 //Font
 $disp-font: 'Permanent Marker', cursive
 $read-font: 'Roboto'
+$alt-font: 'Archivo Black'
 
 //Contact Buttons
 $cont-size-p: 36px
@@ -35,12 +33,15 @@ $codepen: #34495e
 $twitter: #3498db
 $fcc: #27ae60
 
+//layout
+$disp-max-width: 1280px
+
 //Mixins
 @mixin transAll($sec)
   transition: all $sec ease-in-out
 
 @mixin backGround
-  background-color: #fffff7
+  background-color: #ffffff
 
 @mixin textEffect($num, $hue)
   text-shadow: (-$num) 0px 0px $hue, ($num) 0px 0px $hue, 0px (-$num) 0px $hue, 0px ($num) 0px $hue, (-$num * 2) 0px 0px invert($hue), ($num * 2) 0px 0px invert($hue), 0px ($num * 2) 0px invert($hue), 0px (-$num * 2) 0px invert($hue)
@@ -55,198 +56,19 @@ $fcc: #27ae60
 
 @mixin aniInf($name, $time)
   animation: $name $time infinite
+  
+@mixin hero-social($class, $color)
+  #{$class}
+    color: $color
+    &+ .label
+      color: $color
 
 @mixin social($color)
   background-color: $color
   box-shadow: 0 0 0 0 rgba($color, 1)
-
-
-body
-  margin: 0 auto
-  font-family: $read-font
-  color: $color
-  background-color: $bg-color
-    
-.full
-  width: 100%
-
-#content
-  min-height: 95vh
-  display: flex
-  align-items: center
-  justify-content: center
-  align-content: stretch
   
-.read
-  font-family: $read-font
   
-.display
-  font-family: $disp-font
-
-.header-bar
-  font-family: $disp-font
-
-.container,
-.container-fluid
-  max-width: 97.5%
-
-a
-  text-decoration: none
-  &:hover
-    text-decoration: none
-
-.navbar-default
-  @include backGround
-  .navbar-brand
-    font-family: $disp-font
-    font-size: 1.8em
-    color: $color
-    padding: 15px 0
-  .navbar-nav
-    li
-      &:hover
-        background-color: $hover-elem
-      a
-        color: $color
-        &:hover
-          color: $hover-text
-  .navbar-toggle
-    border: 0
-    transform: rotate(0)
-    transition: all 0.25s ease-in-out
-    &:focus,
-    &:hover
-      background-color: transparent
-    .icon-bar
-      transition: all 0.3s ease-in-out
-      height: 4px
-      margin-left: 12.5%
-    .ib-top
-      transform: rotate(45deg)
-      transform-origin: 0% 50%
-    .ib-mid
-      opacity: 0
-    .ib-bot
-      transform: rotate(-45deg)
-      transform-origin: 0% 50%
-    &.collapsed
-      transform: rotate(-180deg)      
-      .icon-bar
-        height: 2px
-        margin-left: 0
-      .ib-top
-        transform: rotate(0)
-      .ib-mid
-        opacity: 1
-      .ib-bot
-        transform: rotate(0)
-  &.navbar-collapse
-    background-color: rgba( 255, 255, 247, 0.95)
-
-#backButton
-  .backButton
-    font-size: 1.55rem
-    color: $color
-    font-family: $read-font
-
-#jumbo-container
-  @include backGround
-
-.jumbotron
-  font-family: $read-font
-  text-align: center
-  color: $color
-  background: none
-  .main
-    margin-top: 100px
-  li
-    display: inline-block
-    padding: 10px
-  h1
-    font-family: Archivo Black
-
-.social
-  list-style: none
-  margin-left: -30px
-  li a
-    font-size: 24px
-    color: $color
-    @include transAll(.2s)
-    .label
-      color: $color
-      &:hover
-        color: red
-    &:hover
-      color: red
-
-#profile
-	.polaroid
-		position: absolute
-		max-width: 70%
-		background: #fffae6
-		border-left: $upper-border
-		border-top: $upper-border
-		border-right: $lower-border
-		border-bottom: $lower-border
-		box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
-		.self,
-		.video
-			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
-			max-width: 90%
-			position: relative
-			left: 5%
-			top: 20px	
-		.gutter
-			position: relative
-			color: #333
-			display: block
-			margin-top: 30px
-			text-align: center
-			font-family: $disp-font
-			font-size: 3.5rem
-		.profile-toggle
-			position: absolute
-			margin-top: -20px
-			border-radius: 50%
-			box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
-			width: 40px
-			height: 40px
-			right: -20px
-			background-color: #2980b9
-			&:active
-				background-color: #3498db
-			.fa
-				color: #fff
-				position: absolute
-				left: .35em
-				top: .35em
-				font-size: 1.75em
-				.fa-play-circle-o
-					&:before
-						padding-left: .05em
-
-p
-  font-size: 1.6em
-
-.constrain
-  max-width: 1280px
-  margin: 0 auto
-  padding: 25px
-
-.portfolio
-  @include backGround
-  h1, h2
-    font-family: 'Permanent Marker', cursive
-    text-align: center
-    color: #eee
-    text-shadow: 2px 2px 6px #222
-  .loading,
-  .fa-spinner
-    text-shadow: 0px 0px 0px #fff
-    color: $color
-  .pulse
-    animation: pulse 2s infinite
-
+//Animations
 @keyframes pulse
   0%
     @include stroke(0px, rgba(0, 0, 0, 0))
@@ -255,30 +77,255 @@ p
     @include stroke(1px, rgba(0, 0, 0, 1))
     color: rgba(255, 255, 255, 1)
 
-.input-group-addon
-  cursor: pointer
+@keyframes shimmer
+  0%
+    background-position: 100% 0
+  100%
+    background-position: -100% 0
+    
+//Globals
+body
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  font-family: $read-font
+  color: $color
+
+p
+  font-size: 1.6em
+  
+a
+  text-decoration: none
+  color: $color
+  &:hover
+    text-decoration: none  
+
+.content
+  width: 90vw
+  max-width: $disp-max-width
+  margin: 0 auto
+
+.read
+  font-family: $read-font
+  
+.display
+  font-family: $disp-font
+  
+//Nav
+.nav_bar
+  margin: 0 auto
+  @include backGround
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4)
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3)
+  .content
+    display: flex
+    align-items: center
+    justify-content: space-between    
+    .brand
+      font-family: $disp-font
+      font-size: 1.8em
+      color: $color
+      padding: 15px 0
+    .right-nav    
+      list-style: none
+      display: flex
+      align-items: center
+      justify-content: space-around
+      width: 50%
+      margin: 0
+      padding: 0
+      max-width: 400px
+      li
+        padding: 22px
+        &:hover
+          background-color: $hover-elem
+          a
+            color: $hover-text
+        
+  .toggle
+    display: none
+  .toggle-btn
+    display: none
+    width: 40px
+    height: 40px
+    transform: rotate(0)
+    transition: all 0.25s ease-in-out
+    .icon-bar
+      transition: all 0.3s ease-in-out
+      height: 4px
+      width: 38px
+      background: #333
+      
+//Jumbotron
+.hero
+  font-family: $read-font
+  text-align: center
+  color: $color
+  background: none
+  margin: 0 auto
+  padding: 10vh
+  width: 100vw
+  display: grid
+  place-items: center
+  h1
+    font-family: Archivo Black
+    font-size: 4vmax
+    margin-bottom: .25vmax
+  h3
+    font-size: 1.75vmax
+
+.social
+  list-style: none
+  display: flex
+  justify-content: space-around
+  li
+    font-size: 2vmax
+    font-weight: 600
+    color: $color
+    @include transAll(.2s)
+    @include hero-social('.fa-github', $github)
+    @include hero-social('.fa-twitter-square', $twitter)
+    @include hero-social('.fa-linkedin-square', $linkedIn)
+    @include hero-social('.fa-free-code-camp', $fcc)
+    @include hero-social('.fa-codepen', $codepen)
+    a
+      i
+        margin-right: 1vw
+    &:hover
+      a
+        .fa,
+        .label
+          color: #aaa
+
+//About
+#about
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 2vw
+  margin: 0 auto
+  max-width: $disp-max-width
+  #resume
+    color: steelblue
+    i
+      margin-right: 1vw
+  #profile
+    display: flex
+    justify-content: center
+    min-height: calc((1280px * .30) * 1.25)
+    position: relative
+    .polaroid
+      position: absolute
+      max-width: calc(1280px * .30)
+      background: #fffae6
+      border-left: $upper-border
+      border-top: $upper-border
+      border-right: $lower-border
+      border-bottom: $lower-border
+      box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
+      .self,
+      .video
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3)
+        max-width: 90%
+        position: relative
+        left: 5%
+        top: 20px
+      .gutter
+        position: relative
+        color: #333
+        display: block
+        margin-top: 30px
+        text-align: center
+        font-family: $disp-font
+        font-size: 3em
+      .profile-toggle
+        position: absolute
+        display: grid
+        place-items: center
+        border-radius: 50%
+        box-shadow: 2px 2px 1px rgba(0,0,0,0.1)
+        width: 40px
+        height: 40px
+        right: -20px
+        bottom: -20px
+        background-color: #2980b9
+        &:active
+          background-color: #3498db
+        .fa
+          color: #fff
+          font-size: 1.75em
+
+//Portfolio
+.portfolio
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  justify-content: space-between
+  .form
+    display: flex
+    flex-direction: row
+    align-items: stretch
+    width: 95vw
+    max-width: calc(1280px - 100px)
+    margin: 0 auto
+    height: 3em
+    &-input
+      flex: 11
+      padding: 10px
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+    &-btn
+      flex: 1
+      display: grid
+      place-items: center
+      border: 1px solid rgba(0, 0, 0, 0.5)
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+      background: #ccc
+      min-width: 60px
+      &:active
+        background: #777
+  .project-grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: .5vw
+    max-width: $disp-max-width
+    margin: 0 auto
+  h1
+    font-family: $disp-font
+    text-align: center
+    color: #eee
+    text-shadow: 2px 2px 6px #222
+  .loading,
+  .fa-spinner
+    text-shadow: 0px 0px 0px #fff
+    color: $color
+  .pulse
+    @include aniInf(pulse, 2s)
 
 .frame
   text-align: center
   background-color: rgba(255, 255, 255, 0.6)
-  //height: 280px
   color: #444
   font-family: 'Permanent Marker'
   border: 1px solid #999
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2)
   margin-top: 25px
   padding: 10px
+  position: relative
   .overlay
+    display: grid
+    place-items: center
     opacity: 0
     position: absolute
-    left: 15px
-    right: 15px
-    top: 25px
-    bottom: 0px
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
     color: #fff
     font-size: 14px
     padding: 10px
-    font-family: 'Helvetica'
+    font-family: $alt-font
     background: rgba(31, 31, 122, 0.1)
     @include transAll(1s)
   &:hover
@@ -299,67 +346,128 @@ p
     max-height: 75%
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
     clear: both
+    
+    
+.dummy
+  border: 1px solid #999
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2)
+  margin-top: 25px
+  padding: 10px
+  min-height: 255px
+  min-width: calc(1.5 * 255px)
+  &-body,
+  &-footer
+    .dummy-content
+      @include aniInf(shimmer, 5s)
+      animation-timing-function: linear
+      background: linear-gradient(65deg, #eee, #ccc, #eee)     
+      
+      background-size: 600%
+      overflow: hidden
+  &-body    
+    .dummy-content
+      min-height: calc(255px * .75)
+  &-footer
+    margin-top: 15px
+    .dummy-content
+      height: 30px  
+      
+      
+//ProjectPage
+.project-page
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-around
+  min-height: 85vh
+  padding: 20px  
+  .stack,
+  .screenshot 
+    display: flex
+    flex-direction: column      
+  .stack
+    justify-content: center
+    align-items: stretch  
+    min-width: 30%
+    margin: 10px
+    ul
+      list-style-type: none
+      li
+        text-indent: -1.4em
+        &:before
+          font-family: 'FontAwesome'
+          content: '\f121'
+          color: $color
+          margin-right: .2em
+  .screenshot
+    justify-content: space-around
+    align-items: center  
+    min-width: 70%
+    img
+      width: 100%   
 
-.tech
-  list-style-type: none
-  li
-    text-indent: -1.4em
-    &:before
-      font-family: 'FontAwesome'
-      content: '\f121'
-      color: $color
-      margin-right: .2em
-
+//Contact
 .contact
-  height: 240px
-  background: none
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
   font-family: $disp-font
-  h4
-    font-size: 2rem
+  padding: 5vh 0
+  .danger-btn
+    display: block
+    font-size: 1em
     text-align: center
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4)
-  button
+    background: $email
     color: $hover-text
-    width: $cont-size-t
-    height: $cont-size-t
-    padding: 0
-    margin: 10px
-    border-radius: 50%
-    border: none
-    font-size: 36px
-    @include transAll(.2s)
-    &:hover
-      margin: 2
-  .fa
-    color: $hover-text
-    text-align: center
-  #github
-    @include social($github)
-    &:hover
-      @include aniInf(github, $pulse-beat)
-  #twitter
-    @include social($twitter)
-    &:hover
-      @include aniInf(twitter, $pulse-beat)
-  #linkedin
-    @include social($linkedIn)
-    &:hover
-      @include aniInf(linkedIn, $pulse-beat)
-  #freecodecamp
-    @include social($fcc)
-    &:hover
-      @include aniInf(fcc, $pulse-beat)
-  #codepen
-    @include social($codepen)
-    &:hover
-      @include aniInf(codepen, $pulse-beat)
-  .copyright
-    text-align: center
+    padding: 15px
+  .contact-buttons
+    display: flex
+    button
+      color: $hover-text
+      width: $cont-size-t
+      height: $cont-size-t
+      padding: 0
+      margin: 10px
+      border-radius: 50%
+      border: none
+      font-size: 36px
+      @include transAll(.2s)
+      &:hover
+        margin: 2
+    .fa
+      color: $hover-text
+      text-align: center
+    #github
+      @include social($github)
+      &:hover
+        @include aniInf(github, $pulse-beat)
+    #twitter
+      @include social($twitter)
+      &:hover
+        @include aniInf(twitter, $pulse-beat)
+    #linkedin
+      @include social($linkedIn)
+      &:hover
+        @include aniInf(linkedIn, $pulse-beat)
+    #freecodecamp
+      @include social($fcc)
+      &:hover
+        @include aniInf(fcc, $pulse-beat)
+    #codepen
+      @include social($codepen)
+      &:hover
+        @include aniInf(codepen, $pulse-beat)
+    .copyright
+      text-align: center
   .radiate
     box-shadow: 0 0 0 0 rgba(212, 73, 70, 1)
-    border-radius: 1px
+    border-radius: 5px
     &:hover
       @include aniInf(email, 1.25s)
+    .fa-envelope
+      margin-right: 1vw
 
 @include pulse(email, $pulse)
 @include pulse(github, $pulse)
@@ -368,73 +476,176 @@ p
 @include pulse(fcc, $pulse)
 @include pulse(codepen, $pulse)
 
-.contact-buttons
-  display: block
-  text-align: center
-
+//Footer  
 .footer
   @include backGround
   border-top: 1px solid #111
-  max-height: 60px
-  h6
-    float: right
-  ul
-    margin: 0
-    padding: 0
-    float: left
-    margin-top: 10px
-  li
-    display: inline
-    padding: 10px
-    &:hover:nth-child(odd)
-      background-color: $hover-elem
-    a
-      color: $color
-      &:hover
-        color: $hover-text
+  max-height: 100px
+  .content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100vw
+    .footer-links
+      margin: 0
+      display: flex
+      list-style: none
+      li
+        padding: 20px 5px      
+        a          
+          color: $color
+        &:nth-child(odd):hover
+          background-color: $hover-elem
+          a
+            color: $hover-text
+            
 
+//Collapsible Container          
 .colCont
-  width: 100%
-  .zzz
-    max-height: 5px
-    overflow: hidden
-    opacity: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  border-top: 1px solid black  
+  .content
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
     transition: max-height 500ms, opacity 750ms
-  .xxx
-    opacity: 1
-    transition: max-height 500ms, opacity 750ms
+    .header-bar
+      font-family: $disp-font
+      width: 100%
+      height: 80px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      font-size: 1.75vmax
+      h1,
+      i
+        margin: 0
+  .child
+    transition: max-height 500ms ease-in-out, opacity 750ms ease-in-out
+    &.hide
+      max-height: 5px
+      overflow: hidden
+      opacity: 0      
+    &.show
+      max-height: 100%
+      opacity: 1
+      padding-bottom: 2vh
+    
+//Media Queries
+
+@media only screen and (min-width: 1145px)
+  
+  .colCont
+    .content
+      .header-bar
+        font-size: 1.25em
+
+@media only screen and (max-width: 960px)
+  
+  .portfolio
+    .project-grid
+      display: grid
+      grid-template-columns: repeat(2, 1fr)    
+    
+  .hero
+    padding: 0
+    padding-top: 5vh
+    padding-bottom: 5vh    
 
 @media only screen and (max-width: 768px)
-  .footer-links, .label, .conText
-    display: none
+  
+  .nav_bar
+    position: relative
+    .brand
+      width: 100%
+      font-size: 1.5em
+    .toggle     
+      &+ .toggle-btn
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+      &~ .right-nav
+        @include backGround
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4)
+        display: block
+        position: absolute
+        left: 0
+        top: 64px      
+        z-index: 50        
+        max-height: 0
+        overflow: hidden
+        transition: max-height 0.3s ease-in-out
+        width: 105vw
+        max-width: 105vw
+        li
+          display: block
+          padding: 10px 0
+          a
+            margin-left: 35px
+      &:checked
+        &+ .toggle-btn
+          .ib-top
+            transform: rotate(45deg)
+            transform-origin: 0% 50%
+          .ib-mid
+            opacity: 0
+          .ib-bot
+            transform: rotate(-45deg)
+            transform-origin: 0% 50%
+        &~ .right-nav
+          max-height: 360px
+  
+  .project-page
+    flex-wrap: wrap
+         
   .social
+    justify-content: center
+    padding: 0
     .fa
       font-size: 40px
-    .fa-github
-      color: $github
-    .fa-twitter-square
-      color: $twitter
-    .fa-linkedin-square
-      color: $linkedIn
-    .fa-free-code-camp
-      color: $fcc
-    .fa-codepen
-      color: $codepen
-
-@media only screen and (min-width: 768px)
-  .frame
-    height: 260px
-
+      margin-right: 3vw
+    .label
+      display: none
+          
+  #about
+    grid-template-columns: repeat(1, 1fr)
+    padding: 10px
+    #profile
+      display: none
+  
+  .portfolio
+    .project-grid
+      display: grid
+      grid-template-columns: repeat(1, 1fr)      
+  
+  .footer 
+    .content
+      justify-content: center
+      .footer-links
+        display: none  
+      
 @media only screen and (max-width: 540px)
+  
   .contact
-    button
-      color: $hover-text
-      width: $cont-size-p
-      height: $cont-size-p
-      margin: 2px
-      font-size: 20px
+    .contact-buttons
+      button
+        color: $hover-text
+        width: $cont-size-p
+        height: $cont-size-p
+        margin: 1vw
+        font-size: 20px
 
 @media only screen and (max-width: 320px)
-  .navbar-default
-    .navbar-brand
-      font-size: 1.5em
+  
+  .nav_bar
+    .content
+      .brand
+        font-size: 1.5em
+
+  .social
+    .fa
+      font-size: 32px
+      

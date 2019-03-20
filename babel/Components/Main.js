@@ -9,14 +9,11 @@ const Main = props => {
     return (
         <div className="full">
             <Banner />
-            <CollapseCont heading="About Me">
+            <CollapseCont heading="About Me" id="welcome-section">
                 <About />
             </CollapseCont>
             <CollapseCont heading="Projects">
-                <Projects
-                    data={props.data}
-                    loading={props.isLoading}
-                />
+                <Projects data={props.data} loading={props.isLoading} />
             </CollapseCont>
             <CollapseCont heading="Contact">
                 <Contact />
