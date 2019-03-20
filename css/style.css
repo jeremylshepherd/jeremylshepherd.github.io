@@ -44,7 +44,11 @@ a {
 .primary-button {
   padding: 10px 20px;
   background-color: cornflowerblue;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); }
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  color: white; }
+  .primary-button:active {
+    background-color: #bbd0f7; }
 
 .nav_bar {
   margin: 0 auto;
