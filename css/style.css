@@ -41,6 +41,11 @@ a {
 .display {
   font-family: "Permanent Marker", cursive; }
 
+.primary-button {
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); }
+
 .nav_bar {
   margin: 0 auto;
   background-color: #ffffff;
@@ -554,6 +559,18 @@ a {
     justify-content: center; }
     .footer .content .footer-links {
       display: none; } }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  align-items: center;
+  justify-content: center; }
+  .error img {
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    opacity: 0.85; }
 
 @media only screen and (max-width: 540px) {
   .contact .contact-buttons button {
