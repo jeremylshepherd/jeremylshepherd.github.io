@@ -8,9 +8,7 @@ import ProjectPage from './Components/ProjectPage';
 import Footer from './Components/Footer';
 import RouteError from './Components/RouteError';
 import Main from './Components/Main';
-import BackButtonRouter from './Components/BackButton';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import $ from 'jquery';
 
 // Better naming conventions
 
