@@ -342,7 +342,8 @@ a {
     align-items: center;
     min-width: 70%; }
     .project-page .screenshot img {
-      width: 100%; }
+      width: 100%;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
 
 .contact {
   display: flex;
