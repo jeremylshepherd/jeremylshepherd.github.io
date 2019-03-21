@@ -507,8 +507,7 @@ a
         &:nth-child(odd):hover
           background-color: $hover-elem
           a
-            color: $hover-text
-            
+            color: $hover-text            
 
 //Collapsible Container          
 .colCont
@@ -543,6 +542,21 @@ a
       max-height: 100%
       opacity: 1
       padding-bottom: 2vh
+
+//Error Page
+.error
+  display: flex
+  flex-direction: column
+  height: 800px
+  align-items: center
+  justify-content: center
+  h1
+    font-size: 2.5vmax
+  img
+    width: 80vw
+    max-width: 450px
+    border-radius: 100%
+    opacity: 0.85
     
 //Media Queries
 
@@ -636,19 +650,6 @@ a
       justify-content: center
       .footer-links
         display: none  
-
-//Error Page
-.error
-  display: flex
-  flex-direction: column
-  height: 800px
-  align-items: center
-  justify-content: center
-  img
-    width: 450px
-    height: 450px
-    border-radius: 100%
-    opacity: 0.85
       
 @media only screen and (max-width: 540px)
   
