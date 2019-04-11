@@ -23,15 +23,20 @@ class Portfolio extends React.Component {
     };
 
     loadProjects = () => {
+        if ('projects' in storage) {
+            let projects = JSON.parse(storage.getItem('projects'));
+            this.setState({ data: projects });
+        }
         this.setState({ isLoading: true });
         fetch(this.props.url)
             .then(response => response.json())
-            .then(data =>
+            .then(data => {
                 this.setState({
                     data: data,
                     isLoading: false
-                })
-            );
+                });
+                storage.setItem('projects', JSON.stringify(data));
+            });
     };
 
     componentDidMount() {

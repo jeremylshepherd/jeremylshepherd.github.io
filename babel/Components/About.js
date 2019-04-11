@@ -1,7 +1,8 @@
 import React from 'react';
 import Bullet from './Bullet';
 import Profile from './Profile';
-import { date } from '../utils';
+import { date, videoSrc } from '../utils';
+import Video from './Video';
 
 export default class About extends React.Component {
     defaultSRC = e => {
@@ -14,6 +15,9 @@ export default class About extends React.Component {
             <div id="about">
                 <Profile />
                 <div>
+                    <div className="mobile-video">
+                        <Video />
+                    </div>
                     <p>{`My name is Jeremy and I am full-stack web & mobile developer.`}</p>
                     <p>
                         {`In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}

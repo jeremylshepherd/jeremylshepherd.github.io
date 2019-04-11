@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { videoSrc } from '../utils';
+import Video from './Video';
+import Arrow from './Arrow';
 
 export default class Profile extends React.Component {
     state = {
@@ -9,13 +11,7 @@ export default class Profile extends React.Component {
     render() {
         const { video } = this.state;
         const Image = video ? (
-            <video
-                preload="auto"
-                className="video"
-                src={videoSrc}
-                controls
-                controlsList="nodownload"
-            />
+            <Video />
         ) : (
             <img
                 onError={this.defaultSRC}
@@ -37,6 +33,10 @@ export default class Profile extends React.Component {
                         onClick={() => this.setState({ video: !video })}>
                         <i className={flag} />
                     </div>
+                </div>
+                <div className="action-box">
+                    <span className="action-text">Watch my video introduction!</span>
+                    <i className="fa fa-level-up" aria-hidden="true" />
                 </div>
             </div>
         );

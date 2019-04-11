@@ -2,7 +2,6 @@ import React from 'react';
 import Thumb from './Thumb';
 import Dummy from './Dummy';
 import Spinner from './Spinner';
-import ProjectPage from './ProjectPage';
 import { queryCheck } from '../utils';
 
 export default class Projects extends React.Component {
@@ -39,7 +38,8 @@ export default class Projects extends React.Component {
                 />
             );
         });
-        let Loading = this.props.loading ? <Spinner /> : null;
+        let msg = this.props.data.length > 0 ? 'Updating...' : ' Loading...';
+        let Loading = this.props.loading ? <Spinner msg={msg} /> : null;
         return (
             <div id="portfolio" className="portfolio">
                 <form className="form">
@@ -54,12 +54,12 @@ export default class Projects extends React.Component {
                         Clear
                     </div>
                 </form>
+                <div>{Loading}</div>
                 <div className="project-grid">
                     {this.props.loading
                         ? [...Array(12)].map((a, i) => <Dummy key={`${i}-dummy`} />)
                         : ThumbNodes}
                 </div>
-                <div>{Loading}</div>
             </div>
         );
     }

@@ -50,7 +50,6 @@ const queryCheck = (r, q) => {
     }
 };
 
-const videoSrc =
-    'https://cdn.rawgit.com/jeremylshepherd/jeremylshepherd.github.io/49cff15c/assets/Jeremy%20Shepherd%20intro_1_1.mp4';
+const videoSrc = 'https://www.youtube.com/embed/R9wbQWQlU6s';
 
 export { socialData, navData, now, tileClass, date, queryCheck, videoSrc };
