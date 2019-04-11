@@ -9,7 +9,7 @@ $upper-border: 1px solid rgba(122, 122, 122, 0.3)
 
 //Text Color
 $color: #222
-$hover-text: #eee
+$hover-text: #fff
 $hover-elem: rgba(0, 0, 0, 0.3)
 
 //Font
@@ -35,6 +35,25 @@ $fcc: #27ae60
 
 //layout
 $disp-max-width: 1280px
+
+
+=fcc
+  display: flex
+  align-items: center
+  justify-content: center
+  
+=fcsa
+  display: flex
+  align-items: center
+  justify-content: space-around
+
+=fcsb
+  display: flex
+  align-items: center
+  justify-content: space-between
+  
+=trans
+  transition: all ease-in-out 350ms
 
 //Mixins
 @mixin transAll($sec)
@@ -121,10 +140,6 @@ a
   &:active
     background-color: #bbd0f7
 
-.st0
-  fill: $twitter
-.st1
-  fill: $twitter
 
 //Nav
 .nav_bar
@@ -222,14 +237,12 @@ a
   .mobile-video
     display: none
   #resume
-    color: steelblue
+    color: $twitter
     i
       margin-right: 1vw
   #profile
-    display: flex
+    +fcc
     flex-direction: column
-    justify-content: center
-    align-items: center
     min-height: calc((1280px * .30) * 1.25)
     position: relative
     .action-box
@@ -253,9 +266,7 @@ a
       border-bottom: $lower-border
       box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5)
       position: relative
-      display: flex
-      align-items: center
-      justify-content: center
+      +fcc
       flex-direction: column
       .self,
       .video
@@ -271,9 +282,7 @@ a
         text-align: center
         font-family: $disp-font
         font-size: 3vmax
-        display: flex
-        align-items: center
-        justify-content: center
+        +fcc
       .profile-toggle
         position: absolute
         display: grid
@@ -297,30 +306,75 @@ a
   flex-direction: column
   align-items: stretch
   justify-content: space-between
-  .form
+  .form-box
     display: flex
     flex-direction: row
-    align-items: stretch
+    flex-wrap: wrap-reverse
+    justify-content: space-between
     width: 95vw
     max-width: calc(1280px - 100px)
-    margin: 0 auto
-    height: 3em
-    &-input
-      flex: 11
-      padding: 10px
-      border-top-left-radius: 5px
-      border-bottom-left-radius: 5px
-    &-btn
-      flex: 1
-      display: grid
-      place-items: center
-      border: 1px solid rgba(0, 0, 0, 0.5)
-      border-top-right-radius: 5px
-      border-bottom-right-radius: 5px
-      background: #ccc
-      min-width: 60px
-      &:active
-        background: #777
+    .form
+      display: flex
+      flex-direction: row
+      align-items: stretch
+      margin: 0 auto
+      height: 3em 
+      width: 65%   
+      &-input
+        flex: 11
+        padding: 10px
+        border-top-left-radius: 5px
+        border-bottom-left-radius: 5px
+      &-btn
+        flex: 1
+        display: grid
+        place-items: center
+        border: 1px solid rgba(0, 0, 0, 0.5)
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        background: #ccc
+        min-width: 60px
+        &:active
+          background: #777    
+    .check-box
+      position: relative
+      +fcsa
+      width: 25%    
+      span
+        font-weight: bold
+      .check
+        display: none              
+      .check-label
+        height: 100%
+        +fcc       
+      .iOS ~ label
+        span
+          position: relative
+          width: 64px
+          height: 30px
+          border-radius: 24px
+          background-color: white
+          box-shadow: inset  0px 0px 3px rgba(0, 0, 0, 0.4)
+          border: 1px solid white
+          z-index: 50
+          +trans
+          &::before
+            +trans
+            content: ''
+            position: absolute
+            width: 24px
+            height: 24px
+            top: 3px
+            left: 3px
+            border-radius: 50%
+            background-color: white
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7)
+            z-index: 100
+      .iOS:checked ~ label        
+        span
+          background-color: $twitter
+          &::before
+            left: 37px
   .project-grid
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -396,8 +450,7 @@ a
     .dummy-content
       @include aniInf(shimmer, 5s)
       animation-timing-function: linear
-      background: linear-gradient(65deg, #eee, #ccc, #eee)     
-      
+      background: linear-gradient(65deg, #eee, #ccc, #eee)           
       background-size: 600%
       overflow: hidden
   &-body    
@@ -411,10 +464,8 @@ a
       
 //ProjectPage
 .project-page
-  display: flex
+  +fcsa
   flex-direction: row
-  align-items: center
-  justify-content: space-around
   min-height: 85vh
   padding: 20px  
   .stack,
@@ -445,10 +496,8 @@ a
 
 //Contact
 .contact
-  display: flex
+  +fcsb
   flex-direction: column
-  align-items: center
-  justify-content: space-between
   font-family: $disp-font
   padding: 5vh 0
   .danger-btn
@@ -462,10 +511,11 @@ a
   .contact-buttons
     display: flex
     button
+      display: grid
+      place-items: center
       color: $hover-text
       width: $cont-size-t
       height: $cont-size-t
-      padding: 0
       margin: 10px
       border-radius: 50%
       border: none
@@ -475,7 +525,6 @@ a
         margin: 2
     .fa
       color: $hover-text
-      text-align: center
     #github
       @include social($github)
       &:hover
@@ -519,9 +568,7 @@ a
   border-top: 1px solid #111
   max-height: 100px
   .content
-    display: flex
-    align-items: center
-    justify-content: space-between
+    +fcsb
     width: 100vw
     .footer-links
       margin: 0
@@ -538,9 +585,7 @@ a
 
 //Collapsible Container          
 .colCont
-  display: flex
-  align-items: center
-  justify-content: center
+  +fcc
   border-top: 1px solid black  
   .content
     display: flex
@@ -552,9 +597,7 @@ a
       font-family: $disp-font
       width: 100%
       height: 80px
-      display: flex
-      align-items: center
-      justify-content: space-between
+      +fcsb
       font-size: 1.75vmax
       h1,
       i
@@ -572,11 +615,9 @@ a
 
 //Error Page
 .error
-  display: flex
+  +fcc
   flex-direction: column
   height: 800px
-  align-items: center
-  justify-content: center
   h1
     font-size: 2.5vmax
   img
@@ -649,6 +690,14 @@ a
         &~ .right-nav
           max-height: 360px
   
+  .portfolio
+    .form-box
+      .form
+        width: 100%
+      .check-box
+        width: 100%
+        margin-bottom: 20px
+
   .project-page
     flex-wrap: wrap
          

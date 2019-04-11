@@ -921,14 +921,23 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Projects).call(this));
     _this.state = {
-      query: ''
+      query: '',
+      featured: true
     };
+    _this.toggleFeatured = _this.toggleFeatured.bind(_assertThisInitialized(_this));
     _this.handleQuery = _this.handleQuery.bind(_assertThisInitialized(_this));
     _this.clearQuery = _this.clearQuery.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Projects, [{
+    key: "toggleFeatured",
+    value: function toggleFeatured(e) {
+      this.setState({
+        featured: !this.state.featured
+      });
+    }
+  }, {
     key: "handleQuery",
     value: function handleQuery(e) {
       this.setState({
@@ -945,11 +954,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var filtered = this.state.query ? this.props.data.filter(function (r) {
-        return (0, _utils.queryCheck)(r, _this2.state.query);
-      }) : this.props.data;
+      var _this$state = this.state,
+          query = _this$state.query,
+          featured = _this$state.featured;
+      var _this$props = this.props,
+          data = _this$props.data,
+          loading = _this$props.loading;
+      var projects = featured ? data.filter(function (r) {
+        return r.type.toLowerCase() === 'full-stack';
+      }) : data;
+      var filtered = query ? projects.filter(function (r) {
+        return (0, _utils.queryCheck)(r, query);
+      }) : projects;
       var ThumbNodes = filtered.map(function (_ref) {
         var _id = _ref._id,
             url = _ref.url,
@@ -967,27 +983,48 @@ function (_React$Component) {
           img: img
         });
       });
-      var msg = this.props.data.length > 0 ? 'Updating...' : ' Loading...';
-      var Loading = this.props.loading ? _react.default.createElement(_Spinner.default, {
+      var msg = data.length > 0 ? 'Updating...' : ' Loading...';
+      var Loading = loading ? _react.default.createElement(_Spinner.default, {
         msg: msg
       }) : null;
       return _react.default.createElement("div", {
         id: "portfolio",
         className: "portfolio"
+      }, _react.default.createElement("div", {
+        className: "form-box"
       }, _react.default.createElement("form", {
         className: "form"
       }, _react.default.createElement("input", {
         type: "text",
         className: "form-input",
-        value: this.state.query,
+        value: query,
         placeholder: "Search...",
         onChange: this.handleQuery
       }), _react.default.createElement("div", {
         className: "form-btn",
         onClick: this.clearQuery
-      }, "Clear")), _react.default.createElement("div", null, Loading), _react.default.createElement("div", {
+      }, "Clear")), _react.default.createElement("div", {
+        className: "check-box"
+      }, _react.default.createElement("span", {
+        style: {
+          color: !featured ? '#222' : '#3498db'
+        }
+      }, "Featured"), _react.default.createElement("input", {
+        id: "iOS",
+        type: "checkbox",
+        "data-style": "ios",
+        className: "check iOS",
+        onChange: this.toggleFeatured
+      }), _react.default.createElement("label", {
+        htmlFor: "iOS",
+        className: "check-label"
+      }, _react.default.createElement("span", null)), _react.default.createElement("span", {
+        style: {
+          color: featured ? '#222' : '#3498db'
+        }
+      }, "All"))), _react.default.createElement("div", null, Loading), _react.default.createElement("div", {
         className: "project-grid"
-      }, this.props.loading ? _toConsumableArray(Array(12)).map(function (a, i) {
+      }, loading ? _toConsumableArray(Array(12)).map(function (a, i) {
         return _react.default.createElement(_Dummy.default, {
           key: "".concat(i, "-dummy")
         });

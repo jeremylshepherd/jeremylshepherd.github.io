@@ -50,12 +50,6 @@ a {
   .primary-button:active {
     background-color: #bbd0f7; }
 
-.st0 {
-  fill: #3498db; }
-
-.st1 {
-  fill: #3498db; }
-
 .nav_bar {
   margin: 0 auto;
   background-color: #ffffff;
@@ -84,7 +78,7 @@ a {
         .nav_bar .content .right-nav li:hover {
           background-color: rgba(0, 0, 0, 0.3); }
           .nav_bar .content .right-nav li:hover a {
-            color: #eee; }
+            color: #fff; }
   .nav_bar .toggle {
     display: none; }
   .nav_bar .toggle-btn {
@@ -160,14 +154,14 @@ a {
   #about .mobile-video {
     display: none; }
   #about #resume {
-    color: steelblue; }
+    color: #3498db; }
     #about #resume i {
       margin-right: 1vw; }
   #about #profile {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     min-height: calc((1280px * .30) * 1.25);
     position: relative; }
     #about #profile .action-box {
@@ -234,30 +228,77 @@ a {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between; }
-  .portfolio .form {
+  .portfolio .form-box {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
     width: 95vw;
-    max-width: calc(1280px - 100px);
-    margin: 0 auto;
-    height: 3em; }
-    .portfolio .form-input {
-      flex: 11;
-      padding: 10px;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px; }
-    .portfolio .form-btn {
-      flex: 1;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background: #ccc;
-      min-width: 60px; }
-      .portfolio .form-btn:active {
-        background: #777; }
+    max-width: calc(1280px - 100px); }
+    .portfolio .form-box .form {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      margin: 0 auto;
+      height: 3em;
+      width: 65%; }
+      .portfolio .form-box .form-input {
+        flex: 11;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px; }
+      .portfolio .form-box .form-btn {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: #ccc;
+        min-width: 60px; }
+        .portfolio .form-box .form-btn:active {
+          background: #777; }
+    .portfolio .form-box .check-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 25%; }
+      .portfolio .form-box .check-box span {
+        font-weight: bold; }
+      .portfolio .form-box .check-box .check {
+        display: none; }
+      .portfolio .form-box .check-box .check-label {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+      .portfolio .form-box .check-box .iOS ~ label span {
+        position: relative;
+        width: 64px;
+        height: 30px;
+        border-radius: 24px;
+        background-color: white;
+        box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.4);
+        border: 1px solid white;
+        z-index: 50;
+        transition: all ease-in-out 350ms; }
+        .portfolio .form-box .check-box .iOS ~ label span::before {
+          transition: all ease-in-out 350ms;
+          content: '';
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 3px;
+          left: 3px;
+          border-radius: 50%;
+          background-color: white;
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+          z-index: 100; }
+      .portfolio .form-box .check-box .iOS:checked ~ label span {
+        background-color: #3498db; }
+        .portfolio .form-box .check-box .iOS:checked ~ label span::before {
+          left: 37px; }
   .portfolio .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -342,9 +383,9 @@ a {
 
 .project-page {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  flex-direction: row;
   min-height: 85vh;
   padding: 20px; }
   .project-page .stack,
@@ -375,9 +416,9 @@ a {
 
 .contact {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
   font-family: "Permanent Marker", cursive;
   padding: 5vh 0; }
   .contact .danger-btn {
@@ -386,15 +427,16 @@ a {
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     background: #d44946;
-    color: #eee;
+    color: #fff;
     padding: 15px; }
   .contact .contact-buttons {
     display: flex; }
     .contact .contact-buttons button {
-      color: #eee;
+      display: grid;
+      place-items: center;
+      color: #fff;
       width: 60px;
       height: 60px;
-      padding: 0;
       margin: 10px;
       border-radius: 50%;
       border: none;
@@ -403,8 +445,7 @@ a {
       .contact .contact-buttons button:hover {
         margin: 2; }
     .contact .contact-buttons .fa {
-      color: #eee;
-      text-align: center; }
+      color: #fff; }
     .contact .contact-buttons #github {
       background-color: #2c3e50;
       box-shadow: 0 0 0 0 #2c3e50; }
@@ -484,7 +525,7 @@ a {
         .footer .content .footer-links li:nth-child(odd):hover {
           background-color: rgba(0, 0, 0, 0.3); }
           .footer .content .footer-links li:nth-child(odd):hover a {
-            color: #eee; }
+            color: #fff; }
 
 .colCont {
   display: flex;
@@ -521,10 +562,10 @@ a {
 
 .error {
   display: flex;
-  flex-direction: column;
-  height: 800px;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column;
+  height: 800px; }
   .error h1 {
     font-size: 2.5vmax; }
   .error img {
@@ -584,6 +625,11 @@ a {
       transform-origin: 0% 50%; }
     .nav_bar .toggle:checked ~ .right-nav {
       max-height: 360px; }
+  .portfolio .form-box .form {
+    width: 100%; }
+  .portfolio .form-box .check-box {
+    width: 100%;
+    margin-bottom: 20px; }
   .project-page {
     flex-wrap: wrap; }
   .social {
@@ -618,7 +664,7 @@ a {
 
 @media only screen and (max-width: 540px) {
   .contact .contact-buttons button {
-    color: #eee;
+    color: #fff;
     width: 36px;
     height: 36px;
     margin: 1vw;

@@ -7,10 +7,15 @@ import { queryCheck } from '../utils';
 export default class Projects extends React.Component {
     constructor() {
         super();
-        this.state = { query: '' };
+        this.state = { query: '', featured: true };
 
+        this.toggleFeatured = this.toggleFeatured.bind(this);
         this.handleQuery = this.handleQuery.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
+    }
+
+    toggleFeatured(e) {
+        this.setState({ featured: !this.state.featured });
     }
 
     handleQuery(e) {
@@ -22,9 +27,10 @@ export default class Projects extends React.Component {
     }
 
     render() {
-        let filtered = this.state.query
-            ? this.props.data.filter(r => queryCheck(r, this.state.query))
-            : this.props.data;
+        const { query, featured } = this.state;
+        const { data, loading } = this.props;
+        let projects = featured ? data.filter(r => r.type.toLowerCase() === 'full-stack') : data;
+        let filtered = query ? projects.filter(r => queryCheck(r, query)) : projects;
         const ThumbNodes = filtered.map(({ _id, url, title, technologies, type, img }) => {
             return (
                 <Thumb
@@ -38,25 +44,41 @@ export default class Projects extends React.Component {
                 />
             );
         });
-        let msg = this.props.data.length > 0 ? 'Updating...' : ' Loading...';
-        let Loading = this.props.loading ? <Spinner msg={msg} /> : null;
+        let msg = data.length > 0 ? 'Updating...' : ' Loading...';
+        let Loading = loading ? <Spinner msg={msg} /> : null;
         return (
             <div id="portfolio" className="portfolio">
-                <form className="form">
-                    <input
-                        type="text"
-                        className="form-input"
-                        value={this.state.query}
-                        placeholder="Search..."
-                        onChange={this.handleQuery}
-                    />
-                    <div className="form-btn" onClick={this.clearQuery}>
-                        Clear
+                <div className="form-box">
+                    <form className="form">
+                        <input
+                            type="text"
+                            className="form-input"
+                            value={query}
+                            placeholder="Search..."
+                            onChange={this.handleQuery}
+                        />
+                        <div className="form-btn" onClick={this.clearQuery}>
+                            Clear
+                        </div>
+                    </form>
+                    <div className="check-box">
+                        <span style={{ color: !featured ? '#222' : '#3498db' }}>Featured</span>
+                        <input
+                            id="iOS"
+                            type="checkbox"
+                            data-style="ios"
+                            className="check iOS"
+                            onChange={this.toggleFeatured}
+                        />
+                        <label htmlFor="iOS" className="check-label">
+                            <span />
+                        </label>
+                        <span style={{ color: featured ? '#222' : '#3498db' }}>All</span>
                     </div>
-                </form>
+                </div>
                 <div>{Loading}</div>
                 <div className="project-grid">
-                    {this.props.loading
+                    {loading
                         ? [...Array(12)].map((a, i) => <Dummy key={`${i}-dummy`} />)
                         : ThumbNodes}
                 </div>
