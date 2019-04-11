@@ -388,6 +388,8 @@ var _utils = require("../utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Contact = function Contact() {
   return _react.default.createElement("div", {
     id: "contact",
@@ -405,9 +407,10 @@ var Contact = function Contact() {
     return _react.default.createElement("button", {
       key: "".concat(s.name, "-button"),
       id: s.name.replace(/\s/g, '').toLowerCase()
-    }, _react.default.createElement("a", {
-      href: s.link
-    }, _react.default.createElement("i", {
+    }, _react.default.createElement("a", _defineProperty({
+      href: s.link,
+      rel: "noopener"
+    }, "rel", "noreferrer"), _react.default.createElement("i", {
       className: s.icon
     })));
   })));
@@ -516,17 +519,20 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var HeroLink = function HeroLink(_ref) {
   var name = _ref.name,
       link = _ref.link,
       icon = _ref.icon;
   return _react.default.createElement("li", {
     title: name
-  }, _react.default.createElement("a", {
+  }, _react.default.createElement("a", _defineProperty({
     id: "profile-link",
     href: link,
-    target: "_blank"
-  }, _react.default.createElement("i", {
+    target: "_blank",
+    rel: "noopener"
+  }, "rel", "noreferrer"), _react.default.createElement("i", {
     className: icon
   }), _react.default.createElement("span", {
     className: "label"
@@ -823,6 +829,8 @@ var _Contact = _interopRequireDefault(require("./Contact"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var ProjectPage = function ProjectPage(props) {
   var stack = props.technologies.map(function (p, i) {
     return _react.default.createElement("li", {
@@ -851,10 +859,11 @@ var ProjectPage = function ProjectPage(props) {
     className: "screenshot"
   }, _react.default.createElement("h2", {
     className: "display"
-  }, "Screenshot"), _react.default.createElement("a", {
+  }, "Screenshot"), _react.default.createElement("a", _defineProperty({
     href: props.url,
-    target: "_blank"
-  }, _react.default.createElement("img", {
+    target: "_blank",
+    rel: "noopener"
+  }, "rel", "noreferrer"), _react.default.createElement("img", {
     src: props.img,
     alt: props.title
   }))));

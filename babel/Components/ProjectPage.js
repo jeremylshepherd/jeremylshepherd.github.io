@@ -29,7 +29,7 @@ const ProjectPage = props => {
             </div>
             <div className="screenshot">
                 <h2 className="display">Screenshot</h2>
-                <a href={props.url} target="_blank">
+                <a href={props.url} target="_blank" rel="noopener" rel="noreferrer">
                     <img src={props.img} alt={props.title} />
                 </a>
             </div>
