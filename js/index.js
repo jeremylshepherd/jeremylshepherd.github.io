@@ -1024,7 +1024,7 @@ function (_React$Component) {
         }
       }, "All"))), _react.default.createElement("div", null, Loading), _react.default.createElement("div", {
         className: "project-grid"
-      }, loading ? _toConsumableArray(Array(12)).map(function (a, i) {
+      }, loading && data.length === 0 ? _toConsumableArray(Array(12)).map(function (a, i) {
         return _react.default.createElement(_Dummy.default, {
           key: "".concat(i, "-dummy")
         });
@@ -1232,6 +1232,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "loadProjects", function () {
       if ('projects' in storage) {
+        console.log('projects are in storage');
         var projects = JSON.parse(storage.getItem('projects'));
 
         _this.setState({

@@ -24,6 +24,7 @@ class Portfolio extends React.Component {
 
     loadProjects = () => {
         if ('projects' in storage) {
+            console.log('projects are in storage');
             let projects = JSON.parse(storage.getItem('projects'));
             this.setState({ data: projects });
         }

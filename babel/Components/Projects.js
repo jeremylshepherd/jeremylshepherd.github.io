@@ -78,7 +78,7 @@ export default class Projects extends React.Component {
                 </div>
                 <div>{Loading}</div>
                 <div className="project-grid">
-                    {loading
+                    {loading && data.length === 0
                         ? [...Array(12)].map((a, i) => <Dummy key={`${i}-dummy`} />)
                         : ThumbNodes}
                 </div>
