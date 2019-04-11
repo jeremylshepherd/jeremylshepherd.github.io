@@ -17,7 +17,7 @@ export default class Profile extends React.Component {
                 onError={this.defaultSRC}
                 id="self"
                 className="self"
-                src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=360&r=pg"
+                src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=540&r=pg"
                 alt="Jeremy L. Shepherd"
             />
         );
@@ -35,8 +35,8 @@ export default class Profile extends React.Component {
                     </div>
                 </div>
                 <div className="action-box">
-                    <span className="action-text">Watch my video introduction!</span>
-                    <i className="fa fa-level-up" aria-hidden="true" />
+                    <span className="action-text">Watch my video introduction! </span>
+                    <Arrow width={40} height={40} />
                 </div>
             </div>
         );

@@ -26,17 +26,18 @@
         "@babel/preset-env": "^7.3.4",
         "@babel/preset-react": "^7.0.0",
         "babel-jest": "^24.5.0",
+        "babel-plugin-inline-react-svg": "^1.1.0",
         "babelify": "^10.0.0",
         "browserify": "^14.5.0",
+        "extend": ">=3.0.2",
         "gulp": "^3.9.0",
         "gulp-babel": "^8.0.0-beta.2",
         "gulp-reactify": "^3.0.1",
         "gulp-sass": "^3.2.1",
         "gulp-sourcemaps": "^2.6.5",
+        "lodash": ">=4.17.11",
         "vinyl-buffer": "^1.0.1",
-        "vinyl-source-stream": "^1.1.2",
-        "extend": ">=3.0.2",
-        "lodash": ">=4.17.11"
+        "vinyl-source-stream": "^1.1.2"
     },
     "dependencies": {
         "eslint": "^4.4.1",

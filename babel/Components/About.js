@@ -1,7 +1,6 @@
 import React from 'react';
 import Bullet from './Bullet';
 import Profile from './Profile';
-import { date, videoSrc } from '../utils';
 import Video from './Video';
 
 export default class About extends React.Component {
@@ -20,7 +19,7 @@ export default class About extends React.Component {
                     </div>
                     <p>{`My name is Jeremy and I am full-stack web & mobile developer.`}</p>
                     <p>
-                        {`In 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}
+                        {`In late 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}
                     </p>
                     <p>
                         {`I have a passion for building functional and beautiful web/mobile applications that enhance lives and frees people to focus their time and energy on following their passions.`}
