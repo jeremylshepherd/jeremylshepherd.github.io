@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { videoSrc } from '../utils';
+import React from 'react';
 import Video from './Video';
 import Arrow from './Arrow';
 

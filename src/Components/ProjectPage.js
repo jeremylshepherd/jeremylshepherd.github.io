@@ -1,10 +1,5 @@
 import React from 'react';
-import Banner from './Banner';
-import CollapseCont from './CollapseCont';
 import BackButtonRouter from './BackButton';
-import About from './About';
-import Projects from './Projects';
-import Contact from './Contact';
 
 const ProjectPage = props => {
     const stack = props.technologies.map((p, i) => {
