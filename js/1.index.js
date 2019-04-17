@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{34:function(e,a,t){"use strict";t.r(a);var r=t(0),s=t.n(r),n=t(9);a.default=function(){return s.a.createElement("div",{className:"error"},s.a.createElement("img",{src:"../../assets/RouterError.jpeg"}),s.a.createElement("h1",{className:"display"},"Oops! I seemed to have misplaced that route."),s.a.createElement(n.a,{className:"primary-button",to:"/"},"Take me home!"))}}}]);
+//# sourceMappingURL=1.index.js.map

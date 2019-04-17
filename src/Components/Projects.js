@@ -1,8 +1,8 @@
 import React from 'react';
 import Thumb from './Thumb';
 import Dummy from './Dummy';
-import Spinner from './Spinner';
 import { queryCheck } from '../utils';
+import AsyncComponent from './AsyncComponent';
 
 export default class Projects extends React.Component {
     constructor() {
@@ -29,6 +29,7 @@ export default class Projects extends React.Component {
     render() {
         const { query, featured } = this.state;
         const { data, loading } = this.props;
+        const Spinner = React.lazy(() => import('./Spinner'));
         let projects = featured ? data.filter(r => r.type.toLowerCase() === 'full-stack') : data;
         let filtered = query ? projects.filter(r => queryCheck(r, query)) : projects;
         const ThumbNodes = filtered.map(({ _id, url, title, technologies, type, img }) => {
@@ -45,12 +46,17 @@ export default class Projects extends React.Component {
             );
         });
         let msg = data.length > 0 ? 'Updating...' : ' Loading...';
-        let Loading = loading ? <Spinner msg={msg} /> : null;
+        let Loading = loading ? (
+            <AsyncComponent>
+                <Spinner msg={msg} />
+            </AsyncComponent>
+        ) : null;
         return (
             <div id="portfolio" className="portfolio">
                 <div className="form-box">
                     <form className="form">
                         <input
+                            aria-label="search input"
                             type="text"
                             className="form-input"
                             value={query}
