@@ -50,6 +50,6 @@ const queryCheck = (r, q) => {
     }
 };
 
-const videoSrc = 'https://www.youtube.com/embed/R9wbQWQlU6s';
+const videoSrc = 'https://www.youtube.com/embed/ICgRHhz6xYE';
 
 export { socialData, navData, now, tileClass, date, queryCheck, videoSrc };

@@ -13,8 +13,16 @@ const Contact = () => {
             </a>
             <div className="contact-buttons">
                 {socialData.map(s => (
-                    <button key={`${s.name}-button`} id={s.name.replace(/\s/g, '').toLowerCase()}>
-                        <a href={s.link} rel="noopener" rel="noreferrer">
+                    <button
+                        key={`${s.name}-button`}
+                        role="button"
+                        aria-label={`${s.name}-button`}
+                        id={s.name.replace(/\s/g, '').toLowerCase()}>
+                        <a
+                            href={s.link}
+                            rel="noopener"
+                            rel="noreferrer"
+                            aria-label={`Link to ${s.name}`}>
                             <i className={s.icon} />
                         </a>
                     </button>

@@ -4,6 +4,7 @@ import { videoSrc } from '../utils';
 const Video = () => {
     return (
         <iframe
+            title="Intro video"
             className="video"
             width={540}
             height={540}

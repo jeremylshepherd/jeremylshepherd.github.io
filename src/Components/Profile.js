@@ -1,5 +1,5 @@
 import React from 'react';
-import Video from './Video';
+import AsyncComponent from './AsyncComponent';
 import Arrow from './Arrow';
 
 export default class Profile extends React.Component {
@@ -9,8 +9,11 @@ export default class Profile extends React.Component {
 
     render() {
         const { video } = this.state;
+        const Video = React.lazy(() => import('./Video'));
         const Image = video ? (
-            <Video />
+            <AsyncComponent>
+                <Video />
+            </AsyncComponent>
         ) : (
             <img
                 onError={this.defaultSRC}
