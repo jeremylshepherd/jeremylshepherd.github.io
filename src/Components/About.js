@@ -26,6 +26,8 @@ export default class About extends React.Component {
                         <br />
                         <a
                             href="https://jeremylshepherd.github.io/assets/resume.pdf"
+                            rel="noopener"
+                            rel="noreferrer"
                             target="_blank"
                             id="resume">
                             <i className="fa fa-file-pdf-o" />

@@ -12,7 +12,6 @@ self.addEventListener('install', async event => {
 });
 
 self.addEventListener('fetch', event => {
-    console.log('fetch heard');
     const req = event.request;
     const url = new URL(req.url);
 

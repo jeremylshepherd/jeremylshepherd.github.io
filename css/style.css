@@ -499,7 +499,8 @@ a:hover {
 }
 
 .portfolio .form-box .check-box span {
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 1.5em;
 }
 
 .portfolio .form-box .check-box .check {
