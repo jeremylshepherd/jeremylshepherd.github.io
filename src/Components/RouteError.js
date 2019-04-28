@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RouteError = () => {
+const RouteError = ({ location }) => {
+    console.log(location);
     return (
         <div className="error">
             <img src="../../assets/RouterError.jpeg" />

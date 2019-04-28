@@ -1,17 +1,25 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import BackButtonRouter from './BackButton';
 
 export default class ProjectPage extends React.Component {
     state = {
-        project: {}
+        project: {},
+        error: false
     };
 
     getProject = () => {
         const id = this.props.match.params.id;
         const url = 'https://jeremylshepherd.herokuapp.com/api/project';
         fetch(`${url}/${id}`)
-            .then(blob => blob.json())
-            .then(json => this.setState({ project: json }));
+            .then(blob => {
+                if (blob.ok) {
+                    return blob.json();
+                }
+                throw new Error('Project not found');
+            })
+            .then(json => this.setState({ project: json }))
+            .catch(error => this.setState({ error: true }));
     };
 
     componentDidMount() {
@@ -19,7 +27,7 @@ export default class ProjectPage extends React.Component {
     }
 
     render() {
-        const { project } = this.state;
+        const { project, error } = this.state;
         const stack = !project.technologies
             ? null
             : project.technologies.map((p, i) => {
@@ -32,6 +40,9 @@ export default class ProjectPage extends React.Component {
             </React.Fragment>
         );
         const back = window.navigator.standalone ? <BackButtonRouter /> : null;
+        if (error) {
+            return <Redirect to="/404" />;
+        }
         return (
             <div className="project-page">
                 {back}

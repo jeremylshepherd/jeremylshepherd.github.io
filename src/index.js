@@ -5,17 +5,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Components/Nav';
 import ProjectPage from './Components/ProjectPage';
+import RouteError from './Components/RouteError';
 import Footer from './Components/Footer';
-import DynamicImport from './Components/DynamicImport';
 import Main from './Components/Main';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Spinner from './Components/Spinner';
-
-const RouteError = props => (
-    <DynamicImport load={() => import('./Components/RouteError')}>
-        {Component => (Component === null ? <Spinner msg="Loading" /> : <Component {...props} />)}
-    </DynamicImport>
-);
 
 const storage = window.localStorage;
 
@@ -58,6 +52,7 @@ class Portfolio extends React.Component {
                         <div id="content">
                             <Switch>
                                 <Route exact path="/" render={() => <Main {...this.state} />} />
+                                <Route exact path="/404" component={RouteError} />
                                 <Route path="/:id" component={ProjectPage} />
                                 <Route component={RouteError} />
                             </Switch>
