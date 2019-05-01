@@ -785,14 +785,20 @@ a:hover {
 }
 
 .contact .contact-buttons button {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #fff;
   width: 60px;
   height: 60px;
   margin: 10px;
-  border-radius: 50%;
+  border-radius: 100%;
   border: none;
   font-size: 36px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1254,7 +1260,7 @@ a:hover {
   .contact .contact-buttons button {
     color: #fff;
     width: 36px;
-    height: 36px;
+    height: 38px;
     margin: 1vw;
     font-size: 20px;
   }

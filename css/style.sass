@@ -514,15 +514,19 @@ a
   .contact-buttons
     display: flex
     button
-      display: grid
-      place-items: center
+      display: flex
+      align-items: center
+      justify-content: center
       color: $hover-text
       width: $cont-size-t
       height: $cont-size-t
       margin: 10px
-      border-radius: 50%
+      border-radius: 100%
       border: none
       font-size: 36px
+      // -moz-background-clip: padding
+      // -webkit-background-clip: padding-box
+      // background-clip: padding-box
       @include transAll(.2s)
       &:hover
         margin: 2
@@ -746,7 +750,7 @@ a
       button
         color: $hover-text
         width: $cont-size-p
-        height: $cont-size-p
+        height: $cont-size-p + 2 //mobile safari hack
         margin: 1vw
         font-size: 20px
 
