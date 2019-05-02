@@ -53,6 +53,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Roboto", sans-serif;
+  font-display: swap;
   color: #222;
 }
 
@@ -123,6 +124,7 @@ a:hover {
 .nav_bar .content .brand {
   font-family: "Permanent Marker", cursive;
   font-size: 1.8em;
+  font-display: block;
   color: #222;
   padding: 15px 0;
 }
