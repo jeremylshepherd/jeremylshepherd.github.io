@@ -13,11 +13,7 @@ const Thumb = props => (
                         {'Project type: ' + props.type}
                     </p>
                 </span>
-                <img
-                    className="image"
-                    src={`http://${window.location.host}/assets/${props.img.split('/').pop()}`}
-                    alt={`${props.title}-screenshot`}
-                />
+                <img className="image" src={props.img} alt={`${props.title}-screenshot`} />
                 <h5>{props.title}</h5>
             </div>
         </Link>
