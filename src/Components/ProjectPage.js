@@ -10,7 +10,7 @@ export default class ProjectPage extends React.Component {
 
     getProject = () => {
         const id = this.props.match.params.id;
-        const url = 'https://jeremylshepherd.herokuapp.com/api/project';
+        const url = 'https://api.jeremylshepherd.io/api/project';
         fetch(`${url}/${id}`)
             .then(blob => {
                 if (blob.ok) {
