@@ -139,10 +139,30 @@
             }
         </script>
         <!-- End Single Page Apps for GitHub Pages -->
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+        </style>
     </head>
 
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <span
+                style="display:flex;flex-direction:column;align-items:center;justify-content:space-around;width:100vw;height:100vh; position: relative"
+            >
+                <h1 style="font-weight:900;font-family:Permanent Marker,cursive">
+                    Jeremy L. Shepherd
+                </h1>
+                <img
+                    class="fa-spin"
+                    style="border-radius: 100%; transition: rotate"
+                    src="./assets/icons/Icon-256x256.png"
+                    alt="Jeremy L Shepherd profile image"
+                />
+                <h1 style="font-weight:900;font-family:Permanent Marker,cursive">
+                    Dayton JavaScript Developer
+                </h1>
+            </span>
+        </div>
         <script>
             if ('serviceWorker' in navigator) {
                 try {
