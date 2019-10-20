@@ -16,7 +16,7 @@ const socialData = [
     },
     {
         name: 'FreeCodeCamp',
-        link: 'https://www.freecodecamp.org/portfolio/jeremylshepherd',
+        link: 'https://www.freecodecamp.org/jeremylshepherd',
         icon: 'fa fa-free-code-camp'
     },
     {
