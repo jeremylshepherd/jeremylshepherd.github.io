@@ -19,7 +19,7 @@ export default class About extends React.Component {
                     </div>
                     <p>{`My name is Jeremy and I am full-stack web & mobile developer.`}</p>
                     <p>
-                        {`In late 2014, I wanted to build a website to showcase my photography and maybe pick up some side work. I scoured tutorials, built a decent site, and found that I really enjoyed coding.`}
+                        {`I have been coding since 2014, I am currently attending University of Cincinnati's Bachelor program for Software Application Development. I will have an Associate degree in Software Development from Sinclair (pendig comletion of internship).`}
                     </p>
                     <p>
                         {`I have a passion for building functional and beautiful web/mobile applications that enhance lives and frees people to focus their time and energy on following their passions.`}
@@ -37,9 +37,11 @@ export default class About extends React.Component {
                         <br />
                         <span>Specializations:</span>
                         <br /> <Bullet /> Building Cross Platform Applications
+                        <br /> <Bullet /> C#, Java, Swift, Ruby, JavaScript
+                        <br /> <Bullet /> .NET Core, .NET Standard, Xamarin
                         <br /> <Bullet /> React, React-Native, Angular, D3
                         <br /> <Bullet /> Node, Express, Ruby on Rails
-                        <br /> <Bullet /> SQL, MongoDB
+                        <br /> <Bullet /> SQL, MongoDB, Firebase, MS SQL Server
                     </p>
                 </div>
             </div>
