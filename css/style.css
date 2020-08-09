@@ -1278,6 +1278,10 @@ a:hover {
             transform: rotate(45deg);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   }
   .nav_bar .toggle:checked + .toggle-btn .ib-mid {
     opacity: 0;
@@ -1287,6 +1291,10 @@ a:hover {
             transform: rotate(-45deg);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   }
   .nav_bar .toggle:checked ~ .right-nav {
     max-height: 360px;

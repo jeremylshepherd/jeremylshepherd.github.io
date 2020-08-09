@@ -1,15 +1,19 @@
 import React from 'react';
 import AsyncComponent from './AsyncComponent';
+import Video from './Video';
 import Arrow from './Arrow';
 
 export default class Profile extends React.Component {
-    state = {
-        video: false
-    };
+    constructor() {
+        super();
+        this.state = {
+            // eslint-disable-next-line comma-dangle
+            video: false,
+        };
+    }
 
     render() {
         const { video } = this.state;
-        const Video = React.lazy(() => import('./Video'));
         const Image = video ? (
             <AsyncComponent>
                 <Video />
