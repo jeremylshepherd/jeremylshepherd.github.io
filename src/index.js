@@ -16,10 +16,13 @@ const storage = window.localStorage;
 const projectData = 'https://api.jeremylshepherd.io/api/jeremylshepherd/projects';
 
 class Portfolio extends React.Component {
-    state = {
-        data: [],
-        isLoading: false
-    };
+    constructor() {
+        super();
+        this.state = {
+            data: [],
+            isLoading: false,
+        };
+    }
 
     loadProjects = () => {
         if ('projects' in storage) {
@@ -33,7 +36,7 @@ class Portfolio extends React.Component {
             .then(data => {
                 this.setState({
                     data: data,
-                    isLoading: false
+                    isLoading: false,
                 });
                 storage.setItem('projects', JSON.stringify(data));
             });
