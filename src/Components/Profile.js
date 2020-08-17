@@ -23,7 +23,7 @@ export default class Profile extends React.Component {
                 onError={this.defaultSRC}
                 id="self"
                 className="self"
-                src="https://gravatar.com/avatar/28acf74786d34d55ddbba649aab086c5.jpg?s=540&r=pg"
+                src="./assets/page/Jeremy L Shepherd profile - square - small.png"
                 alt="Jeremy L. Shepherd"
             />
         );
