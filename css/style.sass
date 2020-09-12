@@ -296,7 +296,7 @@ a
   color: $color
   background: none
   margin: 0 auto
-  padding: 10vh
+  padding: 10vh 0
   width: 100vw
   display: grid
   place-items: center
@@ -310,11 +310,15 @@ a
 .social
   list-style: none
   display: flex
-  justify-content: space-around
+  justify-content: center
   li
+    display: flex
+    align-items: center
+    justify-content: center
     font-size: 2vmax
     font-weight: 600
     color: $color
+    padding: 0 .75em
     @include transAll(.2s)
     @include hero-social('.fa-github', $github)
     @include hero-social('.fa-twitter-square', $twitter)
@@ -748,9 +752,7 @@ a
       grid-template-columns: repeat(2, 1fr)    
     
   .hero
-    padding: 0
-    padding-top: 5vh
-    padding-bottom: 5vh    
+    padding: 10vh  0
 
 @media only screen and (max-width: 768px)
   

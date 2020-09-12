@@ -283,7 +283,7 @@ a:hover {
   color: #222;
   background: none;
   margin: 0 auto;
-  padding: 10vh;
+  padding: 10vh 0;
   width: 100vw;
   display: -ms-grid;
   display: grid;
@@ -305,14 +305,25 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .social li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 2vmax;
   font-weight: 600;
   color: #222;
+  padding: 0 .75em;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1225,9 +1236,7 @@ a:hover {
         grid-template-columns: repeat(2, 1fr);
   }
   .hero {
-    padding: 0;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding: 10vh  0;
   }
 }
 

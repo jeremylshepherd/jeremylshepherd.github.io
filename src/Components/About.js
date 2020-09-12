@@ -22,7 +22,7 @@ export default class About extends React.Component {
                         {`I have been coding since 2014, I am currently attending University of Cincinnati's Bachelor program for Software Application Development. I have* an Associate degree in Software Development from Sinclair (*pending completion of internship).`}
                     </p>
                     <p>
-                        {`I have a passion for building functional and beautiful corss-platform applications that enhance lives and frees people to focus their time and energy on following their passions.`}
+                        {`I have a passion for building functional and beautiful cross-platform applications that enhance lives and free people to focus their time and energy on following their passions.`}
                         <br />
                         <a
                             href="https://jeremylshepherd.github.io/assets/resume.pdf"
