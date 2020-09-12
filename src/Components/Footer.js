@@ -31,7 +31,15 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="content">
-                <ul className="footer-links">{FooterLinks}</ul>
+                <ul className="footer-links">
+                    {FooterLinks}
+                    <li>
+                        <i className="fa fa-coffee" aria-hidden="true" />
+                    </li>
+                    <li>
+                        <a href={`/assets/resume.pdf`}>Résumé</a>
+                    </li>
+                </ul>
                 <h6>{`Copyright © Jeremy L. Shepherd ${now}. All Rights Reserved`}</h6>
             </div>
         </footer>

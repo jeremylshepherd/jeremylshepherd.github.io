@@ -4,7 +4,7 @@ import { navData } from '../utils';
 
 class Nav extends React.Component {
     state = {
-        checked: false
+        checked: false,
     };
 
     toggleChecked = () => {
@@ -39,6 +39,9 @@ class Nav extends React.Component {
                                 </NavLink>
                             </li>
                         ))}
+                        <li>
+                            <a href={`/assets/resume.pdf`}>Résumé</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
