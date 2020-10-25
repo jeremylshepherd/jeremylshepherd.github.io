@@ -13,7 +13,7 @@ import Spinner from './Components/Spinner';
 
 const storage = window.localStorage;
 
-const projectData = 'https://api.jeremylshepherd.io/api/jeremylshepherd/projects';
+const projectData = 'https://jeremylshepherd.herokuapp.com/api/jeremylshepherd/projects';
 
 class Portfolio extends React.Component {
     constructor() {
