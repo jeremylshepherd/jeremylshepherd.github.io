@@ -33,7 +33,7 @@
         "babel-plugin-inline-react-svg": "^1.1.0",
         "extend": ">=3.0.2",
         "lodash": "^4.17.19",
-        "webpack": "^4.29.6",
+        "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12"
     },
     "dependencies": {
