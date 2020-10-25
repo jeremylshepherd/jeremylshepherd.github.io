@@ -30,14 +30,14 @@
         "acorn": "^6.4.1",
         "babel-jest": "^24.5.0",
         "babel-loader": "^8.0.5",
-        "babel-plugin-inline-react-svg": "^1.1.0",
+        "babel-plugin-inline-react-svg": "^1.1.1",
         "extend": ">=3.0.2",
         "lodash": "^4.17.19",
         "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12"
     },
     "dependencies": {
-        "eslint": "^4.4.1",
+        "eslint": "^4.19.1",
         "eslint-config-standard": "^10.2.1",
         "eslint-plugin-import": "^2.7.0",
         "eslint-plugin-node": "^5.1.1",
